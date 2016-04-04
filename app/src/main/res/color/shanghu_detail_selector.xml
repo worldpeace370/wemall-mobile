@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:color="#ffe72843" />
+    <item android:state_checked="true" android:color="#ffe72843" />
+    <item android:color="@color/custom_actionbar_red" />
+</selector>

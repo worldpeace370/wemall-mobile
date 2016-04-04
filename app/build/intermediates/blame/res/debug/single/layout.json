@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_editaddress_actionbar.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_editaddress_actionbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\itemlist_order.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\itemlist_order.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\address_addedit.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\address_addedit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_address_actionbar.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_address_actionbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\itemlist_shop.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\itemlist_shop.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_order.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confirmorder_content.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\confirmorder_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_remark.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\dialog_remark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\welcome_splash.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\welcome_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\wode_fragment.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\wode_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\plus_minus_btn_plugin.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\plus_minus_btn_plugin.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_actionbar.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\fragment_actionbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\wode_setting.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\wode_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_detail_append.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_order_detail_append.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_detail.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\dialog_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\wode_not_login.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\wode_not_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about_actionbar.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_about_actionbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confirmorder_detail.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\confirmorder_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\wode_has_login.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\wode_has_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confirmorder_footer.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\confirmorder_footer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_detail.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_order_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confirmorder.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\confirmorder.xml"
+    }
+]

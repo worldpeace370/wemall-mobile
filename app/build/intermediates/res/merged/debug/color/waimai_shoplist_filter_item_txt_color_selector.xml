@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:color="@color/waimai_shoplist_item_grid_filter_title_highlight" />
+    <item android:state_focused="true" android:color="@color/waimai_shoplist_item_grid_filter_title_highlight" />
+    <item android:color="@color/waimai_shoplist_item_grid_filter_title_highlight" android:state_activated="true" />
+    <item android:color="@color/waimai_shoplist_item_grid_filter_title_normal" />
+</selector>

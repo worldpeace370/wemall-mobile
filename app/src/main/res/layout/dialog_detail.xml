@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/custom_white"
+    android:clickable="true"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/waimai_shopmenu_dishitem_attr_title_height"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/dialog_detail_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/waimai_shop_list_item_magin_left"
+            android:src="@drawable/waimai_shopmenu_dish_icon_close" />
+
+        <TextView
+            android:id="@+id/dialog_detail_title_name"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/waimai_shop_list_item_magin_left"
+            android:gravity="center"
+            android:paddingLeft="0dip"
+            android:paddingRight="@dimen/waimai_shopmenu_dish_item_height"
+            android:singleLine="true"
+            android:textSize="@dimen/waimai_shop_list_item_text_shop_name" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/dialog_detail_big_image"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/waimai_shopmenu_dishitem_attr_image_height"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/waimai_shopmenu_dishitem_attr_magin"
+                android:layout_marginRight="@dimen/waimai_shopmenu_dishitem_attr_magin"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/waimai_shopmenu_dishitem_attr_magin"
+                android:layout_marginRight="@dimen/waimai_shopmenu_dishitem_attr_magin"
+                android:layout_marginTop="@dimen/waimai_shoplist_filter_item_margin_right"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/dialog_detail_attr_single_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="单价："
+                    android:textColor="@color/custom_title"
+                    android:textSize="@dimen/waimai_shop_list_item_text_shop_name" />
+
+                <TextView
+                    android:id="@+id/dialog_detail_tag_single_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_toRightOf="@+id/dialog_detail_attr_single_price"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="¥ "
+                    android:textColor="@color/custom_inputright_red"
+                    android:textSize="@dimen/waimai_shop_list_item_text_shop_name"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/dialog_detail_single_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/dialog_detail_tag_single_price"
+                    android:gravity="center"
+                    android:textColor="@color/custom_pottery_red"
+                    android:textSize="@dimen/waimai_shop_list_item_text_shop_name" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
+                android:layout_marginLeft="@dimen/waimai_shopmenu_dishitem_attr_magin"
+                android:layout_marginRight="@dimen/waimai_shopmenu_dishitem_attr_magin"
+                android:layout_marginTop="10.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/dialog_detail_attr_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="数量："
+                    android:textColor="@color/custom_title"
+                    android:textSize="@dimen/waimai_shop_list_item_text_shop_name" />
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
+                    android:layout_toRightOf="@id/dialog_detail_attr_num"
+                    layout="@layout/plus_minus_btn_plugin" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/dialog_detail_addcart"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/waimai_shopmenu_foot_bar_height"
+                android:background="@color/custom_pottery_red"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="加入购物车"
+                android:textColor="@color/custom_white"
+                android:textSize="@dimen/waimai_shop_list_item_text_shop_name"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

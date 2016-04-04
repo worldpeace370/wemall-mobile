@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/custom_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/confirmorder_address_full"
+            android:layout_width="fill_parent"
+            android:layout_height="78.0dip"
+            android:background="@color/custom_pottery_red"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/custom_content_lrgap"
+            android:paddingRight="@dimen/custom_content_lrgap"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/confirmorder_address_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:ellipsize="end"
+                        android:maxWidth="100.0dip"
+                        android:singleLine="true"
+                        android:text="风清扬"
+                        android:textColor="@color/custom_white"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/confirmorder_address_userphone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="12312312312"
+                        android:textColor="@color/custom_white"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="地址："
+                        android:textColor="@color/custom_pottery_font"
+                        android:textSize="@dimen/custom_info" />
+
+                    <TextView
+                        android:id="@+id/confirmorder_address_addrdesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="安徽凤阳北葫芦村南葫芦道大钟寺"
+                        android:textColor="@color/custom_pottery_font"
+                        android:textSize="@dimen/custom_info" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:src="@drawable/mypage_list_icon_white_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/confirmorder_address_judge"
+            android:layout_width="fill_parent"
+            android:layout_height="34.0dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/confirmorder_address_judge_info"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:drawableLeft="@drawable/global_warn_icon"
+                android:drawablePadding="@dimen/custom_icon_gap"
+                android:gravity="center"
+                android:text="当前地址不在配送范围内"
+                android:textColor="@color/custom_warn"
+                android:textSize="@dimen/custom_hint" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/confirmorder_address_empty"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/custom_item_height"
+        android:background="@color/custom_white"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/custom_content_lrgap"
+        android:paddingRight="0dp" >
+
+        <TextView
+            android:id="@+id/confirmorder_address_add"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="10.0dip"
+            android:drawableRight="@drawable/mypage_list_icon_arrow"
+            android:gravity="center_vertical"
+            android:text="新增地址"
+            android:textColor="@color/custom_title"
+            android:textSize="@dimen/custom_title" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginBottom="@dimen/custom_item_gap"
+        android:background="@color/custom_line" />
+
+    <LinearLayout
+        android:id="@+id/confirmorder_userinfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/custom_white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/custom_content_lrgap"
+        android:paddingRight="0dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/custom_item_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="付款方式"
+                android:textColor="@color/custom_title"
+                android:textSize="@dimen/custom_title" />
+
+            <TextView
+                android:id="@+id/confirmorder_userinfo_sendtime"
+                style="@style/confirmorderUserinfoShown"
+                android:hint="货到付款"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <View style="@style/CustomHorizonSplitLineNoLeft" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/custom_item_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="备注"
+                android:textColor="@color/custom_title"
+                android:textSize="@dimen/custom_title" />
+
+            <TextView
+                android:id="@+id/confirmorder_userinfo_remarks"
+                style="@style/confirmorderUserinfoShown"
+                android:hint="（选填）可输入特殊要求"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/confirmorder_userinfo_invoice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <View style="@style/CustomHorizonSplitLineNoLeft" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/custom_item_height"
+                android:layout_marginRight="@dimen/custom_content_lrgap"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/login_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="需要发票"
+                    android:textColor="@color/custom_title"
+                    android:textSize="@dimen/custom_title" />
+
+                <CheckBox
+                    android:id="@+id/confirmorder_userinfo_invoice_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/login_title"
+                    android:layout_alignBottom="@id/login_title"
+                    android:layout_alignParentRight="true"
+                    android:button="@drawable/button_radio"
+                    android:paddingLeft="0.0dip"
+                    android:paddingRight="0dip" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/confirmorder_userinfo_invoice_inputer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <View style="@style/CustomHorizonSplitLineNoLeft" />
+
+                <EditText
+                    android:id="@+id/confirmorder_userinfo_invoice_header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/custom_item_height"
+                    android:layout_marginBottom="5.0dip"
+                    android:layout_marginRight="@dimen/custom_content_lrgap"
+                    android:layout_marginTop="5.0dip"
+                    android:background="@null"
+                    android:hint="输入个人或者公司抬头"
+                    android:textColor="@color/custom_inputright_gray"
+                    android:textColorHint="@color/custom_hint"
+                    android:textSize="@dimen/custom_hint" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginBottom="@dimen/custom_item_gap"
+        android:background="@color/custom_line" />
+
+    <LinearLayout
+        android:id="@+id/confirmorder_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/custom_white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/custom_content_lrgap"
+        android:paddingRight="@dimen/custom_content_lrgap" >
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/confirmorder_detail" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_marginBottom="@dimen/custom_item_gap"
+        android:background="@color/custom_line" />
+
+</LinearLayout>

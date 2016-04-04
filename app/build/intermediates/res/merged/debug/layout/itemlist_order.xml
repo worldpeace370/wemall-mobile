@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/custom_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78.0dip"
+            android:background="@color/custom_pottery_red"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/custom_content_lrgap"
+            android:paddingRight="@dimen/custom_content_lrgap"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:ellipsize="end"
+                        android:maxWidth="100.0dip"
+                        android:singleLine="true"
+                        android:text="订单编号:"
+                        android:textColor="@color/custom_white"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_id"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="2014111020471369"
+                        android:textColor="@color/custom_white"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单状态："
+                        android:textColor="@color/custom_pottery_font"
+                        android:textSize="@dimen/custom_info" />
+
+                    <TextView
+                        android:id="@+id/order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="未发货"
+                        android:textColor="@color/custom_pottery_font"
+                        android:textSize="@dimen/custom_info" />
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="付款状态："
+                        android:textColor="@color/custom_pottery_font"
+                        android:textSize="@dimen/custom_info" />
+
+                    <TextView
+                        android:id="@+id/pay_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="未付款"
+                        android:textColor="@color/custom_pottery_font"
+                        android:textSize="@dimen/custom_info" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:src="@drawable/mypage_list_icon_white_arrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="55.0dip"
+        android:background="@color/custom_white" >
+
+        <ImageButton
+            android:id="@+id/actionbar_left_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:background="@drawable/setting_actionbar_left_back_selector"
+            android:clickable="true"
+            android:paddingLeft="@dimen/waimai_shoplist_filter_item_grid_margin"
+            android:paddingRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
+                android:gravity="center"
+                android:text="订单详情"
+                android:textColor="@color/custom_title"
+                android:textSize="18.0sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_alignParentBottom="true"
+            android:background="#ffdbdcde" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/custom_background"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_marginTop="@dimen/custom_item_gap"
+                android:background="@color/custom_line" />
+
+            <LinearLayout
+                android:id="@+id/dish_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/custom_white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/custom_content_lrgap"
+                android:paddingRight="@dimen/custom_content_lrgap" >
+
+                <LinearLayout
+                    android:id="@+id/price_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45.0dip"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="@dimen/custom_content_lrgap"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="商品详情"
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <ListView
+                    android:id="@+id/order_detail_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </ListView>
+
+                <LinearLayout
+                    android:id="@+id/count_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45.0dip"
+                    android:layout_gravity="right"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15.0dip"
+                        android:text="总计："
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_hint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥"
+                        android:textColor="@color/custom_pottery_red"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_total_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/custom_pottery_red"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@color/custom_line" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_marginTop="@dimen/custom_item_gap"
+                android:background="@color/custom_line" />
+
+            <LinearLayout
+                android:id="@+id/distribution_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/custom_item_gap"
+                android:background="@color/custom_white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/custom_content_lrgap"
+                android:paddingRight="@dimen/custom_content_lrgap" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/custom_item_height"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:text="联系人："
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="150.0dip"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0sp"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/custom_item_height"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:text="手机："
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/custom_item_height"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15.0dip"
+                    android:paddingTop="15.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="地址："
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:id="@+id/remarks_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/custom_item_height"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15.0dip"
+                    android:paddingTop="15.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="备注信息："
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/custom_item_height"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15.0dip"
+                    android:paddingTop="15.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单状态："
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/custom_item_height"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15.0dip"
+                    android:paddingTop="15.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="付款方式："
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_pay_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/custom_item_height"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15.0dip"
+                    android:paddingTop="15.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="付款状态："
+                        android:textColor="@color/custom_title"
+                        android:textSize="@dimen/custom_title" />
+
+                    <TextView
+                        android:id="@+id/order_detail_pay_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/custom_inputright_gray"
+                        android:textSize="@dimen/custom_title" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

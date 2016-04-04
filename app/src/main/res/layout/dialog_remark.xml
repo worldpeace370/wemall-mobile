@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/custom_dialog_background"
+    android:minWidth="@dimen/custom_dialog_min_width"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/custom_dialog_title_height"
+        android:background="@drawable/global_dialog_border_bottom"
+        android:gravity="center"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:singleLine="true"
+        android:text="备注"
+        android:textColor="@color/custom_dialog_infocolor"
+        android:textSize="@dimen/custom_title_bar"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/dialog_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/custom_dialog_content_padding" >
+
+        <TextView
+            android:id="@+id/dialog_info_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10.0dip"
+            android:paddingTop="10.0dip"
+            android:text="简单的文字提示"
+            android:textColor="@color/custom_dialog_infocolor"
+            android:textSize="@dimen/custom_title"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/remarks_inputer"
+            android:layout_width="fill_parent"
+            android:layout_height="105.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/custom_content_lrgap"
+            android:layout_marginLeft="7.0dip"
+            android:layout_marginRight="7.0dip"
+            android:layout_marginTop="@dimen/custom_item_topgap"
+            android:background="@drawable/global_border"
+            android:gravity="top|left|center"
+            android:hint="请输入备注信息..."
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:maxLength="200"
+            android:padding="10.0dip"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textColor="@color/custom_title"
+            android:textColorLink="@color/custom_hint"
+            android:textSize="@dimen/custom_title" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_button_container"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/custom_dialog_button_height"
+        android:background="@drawable/global_dialog_border_top"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/dialog_button_right"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/global_dialog_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/custom_title"
+            android:textSize="@dimen/custom_title_bar" />
+
+        <View
+            android:id="@+id/dialog_button_split"
+            android:layout_width="1.0px"
+            android:layout_height="fill_parent"
+            android:background="@color/custom_dialog_line" />
+
+        <TextView
+            android:id="@+id/dialog_button_left"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/global_dialog_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/custom_title"
+            android:textSize="@dimen/custom_title_bar" />
+    </LinearLayout>
+
+</LinearLayout>

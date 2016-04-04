@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/activity_editaddress_actionbar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/custom_background" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/custom_item_gap"
+                android:layout_marginTop="@dimen/custom_item_topgap"
+                android:background="@drawable/global_border_topbottom"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/custom_content_lrgap"
+                android:paddingRight="@dimen/custom_content_lrgap" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/AddressaddrInputMtb"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/custom_item_height"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="@dimen/address_add_label_width"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/address_add_label_padding"
+                            android:gravity="left|center"
+                            android:text="联系人"
+                            android:textColor="@color/custom_title"
+                            android:textSize="@dimen/custom_title" />
+
+                        <FrameLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0" >
+
+                            <AutoCompleteTextView
+                                android:id="@+id/address_username"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@null"
+                                android:enabled="false"
+                                android:hint="您的姓名"
+                                android:text=""
+                                android:textColor="@color/custom_title"
+                                android:textColorHint="@color/custom_hint"
+                                android:textSize="@dimen/custom_title" />
+
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/AddressaddrInputMtb"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/custom_item_height"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="@dimen/address_add_label_width"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/address_add_label_padding"
+                            android:gravity="left|center"
+                            android:text="地址"
+                            android:textColor="@color/custom_title"
+                            android:textSize="@dimen/custom_title" />
+
+                        <FrameLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0" >
+
+                            <AutoCompleteTextView
+                                android:id="@+id/address_useraddress"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@null"
+                                android:hint="请尽量详细"
+                                android:text=""
+                                android:textColor="@color/custom_title"
+                                android:textColorHint="@color/custom_hint"
+                                android:textSize="@dimen/custom_title" />
+
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/split_line"
+                    style="@style/CustomHorizonSplitLineNoLeftRight" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/AddressaddrInputMtb"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/custom_item_height"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="@dimen/address_add_label_width"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/address_add_label_padding"
+                            android:gravity="left|center"
+                            android:text="手机"
+                            android:textColor="@color/custom_title"
+                            android:textSize="@dimen/custom_title" />
+
+                        <FrameLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0" >
+
+                            <AutoCompleteTextView
+                                android:id="@+id/address_userphone"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@null"
+                                android:enabled="false"
+                                android:hint="配送人员联系您的方式"
+                                android:maxLength="11"
+                                android:numeric="integer"
+                                android:text=""
+                                android:textColor="@color/custom_title"
+                                android:textColorHint="@color/custom_hint"
+                                android:textSize="@dimen/custom_title" />
+
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/address_delete"
+                style="@style/CustomItem"
+                android:background="@drawable/global_item_pressed_selector"
+                android:clickable="true"
+                android:text="删除该地址"
+                android:textColor="@color/custom_inputright_red"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

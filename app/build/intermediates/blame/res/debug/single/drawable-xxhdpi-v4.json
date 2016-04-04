@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\waimai_actionbar_search.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\waimai_actionbar_search.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tab_icon_dingdan.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\tab_icon_dingdan.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tab_icon_home_selected.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\tab_icon_home_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\shoplist_actionbar_navigationbar_icon_location.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\shoplist_actionbar_navigationbar_icon_location.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\shoplist_actionbar_navigationbar_icon_arrow.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\shoplist_actionbar_navigationbar_icon_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tab_icon_me.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\tab_icon_me.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tab_icon_me_selected.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\tab_icon_me_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\wemall.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\wemall.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tab_icon_home.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\tab_icon_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\waimai_actionbar_menu.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\waimai_actionbar_menu.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\avater.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\avater.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\splash01.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\splash01.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tab_icon_dingdan_selected.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\drawable-xxhdpi\\tab_icon_dingdan_selected.png"
+    }
+]

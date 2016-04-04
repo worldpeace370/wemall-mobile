@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginBottom="@dimen/custom_item_gap"/>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:background="@color/custom_summary_background"
+            android:orientation="horizontal"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="0dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="共"
+                android:textColor="@color/custom_summary_title"
+                android:textSize="@dimen/custom_title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:paddingTop="3.0dip"
+                android:text="￥"
+                android:textColor="@color/custom_white"
+                android:textSize="@dimen/custom_info" />
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="0"
+                android:textColor="@color/custom_white"
+                android:textSize="@dimen/custom_title_bar" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@color/custom_inputright_red"
+            android:gravity="center"
+            android:text="确认下单"
+            android:textColor="@color/custom_white"
+            android:textSize="@dimen/custom_title_bar" />
+    </LinearLayout>
+
+</LinearLayout>

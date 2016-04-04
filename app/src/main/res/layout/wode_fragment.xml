@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffecedf1" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include
+            layout="@layout/wode_has_login"
+            android:visibility="gone" />
+
+        <include
+            layout="@layout/wode_not_login"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginTop="@dimen/custom_item_gap"
+            android:background="@color/custom_line" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/custom_white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/custom_content_lrgap"
+            android:paddingRight="@dimen/custom_content_lrgap" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/wode_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/custom_item_height"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/wode_address_icon"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/custom_icon_gap"
+                        android:layout_marginRight="@dimen/custom_icon_gap"
+                        android:scaleType="center"
+                        android:src="@drawable/mypage_list_icon_location" />
+
+                    <TextView
+                        android:id="@+id/wode_address_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="我的地址"
+                        android:textColor="@color/wode_frag_list_color"
+                        android:textSize="@dimen/custom_title" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="right"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/wode_address_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/custom_icon_gap"
+                            android:layout_marginRight="@dimen/custom_icon_gap"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/mypage_list_icon_arrow" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View style="@style/MenuHorizonSplitLine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/wode_order"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/custom_item_height"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/wode_order_icon"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/custom_icon_gap"
+                        android:layout_marginRight="@dimen/custom_icon_gap"
+                        android:scaleType="center"
+                        android:src="@drawable/mypage_list_icon_daijinjuan" />
+
+                    <TextView
+                        android:id="@+id/wode_order_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="我的订单"
+                        android:textColor="@color/wode_frag_list_color"
+                        android:textSize="@dimen/custom_title" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="right"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/wode_order_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/custom_icon_gap"
+                            android:layout_marginRight="@dimen/custom_icon_gap"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/mypage_list_icon_arrow" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginBottom="@dimen/custom_item_gap"
+            android:background="@color/custom_line" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/custom_line" />
+
+        <LinearLayout
+            android:id="@+id/wode_call"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/custom_item_height"
+            android:background="@color/custom_white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/custom_content_lrgap"
+            android:paddingRight="@dimen/custom_content_lrgap" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:paddingLeft="0dip"
+                android:paddingRight="24.0dip" >
+
+                <ImageView
+                    android:id="@+id/wode_call_icon"
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/custom_icon_gap"
+                    android:layout_marginRight="@dimen/custom_icon_gap"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mypage_list_icon_call" />
+
+                <TextView
+                    android:id="@+id/wode_call_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:text="客服 10086"
+                    android:textColor="@color/custom_actionbar_red"
+                    android:textSize="@dimen/custom_title" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginBottom="@dimen/custom_item_gap"
+            android:background="@color/custom_line" />
+        
+        
+    </LinearLayout>
+
+</ScrollView>

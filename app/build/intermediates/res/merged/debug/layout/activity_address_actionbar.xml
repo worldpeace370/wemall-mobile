@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="55.0dip"
+    android:background="@color/custom_white" >
+
+    <ImageButton
+        android:id="@+id/address_actionbar_left_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left|center"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:background="@drawable/setting_actionbar_left_back_selector"
+        android:clickable="true"
+        android:paddingLeft="@dimen/waimai_shoplist_filter_item_grid_margin"
+        android:paddingRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/address_actionbar_middle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/address_actionbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
+            android:gravity="center"
+            android:text="我的地址"
+            android:textColor="@color/custom_title"
+            android:textSize="18.0sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_alignParentBottom="true"
+        android:background="#ffdbdcde" />
+
+</RelativeLayout>

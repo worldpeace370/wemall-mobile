@@ -1,0 +1,79 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="waimai_tab">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/tab_textcolor_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/waimai_shop_list_alpha_bg_color</item>
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:paddingBottom">4.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="confirmorderUserinfoShown">
+        <item name="android:textSize">@dimen/custom_hint</item>
+        <item name="android:textColor">@color/custom_hint</item>
+        <item name="android:textColorHint">@color/custom_hint</item>
+        <item name="android:gravity">right|center</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_marginRight">10.0dip</item>
+        <item name="android:drawableRight">@drawable/mypage_list_icon_arrow</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="CustomHorizonSplitLineNoLeft">
+        <item name="android:background">@color/waimai_shop_list_divider</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+        <item name="android:layout_marginRight">@dimen/custom_content_lrgap</item>
+    </style>
+    <style name="CustomHorizonSplitLineNoLeftRight">
+        <item name="android:background">@color/waimai_shop_list_divider</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+    </style>
+    <style name="AddressaddrInputMtb">
+        <item name="android:layout_marginTop">2.5dip</item>
+        <item name="android:layout_marginBottom">2.5dip</item>
+    </style>
+    <style name="NameSexSplitLine">
+        <item name="android:background">@color/waimai_shop_list_divider</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+        <item name="android:layout_marginLeft">50.0dip</item>
+    </style>
+    <style name="CustomItem">
+        <item name="android:textSize">@dimen/custom_title</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/global_border_topbottom</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/custom_item_height</item>
+    </style>
+    <style name="MenuHorizonSplitLine">
+        <item name="android:background">@color/waimai_shop_list_divider</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+    </style>
+    
+</resources>
