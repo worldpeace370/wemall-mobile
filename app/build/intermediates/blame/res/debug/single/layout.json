@@ -20,6 +20,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\itemlist_shop.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\title_qrcode.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\title_qrcode.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
@@ -88,6 +92,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\confirmorder_detail.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_qrcode_result.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_qrcode_result.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\wode_has_login.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\wode_has_login.xml"
     },
@@ -98,6 +106,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_detail.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_order_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_mipca_capture.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_mipca_capture.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio1.5\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confirmorder.xml",

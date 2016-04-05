@@ -7,4 +7,5 @@
     <string name="pull_to_refresh">下拉刷新</string>
     <string name="refreshing">加载中...</string>
     <string name="updating">最近更新：</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
 </resources>

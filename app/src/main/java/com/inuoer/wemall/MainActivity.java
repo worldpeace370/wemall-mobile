@@ -1,12 +1,8 @@
 package com.inuoer.wemall;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,9 +13,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.LinearLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +30,11 @@ import com.inuoer.util.Config;
 import com.inuoer.util.HttpUtil;
 import com.inuoer.util.MainAdapter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @SuppressLint("NewApi")
 public class MainActivity extends FragmentActivity implements OnClickListener{
 	public String jsonString;
@@ -46,7 +47,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	public MainAdapter MyAdapter;
 	public ProgressDialog progressDialog;
 //	public LinearLayout popmenull;
-
+    private ImageView qr_code;
 	@SuppressLint("HandlerLeak")
 	Handler handler = new Handler() {
 		@Override
@@ -59,22 +60,33 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			}
 		}
 	};
-	
+	private ImageButton mMenu;
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		title = (TextView) findViewById(R.id.fragment_actionbar_title);
 
-		RelativeLayout actionbar = (RelativeLayout) this.getLayoutInflater()
-				.inflate(R.layout.fragment_actionbar, null);
-		title = (TextView) actionbar
-				.findViewById(R.id.fragment_actionbar_title);
-//		popmenull = (LinearLayout) actionbar.findViewById(R.id.fragment_actionbar_menu);
-//		popmenull.setOnClickListener(this);
-		
-		LinearLayout ll = (LinearLayout) findViewById(R.id.fragment_actionbar_linearlayout);
-		ll.addView(actionbar);
+		qr_code = (ImageView) findViewById(R.id.qr_code);
+		qr_code.setVisibility(View.VISIBLE);
+		//启动二维码扫描
+		qr_code.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (v.getId() == R.id.qr_code){
+					Intent intent = new Intent();
+					intent.setClass(MainActivity.this, MipcaCapture.class);
+					startActivity(intent);
+				}
+			}
+		});
+
+
+		mMenu = (ImageButton) findViewById(R.id.fragment_actionbar_search);
+		mMenu.setVisibility(View.VISIBLE);
 	        
 		MyAdapter = new MainAdapter(this, listItem);
 		progressDialog = new ProgressDialog(this);
@@ -105,6 +117,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.shop:
+			qr_code.setVisibility(View.VISIBLE);
+			mMenu.setVisibility(View.VISIBLE);
 			fragmentTransaction = fragmentManager.beginTransaction();
 			fragmentTransaction.replace(R.id.framelayout_content, fragments.get(0));
 			title.setText("wemall");
@@ -112,6 +126,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 
 			break;
 		case R.id.cart:
+			qr_code.setVisibility(View.GONE);
+			mMenu.setVisibility(View.GONE);
 			fragmentTransaction = fragmentManager.beginTransaction();
 			fragmentTransaction.replace(R.id.framelayout_content, fragments.get(1));
 			title.setText("提交订单");
@@ -119,6 +135,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			
 			break;
 		case R.id.wode:
+			mMenu.setVisibility(View.GONE);
+			qr_code.setVisibility(View.GONE);
 			fragmentTransaction = fragmentManager.beginTransaction();
 			fragmentTransaction.replace(R.id.framelayout_content, fragments.get(2));
 			title.setText("我的");

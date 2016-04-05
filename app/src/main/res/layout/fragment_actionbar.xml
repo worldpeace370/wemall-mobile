@@ -10,36 +10,32 @@
         android:layout_height="fill_parent"
         android:layout_gravity="left|center"
         android:background="@null"
-        android:clickable="true"
         android:paddingLeft="@dimen/waimai_shoplist_filter_item_grid_margin"
         android:paddingRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
-        android:src="@drawable/waimai_actionbar_search"
-        android:visibility="gone" />
+        android:src="@drawable/waimai_actionbar_menu"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:id="@+id/fragment_actionbar_menu"
         android:layout_width="50.0dip"
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true"
-        android:clickable="true"
         android:gravity="center"
-        android:visibility="gone" >
+        >
 
-        <ImageView
-            android:layout_width="20.0dip"
+        <ImageView android:id="@+id/qr_code"
+            android:layout_width="50.0dip"
             android:layout_height="fill_parent"
-            android:clickable="true"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:src="@drawable/waimai_actionbar_menu"
-            android:visibility="visible" />
+            android:src="@drawable/ic_sao_1_sao"
+            android:visibility="gone" />
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerVertical="true"
-        android:clickable="true"
         android:descendantFocusability="blocksDescendants"
         android:gravity="center"
         android:paddingLeft="15.0dip"
