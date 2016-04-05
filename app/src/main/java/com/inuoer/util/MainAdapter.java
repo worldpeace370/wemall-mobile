@@ -1,8 +1,5 @@
 package com.inuoer.util;
 
-import java.util.ArrayList;
-import java.util.Map;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -20,6 +17,9 @@ import android.widget.TextView;
 
 import com.inuoer.util.AsyncImageLoader.ImageCallback;
 import com.inuoer.wemall.R;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class MainAdapter extends BaseAdapter {
 
@@ -76,7 +76,6 @@ public class MainAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();// 取出ViewHolder对象
 		}
-		
 		convertView.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

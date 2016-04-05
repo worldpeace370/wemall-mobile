@@ -1,8 +1,11 @@
 package com.inuoer.wemall;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +29,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.inuoer.fragment.CartFragment;
 import com.inuoer.fragment.MainFragment;
 import com.inuoer.fragment.WoFragment;
+import com.inuoer.util.AsyncImageLoader;
 import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
 import com.inuoer.util.HttpUtil;
@@ -61,6 +66,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		}
 	};
 	private ImageButton mMenu;
+	private int mRequestCode;
+	private Context mContext;
 
 
 	@Override
@@ -68,6 +75,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		mContext = this;
 		title = (TextView) findViewById(R.id.fragment_actionbar_title);
 
 		qr_code = (ImageView) findViewById(R.id.qr_code);
@@ -79,7 +87,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 				if (v.getId() == R.id.qr_code){
 					Intent intent = new Intent();
 					intent.setClass(MainActivity.this, MipcaCapture.class);
-					startActivity(intent);
+					mRequestCode = 0x222;
+					startActivityForResult(intent, mRequestCode);
 				}
 			}
 		});
@@ -183,5 +192,78 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			}
 		}).start();
 
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (this.mRequestCode == requestCode && resultCode == 0x55){
+			//得到二维码扫描来的物品position信息
+			final int position= Integer.parseInt(data.getExtras().getString("result").toString())-1;
+
+			LinearLayout layout = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_detail, null);
+			final Dialog dialog = new Dialog(mContext);
+			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			dialog.setContentView(layout);
+			dialog.show();
+			final ImageView imageView = (ImageView) layout.findViewById(R.id.dialog_detail_big_image);
+			new AsyncImageLoader(mContext).downloadImage(listItem.get(position).get("image").toString(), true,
+					new AsyncImageLoader.ImageCallback() {
+						@Override
+						public void onImageLoaded(Bitmap bitmap, String imageUrl) {
+							imageView.setImageBitmap(bitmap);
+						}
+					});
+			TextView textViewPrice = (TextView)layout.findViewById(R.id.dialog_detail_single_price);
+			textViewPrice.setText(listItem.get(position).get("price").toString());
+			final TextView textViewNum = (TextView) layout.findViewById(R.id.count);
+			layout.findViewById(R.id.dialog_detail_close).setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					dialog.dismiss();
+				}
+			});
+			layout.findViewById(R.id.dialog_detail_addcart).setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					dialog.dismiss();
+				}
+			});
+			//点击增加
+			layout.findViewById(R.id.plus_btn).setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					int num = Integer.parseInt(textViewNum.getText().toString()) + 1;
+					if (num >=0){
+						textViewNum.setText(String.valueOf(num));
+					}
+					CartData.editCart(listItem.get(position).get("id").toString(),
+							listItem.get(position).get("name").toString(),
+							listItem.get(position).get("price").toString(),
+							String.valueOf(num),
+							listItem.get(position).get("image").toString());
+				}
+			});
+			//点击减少
+			layout.findViewById(R.id.minus_btn).setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					int num = Integer.parseInt(textViewNum.getText().toString()) - 1;
+					if (num >=0){
+						textViewNum.setText(String.valueOf(num));
+
+						if (num == 0) {
+							CartData.removeCart(listItem.get(position)
+									.get("id").toString());
+						} else {
+							CartData.editCart(listItem.get(position).get("id").toString(),
+									listItem.get(position).get("name").toString(),
+									listItem.get(position).get("price").toString(),
+									String.valueOf(num),
+									listItem.get(position).get("image").toString());
+						}
+					}
+				}
+			});
+		}
 	}
 }

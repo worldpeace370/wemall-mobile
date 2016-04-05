@@ -216,7 +216,8 @@ public class MipcaCapture extends Activity implements Callback {
         if (resultString.equals("")) {
             Toast.makeText(MipcaCapture.this, "Scan failed!", Toast.LENGTH_SHORT).show();
         }else {
-            onResultHandler(resultString, bitmap);
+//            onResultHandler(resultString, bitmap);
+            onResultHandlerNew(resultString);
         }
         MipcaCapture.this.finish();
     }
@@ -240,8 +241,28 @@ public class MipcaCapture extends Activity implements Callback {
         MipcaCapture.this.finish();
     }
 
+    /**
+     * 将扫描的结果传到启动此活动的界面--MainActivity
+     * @param resultString
+     */
+    private void onResultHandlerNew(String resultString){
+        if(TextUtils.isEmpty(resultString)){
+            Toast.makeText(MipcaCapture.this, "Scan failed!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putString("result", resultString);
+        intent.putExtras(bundle);
+        setResult(0x55, intent);
+        MipcaCapture.this.finish();
+    }
+
     private MyHandler mHandler = new MyHandler(MipcaCapture.this);
 
+    /**
+     * 从相册解析二维码用得到
+     */
     private static class MyHandler extends Handler{
         private WeakReference<MipcaCapture> weakReference;
         public MyHandler(MipcaCapture activity){
@@ -259,6 +280,7 @@ public class MipcaCapture extends Activity implements Callback {
                         activity.onResultHandler((String)msg.obj, scanBitmap);
                         break;
                     case PARSE_BARCODE_FAIL: //解析失败后
+                        activity.progressDialog.dismiss();
                         Toast.makeText(activity, (String)msg.obj, Toast.LENGTH_SHORT).show();
                         break;
                 }

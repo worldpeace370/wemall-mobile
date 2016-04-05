@@ -41,8 +41,11 @@ public class MainFragment extends Fragment{
 			}
 		}
 	};
-	
-	
+
+	public MainFragment() {
+
+	}
+
 	public MainFragment(ArrayList<Map<String, Object>> listItem , MainAdapter MyAdapter) {
 //		super();
 		// TODO Auto-generated constructor stub

@@ -19,8 +19,8 @@
     <dimen name="abc_dropdownitem_icon_width">32.0dip</dimen>
     <dimen name="dialog_fixed_width_major">320.0dip</dimen>
     <dimen name="dialog_fixed_width_minor">320.0dip</dimen>
-    <item type="dimen" name="dialog_fixed_height_major">79.99999%</item>
-    <item type="dimen" name="dialog_fixed_height_minor">100.0%</item>
+    <item name="dialog_fixed_height_major" type="dimen">79.99999%</item>
+    <item name="dialog_fixed_height_minor" type="dimen">100.0%</item>
     <dimen name="activity_horizontal_margin">16.0dip</dimen>
     <dimen name="activity_vertical_margin">16.0dip</dimen>
     <dimen name="waimai_actionbar_container_height">55.0dip</dimen>
