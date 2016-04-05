@@ -215,9 +215,10 @@ public class MipcaCapture extends Activity implements Callback {
         String resultString = result.getText();
         if (resultString.equals("")) {
             Toast.makeText(MipcaCapture.this, "Scan failed!", Toast.LENGTH_SHORT).show();
-        }else {
-//            onResultHandler(resultString, bitmap);
+        }else if (resultString.length() <=2){ //说明是菜单的id
             onResultHandlerNew(resultString);
+        }else {
+            onResultHandler(resultString, bitmap);
         }
         MipcaCapture.this.finish();
     }

@@ -197,6 +197,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (this.mRequestCode == requestCode && resultCode == 0x55){
+			String result = data.getExtras().getString("result");
 			//得到二维码扫描来的物品position信息
 			final int position= Integer.parseInt(data.getExtras().getString("result").toString())-1;
 
