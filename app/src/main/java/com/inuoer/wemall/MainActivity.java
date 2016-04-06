@@ -231,6 +231,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 					});
 			TextView textViewPrice = (TextView)layout.findViewById(R.id.dialog_detail_single_price);
 			textViewPrice.setText(listItem.get(position).get("price").toString());
+			TextView textViewName = ((TextView) layout.findViewById(R.id.dialog_detail_title_name));
+			textViewName.setText(listItem.get(position).get("name").toString());
 			final TextView textViewNum = (TextView) layout.findViewById(R.id.count);
 			layout.findViewById(R.id.dialog_detail_close).setOnClickListener(new OnClickListener() {
 				@Override

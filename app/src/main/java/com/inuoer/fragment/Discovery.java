@@ -12,7 +12,6 @@ import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -56,14 +55,18 @@ public class Discovery extends Fragment {
     private Context mContext;
     private OnFragmentInteractionListener mListener;
     public ArrayList<Map<String, Object>> listItem = new ArrayList<Map<String, Object>>();
+    //摇一摇上下两张图片
     private ImageView imageView_main_logoup;
     private ImageView imageView_main_logodown;
-    private SensorManager sensorManager;
+    //声音池
     private SoundPool soundPool;
     private int soundId;
+    //震动类
     private Vibrator vibrator;
-    private Handler handler = new Handler();
-
+    //购物窗体对话框
+    private Dialog mDialog;
+    //传感器管理类
+    SensorManager mSensorManager;
     private SensorEventListener sensorEventListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
@@ -71,19 +74,7 @@ public class Discovery extends Fragment {
             float y = event.values[1];
             float z = event.values[2];
             if (x>=15 || y>=15 || z>=15) {
-                //				new Thread(new Runnable() {
-                //
-                //					@Override
-                //					public void run() {
-                //							handler.post(new Runnable() {
-                //
-                //							@Override
-                //							public void run() {
-                //								startAnimation();
-                //							}
-                //						});
-                //					}
-                //				}).start();
+
                 //startAnimationByXml();
                 if (mDialog != null){
                     mDialog.dismiss();
@@ -100,8 +91,11 @@ public class Discovery extends Fragment {
 
         }
     };
-    private Dialog mDialog;
 
+
+    /**
+     * 摇一摇结束之后弹出选择菜单窗体
+     */
     private void popShopWindow(){
         Random random = new Random();
         final int position = random.nextInt(13);
@@ -120,6 +114,8 @@ public class Discovery extends Fragment {
                 });
         TextView textViewPrice = (TextView)layout.findViewById(R.id.dialog_detail_single_price);
         textViewPrice.setText(listItem.get(position).get("price").toString());
+        TextView textViewName = ((TextView) layout.findViewById(R.id.dialog_detail_title_name));
+        textViewName.setText(listItem.get(position).get("name").toString());
         final TextView textViewNum = (TextView) layout.findViewById(R.id.count);
         layout.findViewById(R.id.dialog_detail_close).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -215,9 +211,9 @@ public class Discovery extends Fragment {
      * 加速度传感器的初始化,设置监听器
      */
     private void initSensorManager(){
-        SensorManager sensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(sensorEventListener, sensor,
+        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+        Sensor sensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mSensorManager.registerListener(sensorEventListener, sensor,
                 SensorManager.SENSOR_DELAY_UI);
     }
 
@@ -233,7 +229,7 @@ public class Discovery extends Fragment {
         }
         soundId = soundPool.load(mContext, R.raw.awe, 1);
     }
-
+    //初始化震动加速度传感器
     private void initVibrator(){
         vibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
     }
@@ -261,6 +257,14 @@ public class Discovery extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        if (soundPool != null) {
+            soundPool.release();
+            soundPool = null;
+        }
+        if (mSensorManager != null) {
+            mSensorManager.unregisterListener(sensorEventListener);
+            mSensorManager = null;
+        }
     }
 
     /**

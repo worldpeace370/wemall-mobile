@@ -87,7 +87,7 @@ public class MainAdapter extends BaseAdapter {
 				dialog.show();
 				
 				final ImageView imageView = (ImageView) layout.findViewById(R.id.dialog_detail_big_image);
-				new AsyncImageLoader(mContext).downloadImage(getDate.get(position).get("image").toString(),true,
+				new AsyncImageLoader(mContext).downloadImage(getDate.get(position).get("image").toString(), true,
 						new ImageCallback() {
 							@Override
 							public void onImageLoaded(Bitmap bitmap, String imageUrl) {
@@ -98,7 +98,10 @@ public class MainAdapter extends BaseAdapter {
 				
 				TextView textViewPrice = (TextView)layout.findViewById(R.id.dialog_detail_single_price);
 				textViewPrice.setText(holder.price.getText().toString());
-				
+
+				TextView textViewName = ((TextView) layout.findViewById(R.id.dialog_detail_title_name));
+				textViewName.setText(holder.name.getText().toString());
+
 				TextView textViewNum = (TextView) layout.findViewById(R.id.count);
 				textViewNum.setText(holder.numTextView.getText().toString());
 				
