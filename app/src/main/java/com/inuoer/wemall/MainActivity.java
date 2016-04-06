@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -199,7 +200,12 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		if (this.mRequestCode == requestCode && resultCode == 0x55){
 			String result = data.getExtras().getString("result");
 			//得到二维码扫描来的物品position信息
-			final int position= Integer.parseInt(data.getExtras().getString("result").toString())-1;
+			final int position;
+			if (!TextUtils.isEmpty(result)){
+				position= Integer.parseInt(result)-1;
+			}else {
+				position = 0;
+			}
 
 			LinearLayout layout = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_detail, null);
 			final Dialog dialog = new Dialog(mContext);
@@ -229,14 +235,12 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 					dialog.dismiss();
 				}
 			});
-			//点击增加
+			//点击增加物品数
 			layout.findViewById(R.id.plus_btn).setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					int num = Integer.parseInt(textViewNum.getText().toString()) + 1;
-					if (num >=0){
-						textViewNum.setText(String.valueOf(num));
-					}
+					textViewNum.setText(String.valueOf(num));
 					CartData.editCart(listItem.get(position).get("id").toString(),
 							listItem.get(position).get("name").toString(),
 							listItem.get(position).get("price").toString(),
@@ -244,7 +248,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 							listItem.get(position).get("image").toString());
 				}
 			});
-			//点击减少
+			//点击减少物品数
 			layout.findViewById(R.id.minus_btn).setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {

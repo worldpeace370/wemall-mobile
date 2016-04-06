@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 购物车类，通过静态属性的方式存储添加到购物车的信息
+ */
 public class CartData {
 	private final static ArrayList<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 	private static Map<String, Object> map;
@@ -34,7 +37,7 @@ public class CartData {
 
 	public static void editCart(String id, String name, String price,
 			String num, String image) {
-		Boolean addflag = true;
+		Boolean addFlag = true;
 
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).get("id") == id) {
@@ -45,10 +48,10 @@ public class CartData {
 				list.get(i).put("price", price);
 				list.get(i).put("num", num);
 				list.get(i).put("image", image);
-				addflag = false;
+				addFlag = false;
 			}
 		}
-		if (addflag) {
+		if (addFlag) {
 			addCart(id, name, price, num, image);
 		}
 	}
