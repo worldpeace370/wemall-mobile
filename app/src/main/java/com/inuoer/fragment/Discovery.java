@@ -12,6 +12,8 @@ import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -67,6 +69,17 @@ public class Discovery extends Fragment {
     private Dialog mDialog;
     //传感器管理类
     SensorManager mSensorManager;
+
+    //Handler
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 1){
+                popShopWindow();
+            }
+        }
+    };
     private SensorEventListener sensorEventListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
@@ -82,7 +95,6 @@ public class Discovery extends Fragment {
                 startAnimationByJava();
                 startSound();
                 startVibrator();
-                popShopWindow();
             }
         }
 
@@ -97,6 +109,7 @@ public class Discovery extends Fragment {
      * 摇一摇结束之后弹出选择菜单窗体
      */
     private void popShopWindow(){
+
         Random random = new Random();
         final int position = random.nextInt(13);
         LinearLayout layout = (LinearLayout) getLayoutInflater(null).inflate(R.layout.dialog_detail, null);
@@ -345,10 +358,31 @@ public class Discovery extends Fragment {
 
         //延迟执行1秒
         mdn1.setStartOffset(1000);
-        animdn.addAnimation( mdn0);
-        animdn.addAnimation( mdn1);
+        animdn.addAnimation(mdn0);
+        animdn.addAnimation(mdn1);
         //下图片动画效果的添加
         imageView_main_logodown.startAnimation(animdn);
+
+        //动画的监听，当动画结束后在里面进行操作
+        animdn.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                //动画结束后开始发送消息，显示菜单窗体
+                Message msg = mHandler.obtainMessage();
+                msg.what = 1;
+                mHandler.sendMessage(msg);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
 
     }
 }
