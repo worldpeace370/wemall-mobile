@@ -1,68 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/content_actionbar"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+<LinearLayout android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools">
     <include android:id="@+id/action_bar"
              android:layout_width="match_parent"
              android:layout_height="55dp"
              layout="@layout/fragment_actionbar"/>
-    <!--<LinearLayout-->
-        <!--android:id="@+id/fragment_actionbar_linearlayout"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="55dp"-->
-        <!--android:orientation="vertical" >-->
-    <!--</LinearLayout>-->
-
-    <FrameLayout
-        android:id="@+id/framelayout_content"
-        android:layout_width="fill_parent"
-        android:layout_height="0.0dip"
-        android:layout_weight="1.0" >
-    </FrameLayout>
-    
-    <!-- <android.support.v4.com.inuoer.view.ViewPager
-        android:id="@+id/viewPager"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="0.0dip"
-        android:layout_weight="1.0"/> -->
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout
+            android:id="@+id/content_actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1.0px"
-        android:background="#ffcccdd1" />
+            <FrameLayout
+                android:id="@+id/framelayout_content"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0" >
+            </FrameLayout>
 
-    <RadioGroup
-        android:id="@+id/rg_tab"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:gravity="center"
-        android:orientation="horizontal" >
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="#ffcccdd1" />
 
-        <RadioButton
-            android:id="@+id/shop"
-            style="@style/waimai_tab"
-            android:checked="true"
-            android:drawableTop="@drawable/waimai_tab_home_selector"
-            android:text="购物" />
+            <RadioGroup
+                android:id="@+id/rg_tab"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:orientation="horizontal" >
 
-        <RadioButton
-            android:id="@+id/cart"
-            style="@style/waimai_tab"
-            android:drawableTop="@drawable/waimai_tab_cart_selector"
-            android:text="购物车" />
-        <RadioButton
-            android:id="@+id/discover"
-            style="@style/waimai_tab"
-            android:drawableTop="@drawable/waimai_tab_discovery_selector"
-            android:text="发现" />
-        <RadioButton
-            android:id="@+id/wode"
-            style="@style/waimai_tab"
-            android:drawableTop="@drawable/waimai_tab_atme_selector"
-            android:text="我的" />
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/shop"
+                    style="@style/waimai_tab"
+                    android:checked="true"
+                    android:drawableTop="@drawable/waimai_tab_home_selector"
+                    android:text="购物" />
 
+                <RadioButton
+                    android:id="@+id/cart"
+                    style="@style/waimai_tab"
+                    android:drawableTop="@drawable/waimai_tab_cart_selector"
+                    android:text="购物车" />
+                <RadioButton
+                    android:id="@+id/discover"
+                    style="@style/waimai_tab"
+                    android:drawableTop="@drawable/waimai_tab_discovery_selector"
+                    android:text="发现" />
+                <RadioButton
+                    android:id="@+id/wode"
+                    style="@style/waimai_tab"
+                    android:drawableTop="@drawable/waimai_tab_atme_selector"
+                    android:text="我的" />
+            </RadioGroup>
+
+        </LinearLayout>
+        <fragment android:id="@+id/navigation_drawer"
+                  android:layout_width="180dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="start"
+                  android:name="com.inuoer.fragment.DrawerFragment"
+                  tools:layout="@layout/fragment_drawer"/>
+    </android.support.v4.widget.DrawerLayout>
 </LinearLayout>
+

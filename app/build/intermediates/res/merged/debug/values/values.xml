@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="drawer_items">
+        <item>主题样式</item>
+        <item>阴影和裁减</item>
+        <item>图片和颜色</item>
+        <item>全新的动画</item>
+        <item>新增widget</item>
+        <item>兼容适配</item>
+    </string-array>
     <color name="abc_search_url_text_normal">#ff7fa87f</color>
     <item name="abc_search_url_text_pressed" type="color">@android:color/black</item>
     <item name="abc_search_url_text_selected" type="color">@android:color/black</item>

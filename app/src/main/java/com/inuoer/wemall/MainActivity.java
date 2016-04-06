@@ -13,6 +13,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -70,6 +72,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	private ImageButton mMenu;
 	private int mRequestCode;
 	private Context mContext;
+	private DrawerLayout mDrawerLayout;
 
 
 	@Override
@@ -78,33 +81,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		mContext = this;
-		title = (TextView) findViewById(R.id.fragment_actionbar_title);
-
-		qr_code = (ImageView) findViewById(R.id.qr_code);
-		qr_code.setVisibility(View.VISIBLE);
-		//启动二维码扫描
-		qr_code.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (v.getId() == R.id.qr_code){
-					Intent intent = new Intent();
-					intent.setClass(MainActivity.this, MipcaCapture.class);
-					mRequestCode = 0x222;
-					startActivityForResult(intent, mRequestCode);
-				}
-			}
-		});
-
-
-		mMenu = (ImageButton) findViewById(R.id.fragment_actionbar_search);
-		mMenu.setVisibility(View.VISIBLE);
-	        
+		initView();
+		initDrawer();
 		MyAdapter = new MainAdapter(this, listItem);
-		progressDialog = new ProgressDialog(this);
-		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setMessage("正在加载中...");
-		progressDialog.setCancelable(true);
-		progressDialog.show();
+		initProgressDialog();
 		initData();
 
 		Tabs.add((RadioButton) findViewById(R.id.shop));
@@ -124,6 +104,54 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 
 		fragmentManager = getSupportFragmentManager();
 		Tabs.get(0).callOnClick();
+	}
+
+	private void initProgressDialog() {
+		progressDialog = new ProgressDialog(this);
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		progressDialog.setMessage("正在加载中...");
+		progressDialog.setCancelable(true);
+		progressDialog.show();
+	}
+
+	private void initView(){
+
+		title = (TextView) findViewById(R.id.fragment_actionbar_title);
+
+		qr_code = (ImageView) findViewById(R.id.qr_code);
+		qr_code.setVisibility(View.VISIBLE);
+		//启动二维码扫描
+		qr_code.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (v.getId() == R.id.qr_code) {
+					Intent intent = new Intent();
+					intent.setClass(MainActivity.this, MipcaCapture.class);
+					mRequestCode = 0x222;
+					startActivityForResult(intent, mRequestCode);
+				}
+			}
+		});
+
+
+		mMenu = (ImageButton) findViewById(R.id.drawer_menu);
+		mMenu.setVisibility(View.VISIBLE);
+		mMenu.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (v.getId() == R.id.drawer_menu) {
+					if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+						mDrawerLayout.closeDrawer(GravityCompat.START);
+					}else {
+						mDrawerLayout.openDrawer(GravityCompat.START);
+					}
+				}
+			}
+		});
+	}
+
+	private void initDrawer() {
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 	}
 
 	@Override

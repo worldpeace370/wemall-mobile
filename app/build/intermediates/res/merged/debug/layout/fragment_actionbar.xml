@@ -5,14 +5,14 @@
     android:background="@color/custom_pottery_red" >
 
     <ImageButton
-        android:id="@+id/fragment_actionbar_search"
+        android:id="@+id/drawer_menu"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_gravity="left|center"
         android:background="@null"
         android:paddingLeft="@dimen/waimai_shoplist_filter_item_grid_margin"
         android:paddingRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
-        android:src="@drawable/waimai_actionbar_menu"
+        android:src="@drawable/abc_ic_menu_moreoverflow_normal_holo_light"
         android:visibility="gone"/>
 
     <LinearLayout

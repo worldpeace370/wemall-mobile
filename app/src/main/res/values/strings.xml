@@ -11,4 +11,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="drawer_items">
+        <item>主题样式</item>
+        <item>阴影和裁减</item>
+        <item>图片和颜色</item>
+        <item>全新的动画</item>
+        <item>新增widget</item>
+        <item>兼容适配</item>
+    </string-array>
 </resources>
