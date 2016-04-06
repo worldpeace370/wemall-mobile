@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:23.1.0'
-    compile 'com.alibaba:fastjson:latest.integration'
     compile files('libs/zxing.jar')
+    compile 'com.android.support:support-v4:23.2.1'
+    compile 'com.alibaba:fastjson:latest.integration'
 }

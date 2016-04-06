@@ -51,9 +51,13 @@
         <RadioButton
             android:id="@+id/cart"
             style="@style/waimai_tab"
-            android:drawableTop="@drawable/waimai_tab_book_selector"
+            android:drawableTop="@drawable/waimai_tab_cart_selector"
             android:text="购物车" />
-
+        <RadioButton
+            android:id="@+id/discover"
+            style="@style/waimai_tab"
+            android:drawableTop="@drawable/waimai_tab_discovery_selector"
+            android:text="发现" />
         <RadioButton
             android:id="@+id/wode"
             style="@style/waimai_tab"

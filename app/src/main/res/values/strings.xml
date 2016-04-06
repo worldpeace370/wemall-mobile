@@ -8,4 +8,7 @@
     <string name="refreshing">加载中...</string>
     <string name="updating">最近更新：</string>
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

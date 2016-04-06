@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromYDelta="0"
+    android:toYDelta="-100"
+    android:duration="600"
+    android:repeatMode="reverse"
+    android:repeatCount="1"
+    android:interpolator="@android:anim/accelerate_interpolator">
+    
+</translate>

@@ -28,6 +28,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.inuoer.fragment.CartFragment;
+import com.inuoer.fragment.Discovery;
 import com.inuoer.fragment.MainFragment;
 import com.inuoer.fragment.WoFragment;
 import com.inuoer.util.AsyncImageLoader;
@@ -106,18 +107,21 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		progressDialog.show();
 		initData();
 
-		Tabs.add((RadioButton)findViewById(R.id.shop));
-		Tabs.add((RadioButton)findViewById(R.id.cart));
-		Tabs.add((RadioButton)findViewById(R.id.wode));
-		
+		Tabs.add((RadioButton) findViewById(R.id.shop));
+		Tabs.add((RadioButton) findViewById(R.id.cart));
+		Tabs.add((RadioButton) findViewById(R.id.wode));
+		Tabs.add((RadioButton)findViewById(R.id.discover));
+
 		Tabs.get(0).setOnClickListener(this);
 		Tabs.get(1).setOnClickListener(this);
 		Tabs.get(2).setOnClickListener(this);
+		Tabs.get(3).setOnClickListener(this);
 
-		fragments.add(new MainFragment(listItem , MyAdapter));
+		fragments.add(new MainFragment(listItem, MyAdapter));
 		fragments.add(new CartFragment());
 		fragments.add(new WoFragment());
-		
+		fragments.add(new Discovery(listItem));
+
 		fragmentManager = getSupportFragmentManager();
 		Tabs.get(0).callOnClick();
 	}
@@ -153,10 +157,15 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			fragmentTransaction.commit();
 			
 			break;
-//		case R.id.fragment_actionbar_menu:
-//			Toast.makeText(this, "11111111", Toast.LENGTH_SHORT).show();
-//			
-//			break;
+			case R.id.discover:
+				mMenu.setVisibility(View.GONE);
+				qr_code.setVisibility(View.GONE);
+				fragmentTransaction = fragmentManager.beginTransaction();
+				fragmentTransaction.replace(R.id.framelayout_content, fragments.get(3));
+				title.setText("发现");
+				fragmentTransaction.commit();
+
+				break;
 		}
 	}
 	
