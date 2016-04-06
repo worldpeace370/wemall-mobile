@@ -313,7 +313,7 @@ public class Discovery extends Fragment {
      * 开始播放声音
      */
     private void startSound(){
-        soundPool.play(soundId, 1, 1, 1, 0, 1);
+        soundPool.play(soundId, 1, 1, 1, 0, 0.8f);
     }
 
     /**

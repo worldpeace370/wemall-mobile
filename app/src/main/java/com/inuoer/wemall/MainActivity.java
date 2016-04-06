@@ -135,7 +135,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			mMenu.setVisibility(View.VISIBLE);
 			fragmentTransaction = fragmentManager.beginTransaction();
 			fragmentTransaction.replace(R.id.framelayout_content, fragments.get(0));
-			title.setText("wemall");
+			title.setText(R.string.app_name);
 			fragmentTransaction.commit();
 
 			break;

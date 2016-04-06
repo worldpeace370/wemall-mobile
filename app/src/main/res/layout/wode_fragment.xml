@@ -178,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:gravity="center_vertical"
-                    android:text="客服 10086"
+                    android:text="客服 18000000000"
                     android:textColor="@color/custom_actionbar_red"
                     android:textSize="@dimen/custom_title" />
             </LinearLayout>

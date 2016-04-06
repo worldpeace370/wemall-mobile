@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-2.0.0_d861113fd1f1ebcc6d6c06aaaa0388d7e8158338.jar" />
+    </item>
+
+</items>

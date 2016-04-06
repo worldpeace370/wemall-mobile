@@ -17,6 +17,7 @@ ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\A
 		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:3:11-69
 uses-sdk
 ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:7:5-9:40
+MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:9:9-38
@@ -50,16 +51,17 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:16:5-79
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:16:22-77
-android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:18:5-88
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:18:5-80
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:18:30-86
-android:uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:19:5-82
+		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:18:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:19:5-74
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:19:30-80
+		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:19:22-72
 application
 ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:21:5-46:19
+MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Administrator\.AndroidStudio1.5\wemall-mobile\app\src\main\AndroidManifest.xml:24:9-41

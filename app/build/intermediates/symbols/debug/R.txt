@@ -1,5 +1,9 @@
 int anim translate_down 0x7f040000
 int anim translate_up 0x7f040001
+int attr civ_border_color 0x7f010001
+int attr civ_border_overlay 0x7f010002
+int attr civ_border_width 0x7f010000
+int attr civ_fill_color 0x7f010003
 int color abc_search_url_text_holo 0x7f080055
 int color abc_search_url_text_normal 0x7f080000
 int color abc_search_url_text_pressed 0x7f080001
@@ -351,6 +355,7 @@ int id button_back 0x7f09008f
 int id button_photos 0x7f090091
 int id cart 0x7f090024
 int id cartlistview 0x7f090050
+int id circle_image 0x7f0900a0
 int id confirmorder_actionbar_left_back 0x7f09002b
 int id confirmorder_actionbar_middle 0x7f09002c
 int id confirmorder_actionbar_title 0x7f09002d
@@ -518,7 +523,6 @@ int id wode_order 0x7f090098
 int id wode_order_arrow 0x7f09009b
 int id wode_order_icon 0x7f090099
 int id wode_order_text 0x7f09009a
-int id wode_photo 0x7f0900a0
 int id wode_setting_actionbar_left 0x7f0900a6
 int id wode_setting_actionbar_title 0x7f0900a7
 int id wode_username 0x7f0900a2
@@ -575,3 +579,8 @@ int style MenuHorizonSplitLine 0x7f060006
 int style NameSexSplitLine 0x7f060007
 int style confirmorderUserinfoShown 0x7f060008
 int style waimai_tab 0x7f060009
+int[] styleable CircleImageView { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003 }
+int styleable CircleImageView_civ_border_color 1
+int styleable CircleImageView_civ_border_overlay 2
+int styleable CircleImageView_civ_border_width 0
+int styleable CircleImageView_civ_fill_color 3
