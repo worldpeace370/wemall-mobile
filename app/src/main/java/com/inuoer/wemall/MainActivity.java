@@ -30,7 +30,6 @@ import com.inuoer.fragment.WoFragment;
 import com.inuoer.util.AsyncImageLoader;
 import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
-import com.inuoer.util.FragmentFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -267,9 +266,11 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 	public void onDrawerItemSelected(String menu_id) {
 		mDrawerLayout.closeDrawer(GravityCompat.START);
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-		MainFragment mainFragment = FragmentFactory.createFragment(menu_id);
-		transaction.replace(R.id.framelayout_content, mainFragment).commit();
-
+		if ("0".equals(menu_id)){
+			transaction.replace(R.id.framelayout_content, MainFragment.newInstance(Config.API_GET_GOODS, null)).commit();
+		}else {
+			transaction.replace(R.id.framelayout_content, MainFragment.newInstance(Config.API_GET_GOODS, menu_id)).commit();
+		}
 	}
 
 	@Override

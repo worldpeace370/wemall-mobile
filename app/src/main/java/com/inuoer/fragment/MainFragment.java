@@ -109,10 +109,10 @@ public class MainFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		if (lv == null){
-			lv = new ListView(getActivity());
-			lv.setAdapter(MyAdapter);
-		}
+
+		lv = new ListView(getActivity());
+		lv.setAdapter(MyAdapter);
+
 		return lv;
 	}
 
@@ -128,6 +128,7 @@ public class MainFragment extends Fragment{
 	 * 加载网络数据
 	 */
 	public void initData() {
+		listItemSelected.clear();
 		new Thread(new Runnable() {
 			public void run() {
 				try {
