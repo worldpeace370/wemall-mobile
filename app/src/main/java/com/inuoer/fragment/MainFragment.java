@@ -163,4 +163,11 @@ public class MainFragment extends Fragment{
 	public ArrayList<Map<String, Object>> getListItem() {
 		return listItem;
 	}
+
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+		listItemSelected.clear();
+		listItem.clear();
+	}
 }
