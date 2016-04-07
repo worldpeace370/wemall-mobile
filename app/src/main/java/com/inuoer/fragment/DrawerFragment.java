@@ -89,7 +89,7 @@ public class DrawerFragment extends Fragment{
             mDrawerListView.setItemChecked(position, true);
         }
         if (mListener != null){
-            mListener.onDrawerItemSelected(position);
+            mListener.onDrawerItemSelected(String.valueOf(position));
         }
     }
 
@@ -97,6 +97,6 @@ public class DrawerFragment extends Fragment{
      * 自定义抽屉布局接口，用于点击菜单选项后在Activity中接口回调来切换Fragment
      */
     public interface OnDrawerItemSelectedListener{
-        void onDrawerItemSelected(int position);
+        void onDrawerItemSelected(String menu_id);
     }
 }

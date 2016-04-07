@@ -30,14 +30,15 @@ import com.inuoer.fragment.WoFragment;
 import com.inuoer.util.AsyncImageLoader;
 import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
+import com.inuoer.util.FragmentFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements DrawerFragment.OnDrawerItemSelectedListener, DrawerLayout.DrawerListener{
-	public List<Fragment> mFragmentList = new ArrayList<Fragment>();
-	public ArrayList<Map<String, Object>> listItem = new ArrayList<Map<String, Object>>();
+	private List<Fragment> mFragmentList = new ArrayList<Fragment>();
+	private ArrayList<Map<String, Object>> listItem = new ArrayList<Map<String, Object>>();
 
 	private int mRequestCode;
 	private Context mContext;
@@ -116,27 +117,28 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 			getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 		}
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-		Fragment currentFragment = mFragmentList.get(currentTabIndex);
+		//Fragment currentFragment = mFragmentList.get(currentTabIndex);
 		Fragment targetFragment = mFragmentList.get(targetTabIndex);
-		//如果targetFragment没有被增加,隐藏currentFragment,增加targetFragment
-		if(!targetFragment.isAdded()){
-			transaction.hide(currentFragment).add(R.id.framelayout_content, targetFragment);
-		}else{//如果targetFragment添加过了,隐藏currentFragment,显示targetFragment
-			transaction.hide(currentFragment).show(targetFragment);
-		}
-		//更新currentTabIndex
-		currentTabIndex = targetTabIndex;
+		transaction.replace(R.id.framelayout_content, targetFragment);
+//		//如果targetFragment没有被增加,隐藏currentFragment,增加targetFragment
+//		if(!targetFragment.isAdded()){
+//			transaction.hide(currentFragment).add(R.id.framelayout_content, targetFragment);
+//		}else{//如果targetFragment添加过了,隐藏currentFragment,显示targetFragment
+//			transaction.hide(currentFragment).show(targetFragment);
+//		}
+//		//更新currentTabIndex
+//		currentTabIndex = targetTabIndex;
 		transaction.commit();
 	}
 
 	private void initFragmentList() {
-		mMainFragment = MainFragment.newInstance(Config.API_GET_GOODS);
+		mMainFragment = MainFragment.newInstance(Config.API_GET_GOODS, null);
 		mFragmentList.add(mMainFragment);
 		mFragmentList.add(new CartFragment());
 		mFragmentList.add(new Discovery());
 		mFragmentList.add(new WoFragment());
 		//默认Fragment,为shopping页面--刚进入APP的首页
-		getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, mFragmentList.get(0)).commit();
+		getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, mMainFragment).commit();
 	}
 
 
@@ -259,11 +261,14 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 
 	/**
 	 * mDrawerFragment的回调方法
-	 * @param position
+	 * @param menu_id
 	 */
 	@Override
-	public void onDrawerItemSelected(int position) {
+	public void onDrawerItemSelected(String menu_id) {
 		mDrawerLayout.closeDrawer(GravityCompat.START);
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		MainFragment mainFragment = FragmentFactory.createFragment(menu_id);
+		transaction.replace(R.id.framelayout_content, mainFragment).commit();
 
 	}
 

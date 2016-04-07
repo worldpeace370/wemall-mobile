@@ -1389,12 +1389,11 @@
         <item>发现</item>
         <item>个人中心</item>
     </string-array><string name="scan_text">将二维码放入框内, 即可自动扫描</string><string name="refreshing">加载中...</string><string name="hello_blank_fragment">Hello blank fragment</string><string-array name="drawer_items">
-        <item>全州拌饭</item>
+        <item>全部菜品</item>
         <item>自助火锅</item>
         <item>烧烤烤肉</item>
         <item>小吃甜点</item>
         <item>麻辣涮串</item>
-        <item>煎饼果子</item>
     </string-array><string name="release_to_refresh">松开刷新</string><string name="navigation_drawer_close">close</string><string name="updating">最近更新：</string><string-array name="arr_mine_fragment_title">
         <item>我的墩墩币</item>
         <item>我的收藏</item>

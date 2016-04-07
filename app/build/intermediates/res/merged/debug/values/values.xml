@@ -9,12 +9,11 @@
         <item>应用推荐</item>
     </string-array>
     <string-array name="drawer_items">
-        <item>全州拌饭</item>
+        <item>全部菜品</item>
         <item>自助火锅</item>
         <item>烧烤烤肉</item>
         <item>小吃甜点</item>
         <item>麻辣涮串</item>
-        <item>煎饼果子</item>
     </string-array>
     <string-array name="title_name">
         <item>墩墩美食</item>
