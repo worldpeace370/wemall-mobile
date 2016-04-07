@@ -19,6 +19,7 @@ import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
 import com.inuoer.util.HttpUtil;
 import com.inuoer.util.MainAdapter;
+import com.inuoer.util.ShareValue;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -118,6 +119,7 @@ public class MainFragment extends Fragment{
 						map.put("num", CartData.findCart(i));
 						listItem.add(map);
 					}
+					ShareValue.listItem = listItem;
 					handler.sendEmptyMessage(0x123);
 				} catch (Exception e) {
 					handler.sendEmptyMessage(0x124);

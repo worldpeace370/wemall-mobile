@@ -1,7 +1,9 @@
 package com.inuoer.wemall;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,10 +16,19 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.inuoer.util.AsyncImageLoader;
+import com.inuoer.util.CartData;
+import com.inuoer.util.ShareValue;
+
+import java.util.Random;
 
 public class ShakeActivity extends Activity {
     //摇一摇上下两张图片
@@ -36,7 +47,7 @@ public class ShakeActivity extends Activity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1){
-//                popShopWindow();
+                showPopFood();
             }
         }
     };
@@ -48,9 +59,9 @@ public class ShakeActivity extends Activity {
             float z = event.values[2];
             if (x>=15 || y>=15 || z>=15) {
 
-//                if (mDialog != null){
-//                    mDialog.dismiss();
-//                }
+                if (mDialog != null){
+                    mDialog.dismiss();
+                }
                 startAnimationByJava();
                 startSound();
                 startVibrator();
@@ -62,6 +73,8 @@ public class ShakeActivity extends Activity {
 
         }
     };
+    private Dialog mDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,6 +205,76 @@ public class ShakeActivity extends Activity {
             }
         });
 
+    }
+
+    private void showPopFood(){
+        Random random = new Random();
+        final int position = random.nextInt(13);
+
+        LinearLayout layout = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog_detail, null);
+        mDialog = new Dialog(this);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mDialog.setContentView(layout);
+        mDialog.show();
+        final ImageView imageView = (ImageView) layout.findViewById(R.id.dialog_detail_big_image);
+        new AsyncImageLoader(this).downloadImage(ShareValue.listItem.get(position).get("image").toString(), true,
+                new AsyncImageLoader.ImageCallback() {
+                    @Override
+                    public void onImageLoaded(Bitmap bitmap, String imageUrl) {
+                        imageView.setImageBitmap(bitmap);
+                    }
+                });
+        TextView textViewPrice = (TextView)layout.findViewById(R.id.dialog_detail_single_price);
+        textViewPrice.setText(ShareValue.listItem.get(position).get("price").toString());
+        TextView textViewName = ((TextView) layout.findViewById(R.id.dialog_detail_title_name));
+        textViewName.setText(ShareValue.listItem.get(position).get("name").toString());
+        final TextView textViewNum = (TextView) layout.findViewById(R.id.count);
+        layout.findViewById(R.id.dialog_detail_close).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        layout.findViewById(R.id.dialog_detail_addcart).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        //点击增加物品数
+        layout.findViewById(R.id.plus_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int num = Integer.parseInt(textViewNum.getText().toString()) + 1;
+                textViewNum.setText(String.valueOf(num));
+                CartData.editCart(ShareValue.listItem.get(position).get("id").toString(),
+                        ShareValue.listItem.get(position).get("name").toString(),
+                        ShareValue.listItem.get(position).get("price").toString(),
+                        String.valueOf(num),
+                        ShareValue.listItem.get(position).get("image").toString());
+            }
+        });
+        //点击减少物品数
+        layout.findViewById(R.id.minus_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int num = Integer.parseInt(textViewNum.getText().toString()) - 1;
+                if (num >=0){
+                    textViewNum.setText(String.valueOf(num));
+
+                    if (num == 0) {
+                        CartData.removeCart(ShareValue.listItem.get(position)
+                                .get("id").toString());
+                    } else {
+                        CartData.editCart(ShareValue.listItem.get(position).get("id").toString(),
+                                ShareValue.listItem.get(position).get("name").toString(),
+                                ShareValue.listItem.get(position).get("price").toString(),
+                                String.valueOf(num),
+                                ShareValue.listItem.get(position).get("image").toString());
+                    }
+                }
+            }
+        });
     }
 
     @Override
