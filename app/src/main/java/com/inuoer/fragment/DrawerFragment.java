@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -82,7 +81,7 @@ public class DrawerFragment extends Fragment{
     public void selectItem(int position) {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null){
-            mDrawerListView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
+            //mDrawerListView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
             /**
              * Sets the checked state of the specified position. The is only valid if the choice mode
              * has been set to CHOICE_MODE_SINGLE or CHOICE_MODE_MULTIPLE.

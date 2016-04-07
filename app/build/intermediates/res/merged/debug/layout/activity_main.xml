@@ -4,10 +4,29 @@
               android:orientation="vertical"
               xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools">
-    <include android:id="@+id/action_bar"
-             android:layout_width="match_parent"
-             android:layout_height="55dp"
-             layout="@layout/fragment_actionbar"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/custom_pottery_red"
+        android:fitsSystemWindows="true">
+        <TextView android:id="@+id/tab_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="墩墩美食"
+            android:textSize="22sp"/>
+        <ImageView
+            android:id="@+id/qr_code"
+            android:layout_width="50dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_sao_1_sao"
+            android:visibility="visible" />
+    </android.support.v7.widget.Toolbar>
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -33,7 +52,7 @@
                 android:background="#ffcccdd1" />
 
             <RadioGroup
-                android:id="@+id/rg_tab"
+                android:id="@+id/radioGroup"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"

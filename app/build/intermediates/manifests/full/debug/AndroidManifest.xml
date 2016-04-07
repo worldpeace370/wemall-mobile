@@ -32,7 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.inuoer.wemall.MainActivity" />
+        <activity
+            android:name="com.inuoer.wemall.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="com.inuoer.wemall.EditAddressActivity" />
         <activity android:name="com.inuoer.wemall.OrderActivity" />
         <activity android:name="com.inuoer.wemall.SettingActivity" />
@@ -41,6 +43,8 @@
         <activity android:name="com.inuoer.wemall.QRCodeResult" >
         </activity>
         <activity android:name="com.inuoer.wemall.MipcaCapture" >
+        </activity>
+        <activity android:name="com.inuoer.wemall.ShakeActivity" >
         </activity>
     </application>
 

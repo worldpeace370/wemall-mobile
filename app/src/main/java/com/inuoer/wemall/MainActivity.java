@@ -1,239 +1,185 @@
 package com.inuoer.wemall;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.inuoer.fragment.CartFragment;
 import com.inuoer.fragment.Discovery;
+import com.inuoer.fragment.DrawerFragment;
 import com.inuoer.fragment.MainFragment;
 import com.inuoer.fragment.WoFragment;
 import com.inuoer.util.AsyncImageLoader;
 import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
-import com.inuoer.util.HttpUtil;
-import com.inuoer.util.MainAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SuppressLint("NewApi")
-public class MainActivity extends FragmentActivity implements OnClickListener{
-	public String jsonString;
-	private FragmentManager fragmentManager;
-	private FragmentTransaction fragmentTransaction;
-	public TextView title;
-	public List<Fragment> fragments = new ArrayList<Fragment>();
-	public List<RadioButton> Tabs = new ArrayList<RadioButton>();
+public class MainActivity extends AppCompatActivity implements DrawerFragment.OnDrawerItemSelectedListener, DrawerLayout.DrawerListener{
+	public List<Fragment> mFragmentList = new ArrayList<Fragment>();
 	public ArrayList<Map<String, Object>> listItem = new ArrayList<Map<String, Object>>();
-	public MainAdapter MyAdapter;
-	public ProgressDialog progressDialog;
-//	public LinearLayout popmenull;
-    private ImageView qr_code;
-	@SuppressLint("HandlerLeak")
-	Handler handler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			if (msg.what == 0x123) {
-				MyAdapter.notifyDataSetChanged();
-			} else if (msg.what == 0x124) {
-				Toast.makeText(MainActivity.this, "请检查网络连接!", Toast.LENGTH_LONG)
-						.show();
-			}
-		}
-	};
-	private ImageButton mMenu;
+
 	private int mRequestCode;
 	private Context mContext;
 	private DrawerLayout mDrawerLayout;
+	private RadioGroup mRadioGroup;
+	private RadioButton[] arrRadioButtons;
+	//当前书签对应的Fragment索引
+	private int currentTabIndex = 0;
+	//每个Fragment的标题字符串数组
+	private String[] mTitleArray;
+	//抽屉布局的Fragment
+	private DrawerFragment mDrawerFragment;
 
+	private Toolbar mToolBar;
+	private ActionBarDrawerToggle mToggle;
+	private TextView mTab_title;
+	private ImageView mQr_code;
+	private MainFragment mMainFragment;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		mContext = this;
-		initView();
 		initDrawer();
-		MyAdapter = new MainAdapter(this, listItem);
-		initProgressDialog();
-		initData();
+		initToolBar();
+		initView();
+		initFragmentList();
+		initTabs();
 
-		Tabs.add((RadioButton) findViewById(R.id.shop));
-		Tabs.add((RadioButton) findViewById(R.id.cart));
-		Tabs.add((RadioButton) findViewById(R.id.wode));
-		Tabs.add((RadioButton)findViewById(R.id.discover));
-
-		Tabs.get(0).setOnClickListener(this);
-		Tabs.get(1).setOnClickListener(this);
-		Tabs.get(2).setOnClickListener(this);
-		Tabs.get(3).setOnClickListener(this);
-
-		fragments.add(new MainFragment(listItem, MyAdapter));
-		fragments.add(new CartFragment());
-		fragments.add(new WoFragment());
-		fragments.add(new Discovery(listItem));
-
-		fragmentManager = getSupportFragmentManager();
-		Tabs.get(0).callOnClick();
+	}
+	/**
+	 * 初始化主Activity页面下面的书签导航,并点击可以切换不同的页面
+	 */
+	private void initTabs(){
+		mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+		//为新建的RadioButton数组创建大小,该数组里面包含RadioGroup里面所有的RadioButton
+		arrRadioButtons = new RadioButton[mRadioGroup.getChildCount()];
+		for (int i = 0; i < mRadioGroup.getChildCount(); i++) {
+			arrRadioButtons[i] = (RadioButton) mRadioGroup.getChildAt(i);
+		}
+		//设置第一个RadioButton默认被选中
+		arrRadioButtons[0].setChecked(true);
+		//mRadioGroup的监听事件,改变对应RadioButton的标题颜色和切换Fragment
+		mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				for (int i = 0; i < arrRadioButtons.length; i++) {
+					//如果找到了按下的那个RadioButton
+					if (arrRadioButtons[i].getId() == checkedId) {
+						//切换Fragment
+						switchFragment(i);
+					}
+				}
+			}
+		});
 	}
 
-	private void initProgressDialog() {
-		progressDialog = new ProgressDialog(this);
-		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setMessage("正在加载中...");
-		progressDialog.setCancelable(true);
-		progressDialog.show();
+	/**将四个书签页面全部加到List<Fragment> mFragmentList里面,在这个函数里进行Fragment切换,管理
+	 * 利用hide和show可以大大节省以后加载碎片的性能开销
+	 * @param targetTabIndex
+	 */
+	private void switchFragment(int targetTabIndex){
+		if (targetTabIndex == 0){
+			mQr_code.setVisibility(View.VISIBLE);
+			mTab_title.setText(mTitleArray[0]);
+			getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+			mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolBar,
+					R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+			mToggle.syncState();
+		}else {
+			mQr_code.setVisibility(View.INVISIBLE);
+			mTab_title.setText(mTitleArray[targetTabIndex]);
+			getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+		}
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		Fragment currentFragment = mFragmentList.get(currentTabIndex);
+		Fragment targetFragment = mFragmentList.get(targetTabIndex);
+		//如果targetFragment没有被增加,隐藏currentFragment,增加targetFragment
+		if(!targetFragment.isAdded()){
+			transaction.hide(currentFragment).add(R.id.framelayout_content, targetFragment);
+		}else{//如果targetFragment添加过了,隐藏currentFragment,显示targetFragment
+			transaction.hide(currentFragment).show(targetFragment);
+		}
+		//更新currentTabIndex
+		currentTabIndex = targetTabIndex;
+		transaction.commit();
+	}
+
+	private void initFragmentList() {
+		mMainFragment = MainFragment.newInstance(Config.API_GET_GOODS);
+		mFragmentList.add(mMainFragment);
+		mFragmentList.add(new CartFragment());
+		mFragmentList.add(new Discovery());
+		mFragmentList.add(new WoFragment());
+		//默认Fragment,为shopping页面--刚进入APP的首页
+		getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, mFragmentList.get(0)).commit();
+	}
+
+
+	private void initToolBar(){
+		mToolBar = (Toolbar) findViewById(R.id.toolbar);
+		mToolBar.setTitle("");
+		setSupportActionBar(mToolBar);
+		getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolBar,
+				R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+		mToggle.syncState();
 	}
 
 	private void initView(){
-
-		title = (TextView) findViewById(R.id.fragment_actionbar_title);
-
-		qr_code = (ImageView) findViewById(R.id.qr_code);
-		qr_code.setVisibility(View.VISIBLE);
-		//启动二维码扫描
-		qr_code.setOnClickListener(new OnClickListener() {
+		mTitleArray = getResources().getStringArray(R.array.title_name);
+		mQr_code = (ImageView) mToolBar.findViewById(R.id.qr_code);
+		mQr_code.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (v.getId() == R.id.qr_code) {
-					Intent intent = new Intent();
-					intent.setClass(MainActivity.this, MipcaCapture.class);
-					mRequestCode = 0x222;
-					startActivityForResult(intent, mRequestCode);
-				}
+				Intent intent = new Intent();
+				intent.setClass(MainActivity.this, MipcaCapture.class);
+				mRequestCode = 0x222;
+				startActivityForResult(intent, mRequestCode);
 			}
 		});
-
-
-		mMenu = (ImageButton) findViewById(R.id.drawer_menu);
-		mMenu.setVisibility(View.VISIBLE);
-		mMenu.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (v.getId() == R.id.drawer_menu) {
-					if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-						mDrawerLayout.closeDrawer(GravityCompat.START);
-					}else {
-						mDrawerLayout.openDrawer(GravityCompat.START);
-					}
-				}
-			}
-		});
+		mTab_title = (TextView) mToolBar.findViewById(R.id.tab_title);
+		mTab_title.setText(mTitleArray[0]);
 	}
+
 
 	private void initDrawer() {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-	}
-
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		switch (v.getId()) {
-		case R.id.shop:
-			qr_code.setVisibility(View.VISIBLE);
-			mMenu.setVisibility(View.VISIBLE);
-			fragmentTransaction = fragmentManager.beginTransaction();
-			fragmentTransaction.replace(R.id.framelayout_content, fragments.get(0));
-			title.setText(R.string.app_name);
-			fragmentTransaction.commit();
-
-			break;
-		case R.id.cart:
-			qr_code.setVisibility(View.GONE);
-			mMenu.setVisibility(View.GONE);
-			fragmentTransaction = fragmentManager.beginTransaction();
-			fragmentTransaction.replace(R.id.framelayout_content, fragments.get(1));
-			title.setText("提交订单");
-			fragmentTransaction.commit();
-			
-			break;
-		case R.id.wode:
-			mMenu.setVisibility(View.GONE);
-			qr_code.setVisibility(View.GONE);
-			fragmentTransaction = fragmentManager.beginTransaction();
-			fragmentTransaction.replace(R.id.framelayout_content, fragments.get(2));
-			title.setText("我的");
-			fragmentTransaction.commit();
-			
-			break;
-			case R.id.discover:
-				mMenu.setVisibility(View.GONE);
-				qr_code.setVisibility(View.GONE);
-				fragmentTransaction = fragmentManager.beginTransaction();
-				fragmentTransaction.replace(R.id.framelayout_content, fragments.get(3));
-				title.setText("发现");
-				fragmentTransaction.commit();
-
-				break;
-		}
-	}
-	
-	public void initData() {
-		new Thread(new Runnable() {
-			public void run() {
-				try {
-					jsonString = HttpUtil
-							.getGetJsonContent(Config.API_GET_GOODS);
-					
-					JSONArray jsonArr = JSON.parseArray(jsonString);
-					for (int i = 0; i < jsonArr.size(); i++) {
-						// 获取每一个JsonObject对象
-						JSONObject myjObject = jsonArr.getJSONObject(i);
-						Map<String, Object> map = new HashMap<String, Object>();
-						map.put("id", i);
-						//new GetBitmapUtil().getBitmapByUrl(Config.API_UPLOADS+myjObject.getString("image"));
-						map.put("image", Config.API_UPLOADS+myjObject.getString("image"));
-						map.put("name", myjObject.getString("name"));
-						map.put("price", myjObject.getString("price"));
-						map.put("num", CartData.findCart(i));
-						listItem.add(map);
-					}
-//
-					handler.sendEmptyMessage(0x123);
-					progressDialog.dismiss();
-				} catch (Exception e) {
-					// TODO: handle exception
-//					System.out.println(e);
-					handler.sendEmptyMessage(0x124);
-					// System.out.println("请检查网络连接");
-				}
-
-			}
-		}).start();
-
+		//设置DrawerListener监听器，重写四个方法
+		mDrawerLayout.setDrawerListener(this);
+		mDrawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+		mDrawerFragment.setOnDrawerItemSelectedListener(this);
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		listItem = mMainFragment.getListItem();
 		if (this.mRequestCode == requestCode && resultCode == 0x55){
 			String result = data.getExtras().getString("result");
 			//得到二维码扫描来的物品position信息
@@ -308,6 +254,48 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 					}
 				}
 			});
+		}
+	}
+
+	/**
+	 * mDrawerFragment的回调方法
+	 * @param position
+	 */
+	@Override
+	public void onDrawerItemSelected(int position) {
+		mDrawerLayout.closeDrawer(GravityCompat.START);
+
+	}
+
+	@Override
+	public void onDrawerSlide(View drawerView, float slideOffset) {//drawer滑动的时候回调
+		mToggle.onDrawerSlide(drawerView, slideOffset);
+	}
+
+	@Override
+	public void onDrawerOpened(View drawerView) { //打开drawer
+		mToggle.onDrawerOpened(drawerView);  //需要把开关变为打开
+	}
+
+	@Override
+	public void onDrawerClosed(View drawerView) { //关闭drawer
+		mToggle.onDrawerClosed(drawerView);  //需要把开关也变为关闭
+		invalidateOptionsMenu();//重新绘制选项菜单
+	}
+
+	@Override
+	public void onDrawerStateChanged(int newState) {    //drawer状态改变的回调
+		mToggle.onDrawerStateChanged(newState);
+	}
+	/**
+	 * 按下返回键，关闭抽屉布局
+	 */
+	@Override
+	public void onBackPressed() {
+		if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+			mDrawerLayout.closeDrawer(GravityCompat.START);
+		} else {
+			super.onBackPressed();
 		}
 	}
 }

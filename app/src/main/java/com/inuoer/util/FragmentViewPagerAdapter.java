@@ -104,9 +104,9 @@ public class FragmentViewPagerAdapter extends PagerAdapter implements
 	@Override
 	public void onPageSelected(int i) {
 		fragments.get(currentPageIndex).onPause(); // 调用切换前Fargment的onPause()
-		// fragments.get(currentPageIndex).onStop(); // 调用切换前Fargment的onStop()
+		// mFragmentList.get(currentPageIndex).onStop(); // 调用切换前Fargment的onStop()
 		if (fragments.get(i).isAdded()) {
-			// fragments.get(i).onStart(); // 调用切换后Fargment的onStart()
+			// mFragmentList.get(i).onStart(); // 调用切换后Fargment的onStart()
 			fragments.get(i).onResume(); // 调用切换后Fargment的onResume()
 		}
 		currentPageIndex = i;

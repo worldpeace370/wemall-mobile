@@ -14,7 +14,6 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
@@ -33,7 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".EditAddressActivity"/>
         <activity android:name=".OrderActivity"/>
         <activity android:name=".SettingActivity"/>
@@ -42,6 +43,8 @@
         <activity android:name=".QRCodeResult">
         </activity>
         <activity android:name=".MipcaCapture">
+        </activity>
+        <activity android:name=".ShakeActivity">
         </activity>
     </application>
 

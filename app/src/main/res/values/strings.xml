@@ -11,13 +11,29 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
 
     <string-array name="drawer_items">
-        <item>主题样式</item>
-        <item>阴影和裁减</item>
-        <item>图片和颜色</item>
-        <item>全新的动画</item>
-        <item>新增widget</item>
-        <item>兼容适配</item>
+        <item>全州拌饭</item>
+        <item>自助火锅</item>
+        <item>烧烤烤肉</item>
+        <item>小吃甜点</item>
+        <item>麻辣涮串</item>
+        <item>煎饼果子</item>
+    </string-array>
+    <string-array name="title_name">
+        <item>墩墩美食</item>
+        <item>提交订单</item>
+        <item>发现</item>
+        <item>个人中心</item>
+    </string-array>
+    <string-array name="arr_mine_fragment_title">
+        <item>我的墩墩币</item>
+        <item>我的收藏</item>
+        <item>摇摇菜单</item>
+        <item>我的团购</item>
+        <item>我的小推车</item>
+        <item>应用推荐</item>
     </string-array>
 </resources>

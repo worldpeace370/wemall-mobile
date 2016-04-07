@@ -1,5 +1,6 @@
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:choiceMode="singleChoice"
+
+          android:listSelector="#d5ea6f81"
           android:background="?android:attr/colorBackground" />
