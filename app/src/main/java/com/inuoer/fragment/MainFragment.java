@@ -129,6 +129,7 @@ public class MainFragment extends Fragment{
 	 */
 	public void initData() {
 		listItemSelected.clear();
+		ShareValue.listItem.clear();
 		new Thread(new Runnable() {
 			public void run() {
 				try {
@@ -150,7 +151,7 @@ public class MainFragment extends Fragment{
 					}
 					//必须用addAll，直接listItemSelected = selectByMenuId()不行
 					listItemSelected.addAll(selectByMenuId());
-					ShareValue.listItem = listItem;
+					ShareValue.listItem.addAll(listItem);
 					handler.sendEmptyMessage(0x123);
 				} catch (Exception e) {
 					handler.sendEmptyMessage(0x124);

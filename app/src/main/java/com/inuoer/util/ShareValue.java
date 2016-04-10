@@ -8,5 +8,5 @@ import java.util.Map;
  * Contacts wuxiangkun@live.com
  */
 public class ShareValue {
-    public static ArrayList<Map<String, Object>> listItem;
+    public static ArrayList<Map<String, Object>> listItem = new ArrayList<>();
 }

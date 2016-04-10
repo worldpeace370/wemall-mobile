@@ -6,77 +6,77 @@
         jumboMode="true"
         revision="23.0.3"
         sha1="aba3867820f46117ef0dfe760418b1bc0278894f">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\fastjson-1.2.8_168a854cf082fb224fcc22337df25944a6dfc909\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\fastjson-1.2.8_168a854cf082fb224fcc22337df25944a6dfc909.jar" />
     </item>
     <item
         jar="F:\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.2.1_c2e06cc1a6220ef37c6b9f73e17e8540960c432d\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_c2e06cc1a6220ef37c6b9f73e17e8540960c432d.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="5af6d1df434d4fdcd6224e1e10e8a6579854de1e">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_1acefff8a7b6d3a88540011926e5f96ff8ca12f0\classes.dex" />
+        sha1="fe6968359072c947dcc9624d4d2d5df194d68a76">
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\instant-run_1acefff8a7b6d3a88540011926e5f96ff8ca12f0.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="6b32b797c481fd47228b726dd03471c962cd5fa4">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_fd2d7cdd1d2835ea04e1cedbf200c07b511a6c9d\classes.dex" />
+        sha1="f0050ca7cfe0b7be7951a60d0639eeaf8c16f2e0">
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_fd2d7cdd1d2835ea04e1cedbf200c07b511a6c9d.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.2.1_6fd25d99378d87225cb9a5ebca883516449288b9\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_6fd25d99378d87225cb9a5ebca883516449288b9.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.2.1_4ba468417e801af8dc1ac012f2dadffc69433a37\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.1_4ba468417e801af8dc1ac012f2dadffc69433a37.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.1_9ccb24ed696400df5ddeb5b01c691e27f1b93dab\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.1_9ccb24ed696400df5ddeb5b01c691e27f1b93dab.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\de.hdodenhof-circleimageview-2.0.0_391d68df4808e35b0e4e6ee6cda9166984d229f2\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-2.0.0_391d68df4808e35b0e4e6ee6cda9166984d229f2.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.2.1_e5e1316ef313f6fa515c4d4afe23eba6176f8a3b\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_e5e1316ef313f6fa515c4d4afe23eba6176f8a3b.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.2.1_45fdacedbc266fc22a2ea09834817f268c4ae45a\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.1_45fdacedbc266fc22a2ea09834817f268c4ae45a.jar" />
     </item>
     <item
         jar="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\libs\zxing.jar"
         jumboMode="true"
         revision="23.0.3"
         sha1="e88c14e6e7daa0fa65172a62b54ee6a16ff4162d">
-        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\transforms\dex\debug\folders\1000\2\zxing_bebc04001df1dee0c5a6f9e5da248a0a5edfe3d1\classes.dex" />
+        <dex dex="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\pre-dexed\debug\zxing_bebc04001df1dee0c5a6f9e5da248a0a5edfe3d1.jar" />
     </item>
 
 </items>
