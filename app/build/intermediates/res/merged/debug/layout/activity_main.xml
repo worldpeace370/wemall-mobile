@@ -24,7 +24,7 @@
             android:gravity="center"
             android:layout_gravity="right"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_sao_1_sao"
+            android:src="@drawable/icon_qrcode"
             android:visibility="visible" />
     </android.support.v7.widget.Toolbar>
     <android.support.v4.widget.DrawerLayout

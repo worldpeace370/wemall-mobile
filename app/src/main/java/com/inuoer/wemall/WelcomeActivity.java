@@ -1,8 +1,5 @@
 package com.inuoer.wemall;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +9,9 @@ import android.view.Window;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class WelcomeActivity extends Activity{
 
