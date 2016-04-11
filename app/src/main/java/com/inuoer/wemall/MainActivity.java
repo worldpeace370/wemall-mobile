@@ -23,13 +23,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.inuoer.fragment.CartFragment;
-import com.inuoer.fragment.Discovery;
+import com.inuoer.fragment.DiscoveryFragment;
 import com.inuoer.fragment.DrawerFragment;
 import com.inuoer.fragment.MainFragment;
 import com.inuoer.fragment.WoFragment;
 import com.inuoer.util.AsyncImageLoader;
 import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
+import com.inuoer.util.SharedDataSave;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mContext = this;
+		//进入MainActivity之后，就不是第一次了，将配置改为false
+		SharedDataSave.save(mContext, Config.THE_FIRST_INSTALL, false);
 		initDrawer();
 		initToolBar();
 		initView();
@@ -134,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 		mMainFragment = MainFragment.newInstance(Config.API_GET_GOODS, null);
 		mFragmentList.add(mMainFragment);
 		mFragmentList.add(new CartFragment());
-		mFragmentList.add(new Discovery());
+		mFragmentList.add(new DiscoveryFragment());
 		mFragmentList.add(new WoFragment());
 		//默认Fragment,为shopping页面--刚进入APP的首页
 		getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, mMainFragment).commit();

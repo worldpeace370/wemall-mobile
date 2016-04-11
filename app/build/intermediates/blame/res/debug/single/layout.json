@@ -24,6 +24,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\dialog_remark.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_intro_5.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\view_intro_5.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
@@ -46,6 +50,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_intro_4.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\view_intro_4.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confirmorder.xml",
@@ -116,6 +124,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_intro_3.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\view_intro_3.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_title_item.xml"
     },
@@ -128,12 +140,20 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_editaddress_actionbar.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login_new.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_login_new.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_qrcode_result.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_qrcode_result.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_intro_2.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\view_intro_2.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confirmorder_detail.xml",
@@ -156,6 +176,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_media.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_login.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\view_login.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\plus_minus_btn_plugin.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\plus_minus_btn_plugin.xml"
     },
@@ -174,6 +198,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_intro_1.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\view_intro_1.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_address_actionbar.xml",
@@ -202,6 +230,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shake.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_shake.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_guide.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\layout\\activity_guide.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",

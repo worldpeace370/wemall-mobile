@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_1.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_1.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
@@ -28,12 +32,32 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_1.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_1.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tab_ic_nearby_highlight.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\tab_ic_nearby_highlight.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\waimai_binding_btn_normal_bg.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\waimai_binding_btn_normal_bg.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_1.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_1.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_1.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_cart.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_cart.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_title_btn_pressed.9.png",
@@ -52,8 +76,16 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\mypage_login.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_2.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_2.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\global_warn_icon.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\global_warn_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_2.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_2.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
@@ -64,6 +96,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_2.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_2.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\shake_report_dragger_down.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\shake_report_dragger_down.xml"
     },
@@ -72,8 +108,16 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_btn_weixin.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\login_btn_weixin.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_2.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_2.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\search_bar_bg.9.png",
@@ -98,10 +142,6 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\waimai_binding_btn_presss_bg.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\waimai_binding_btn_presss_bg.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tab_ic_featured_highlight.png",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\tab_ic_featured_highlight.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\waimai_actionbar_searchbar_icon_delete_click.png",
@@ -144,12 +184,12 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tab_ic_featured_normal.png",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\tab_ic_featured_normal.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\waimai_shoplist_item_icon_mian.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\waimai_shoplist_item_icon_mian.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_cart_selector.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_cart_selector.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\waimai_shopmenu_out_sale.png",
@@ -158,6 +198,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_9.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_9.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\waimai_actionbar_search.png",
@@ -180,8 +224,12 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\tab_ic_mine_highlight.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\shake_phone.png",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\shake_phone.png"
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_3.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_3.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_3.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_3.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\shake_report_dragger_down_normal.png",
@@ -220,6 +268,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\waimai_actionbar_search_gray.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_btn_browse.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\login_btn_browse.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_right_arrow.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_right_arrow.png"
     },
@@ -248,8 +300,24 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\waimai_binding_input_bg.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\animationnew.png",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\animationnew.png"
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_0.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_0.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\man_run.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\man_run.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_0.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_0.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_0.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_0.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_3.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_3.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
@@ -260,12 +328,32 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_3.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_3.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_0.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_0.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_search_api_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_more_up.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\login_more_up.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_3.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_3.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_0.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_0.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_title_back_focused.9.png",
@@ -280,6 +368,22 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\shake_report_dragger_up_pressed.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_6.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_6.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_btn_weibo.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\login_btn_weibo.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_6.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_6.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_6.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_6.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
@@ -292,8 +396,28 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\search_bar_icon_normal.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_cart_normal.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_cart_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_12.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_12.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_6.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_6.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\title_btn_back.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\title_btn_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_6.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_6.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_11.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_11.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\splash_food.jpg",
@@ -312,6 +436,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\title_btn_right.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_5.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_5.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
@@ -326,6 +454,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_5.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_5.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\title_btn_function.png",
@@ -360,20 +492,56 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\shake_bg.jpg"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_7.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_7.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_title_btn_menu.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\mm_title_btn_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro_item_manrun_1.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro_item_manrun_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_7.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_7.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_voice_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_voice_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_10.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_10.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_4.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_4.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_moreoverflow_normal_holo_light.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\abc_ic_menu_moreoverflow_normal_holo_light.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_7.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_7.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\confirmorder_desc_bottom_resource.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\confirmorder_desc_bottom_resource.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_7.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_7.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_7.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_7.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_4.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_4.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mypage_login_click.png",
@@ -384,8 +552,28 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\shake_line_up.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_4.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_4.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\splash_login.jpeg",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\splash_login.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro_item_manrun_2.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro_item_manrun_2.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro4_item_4.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro4_item_4.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_4.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_4.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
@@ -436,6 +624,14 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\tab_ic_mine_normal.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro5_item_8.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro5_item_8.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_phone_bg.9.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\ic_phone_bg.9.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_title_back_pressed.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\mm_title_back_pressed.9.png"
     },
@@ -444,12 +640,36 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\search_bar_edit_bg.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\login_btn_qq.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\login_btn_qq.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_title_btn_menu_normal.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\mm_title_btn_menu_normal.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_shake.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_shake.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_login_user.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_login_user.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro3_item_5.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro3_item_5.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_shoppingcart_pink_normal.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_shoppingcart_pink_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_2.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_2.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro2_item_5.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro2_item_5.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\wallet_base_overflow_normal.png",
@@ -458,6 +678,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mm_title_btn_menu_disable.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\mm_title_btn_menu_disable.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\intro1_item_5.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\intro1_item_5.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
@@ -472,6 +696,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_logo.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\common_logo.png"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
@@ -482,6 +710,10 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon_login_pwd.png",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable-hdpi\\icon_login_pwd.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",

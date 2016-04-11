@@ -43,6 +43,7 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="base_shallow_black">#818181</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -131,6 +132,8 @@
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="shop_comment_total_count_color">#ffabaeb2</color>
+    <color name="start_normal">#D44D63</color>
+    <color name="start_pressed">#8e031a</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -204,25 +207,25 @@
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
-    <dimen name="abc_action_bar_default_height">48.0dip</dimen>
+    <dimen name="abc_action_bar_default_height">48.0dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_end_material">0dp</dimen>
     <dimen name="abc_action_bar_default_padding_start_material">0dp</dimen>
-    <dimen name="abc_action_bar_icon_vertical_padding">8.0dip</dimen>
+    <dimen name="abc_action_bar_icon_vertical_padding">8.0dp</dimen>
     <dimen name="abc_action_bar_icon_vertical_padding_material">16dp</dimen>
     <dimen name="abc_action_bar_overflow_padding_end_material">10dp</dimen>
     <dimen name="abc_action_bar_overflow_padding_start_material">6dp</dimen>
-    <dimen name="abc_action_bar_progress_bar_size">40.0dip</dimen>
-    <dimen name="abc_action_bar_stacked_max_height">48.0dip</dimen>
-    <dimen name="abc_action_bar_stacked_tab_max_width">180.0dip</dimen>
-    <dimen name="abc_action_bar_subtitle_bottom_margin">5.0dip</dimen>
+    <dimen name="abc_action_bar_progress_bar_size">40.0dp</dimen>
+    <dimen name="abc_action_bar_stacked_max_height">48.0dp</dimen>
+    <dimen name="abc_action_bar_stacked_tab_max_width">180.0dp</dimen>
+    <dimen name="abc_action_bar_subtitle_bottom_margin">5.0dp</dimen>
     <dimen name="abc_action_bar_subtitle_bottom_margin_material">5dp</dimen>
-    <dimen name="abc_action_bar_subtitle_text_size">14.0dip</dimen>
-    <dimen name="abc_action_bar_subtitle_top_margin">-3.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_text_size">14.0dp</dimen>
+    <dimen name="abc_action_bar_subtitle_top_margin">-3.0dp</dimen>
     <dimen name="abc_action_bar_subtitle_top_margin_material">-3dp</dimen>
-    <dimen name="abc_action_bar_title_text_size">18.0dip</dimen>
+    <dimen name="abc_action_bar_title_text_size">18.0dp</dimen>
     <dimen name="abc_action_button_min_height_material">48dp</dimen>
-    <dimen name="abc_action_button_min_width">56.0dip</dimen>
+    <dimen name="abc_action_button_min_width">56.0dp</dimen>
     <dimen name="abc_action_button_min_width_material">48dp</dimen>
     <dimen name="abc_action_button_min_width_overflow_material">36dp</dimen>
     <dimen name="abc_alert_dialog_button_bar_height">48dp</dimen>
@@ -230,7 +233,7 @@
     <dimen name="abc_button_inset_vertical_material">6dp</dimen>
     <dimen name="abc_button_padding_horizontal_material">8dp</dimen>
     <dimen name="abc_button_padding_vertical_material">@dimen/abc_control_padding_material</dimen>
-    <dimen name="abc_config_prefDialogWidth">320.0dip</dimen>
+    <dimen name="abc_config_prefDialogWidth">320.0dp</dimen>
     <dimen name="abc_control_corner_material">2dp</dimen>
     <dimen name="abc_control_inset_material">4dp</dimen>
     <dimen name="abc_control_padding_material">4dp</dimen>
@@ -245,17 +248,17 @@
     <dimen name="abc_dialog_padding_top_material">18dp</dimen>
     <item format="float" name="abc_disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="abc_disabled_alpha_material_light" type="dimen">0.26</item>
-    <dimen name="abc_dropdownitem_icon_width">32.0dip</dimen>
-    <dimen name="abc_dropdownitem_text_padding_left">8.0dip</dimen>
-    <dimen name="abc_dropdownitem_text_padding_right">8.0dip</dimen>
+    <dimen name="abc_dropdownitem_icon_width">32.0dp</dimen>
+    <dimen name="abc_dropdownitem_text_padding_left">8.0dp</dimen>
+    <dimen name="abc_dropdownitem_text_padding_right">8.0dp</dimen>
     <dimen name="abc_edit_text_inset_bottom_material">7dp</dimen>
     <dimen name="abc_edit_text_inset_horizontal_material">4dp</dimen>
     <dimen name="abc_edit_text_inset_top_material">10dp</dimen>
     <dimen name="abc_floating_window_z">16dp</dimen>
     <dimen name="abc_list_item_padding_horizontal_material">@dimen/abc_action_bar_content_inset_material</dimen>
-    <dimen name="abc_panel_menu_list_width">296.0dip</dimen>
-    <dimen name="abc_search_view_preferred_width">320.0dip</dimen>
-    <dimen name="abc_search_view_text_min_width">160.0dip</dimen>
+    <dimen name="abc_panel_menu_list_width">296.0dp</dimen>
+    <dimen name="abc_search_view_preferred_width">320.0dp</dimen>
+    <dimen name="abc_search_view_text_min_width">160.0dp</dimen>
     <dimen name="abc_seekbar_track_background_height_material">2dp</dimen>
     <dimen name="abc_seekbar_track_progress_height_material">2dp</dimen>
     <dimen name="abc_select_dialog_padding_start_material">20dp</dimen>
@@ -277,8 +280,8 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <dimen name="activity_horizontal_margin">16.0dip</dimen>
-    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="activity_horizontal_margin">16.0dp</dimen>
+    <dimen name="activity_vertical_margin">16.0dp</dimen>
     <dimen name="address_add_label_padding">8.0dip</dimen>
     <dimen name="address_add_label_width">50.0dip</dimen>
     <dimen name="address_list_item">65.0dip</dimen>
@@ -315,8 +318,8 @@
     <dimen name="custom_toast_min_width">180.0dip</dimen>
     <item name="dialog_fixed_height_major" type="dimen">79.99999%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100.0%</item>
-    <dimen name="dialog_fixed_width_major">320.0dip</dimen>
-    <dimen name="dialog_fixed_width_minor">320.0dip</dimen>
+    <dimen name="dialog_fixed_width_major">320.0dp</dimen>
+    <dimen name="dialog_fixed_width_minor">320.0dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="half_padding">4.0dip</dimen>
@@ -395,6 +398,7 @@
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="auto_focus" type="id"/>
+    <item name="brand_add_id" type="id"/>
     <item name="decode" type="id"/>
     <item name="decode_failed" type="id"/>
     <item name="decode_succeeded" type="id"/>
@@ -403,11 +407,14 @@
     <item name="gridview" type="id"/>
     <item name="home" type="id"/>
     <item name="launch_product_query" type="id"/>
+    <item name="parallax_pager" type="id"/>
+    <item name="parallax_view_tag" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="quit" type="id"/>
     <item name="restart_preview" type="id"/>
     <item name="return_scan_result" type="id"/>
+    <item name="scrollview" type="id"/>
     <item name="search_book_contents_failed" type="id"/>
     <item name="search_book_contents_succeeded" type="id"/>
     <item name="split" type="id">false</item>
@@ -440,16 +447,29 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">墩墩美食</string>
+    <string name="fifth_item">尽在墩墩美食</string>
+    <string name="first_item">全国的美食</string>
+    <string name="forgot_pwd">忘记密码？</string>
+    <string name="fourth_item">新疆的烤羊</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
+    <string name="loginButtonText">登录</string>
     <string name="navigation_drawer_close">close</string>
     <string name="navigation_drawer_open">open</string>
+    <string name="phone_login">手机登录</string>
+    <string name="phone_reg">注册账号</string>
     <string name="pull_to_refresh">下拉刷新</string>
+    <string name="pwdHint">密码</string>
     <string name="refreshing">加载中...</string>
+    <string name="registerButtonText">注册</string>
     <string name="release_to_refresh">松开刷新</string>
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="second_item">四川的麻辣</string>
+    <string name="start">开始体验</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="third_item">东北的炖菜</string>
     <string name="updating">最近更新：</string>
+    <string name="usernameHint">用户名</string>
     <style name="AddressaddrInputMtb">
         <item name="android:layout_marginTop">2.5dip</item>
         <item name="android:layout_marginBottom">2.5dip</item>
@@ -1806,6 +1826,14 @@
         <item name="android:layout_marginRight">10.0dip</item>
         <item name="android:drawableRight">@drawable/mypage_list_icon_arrow</item>
         <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="item_title">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#4e3c3c</item>
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
     </style>
     <style name="waimai_tab">
         <item name="android:textSize">12.0sp</item>

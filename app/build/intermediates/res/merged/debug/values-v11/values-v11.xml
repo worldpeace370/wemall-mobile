@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr format="float" name="a_in"/>
+    <attr format="float" name="a_out"/>
+    <attr format="float" name="x_in"/>
+    <attr format="float" name="x_out"/>
+    <attr format="float" name="y_in"/>
+    <attr format="float" name="y_out"/>
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!-- API 11 theme customizations can go here. -->
     </style>

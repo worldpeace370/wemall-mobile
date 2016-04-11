@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.inuoer.wemall.LoginActivity;
 import com.inuoer.wemall.R;
 import com.inuoer.wemall.ShakeActivity;
 
@@ -21,17 +22,17 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Discovery extends Fragment {
+public class DiscoveryFragment extends Fragment {
 
     private List<Map<String, Object>> totalList = new ArrayList<Map<String, Object>>();
     private Context mContext;
     private int arrImageLeft[] = new int[]{R.drawable.ic_mine_activity_myqb,R.drawable.ic_mine_activity_collection
-            ,R.drawable.shake_phone, R.drawable.ic_mine_activity_group,R.drawable.ic_mine_activity_baoming,
+            ,R.drawable.icon_shake, R.drawable.ic_mine_activity_group,R.drawable.ic_mine_activity_baoming,
             R.drawable.ic_mine_activity_app_commend};
-    private String TAG = "Discovery";
+    private String TAG = "DiscoveryFragment";
     private View mRootView;
 
-    public Discovery() {
+    public DiscoveryFragment() {
 
     }
 
@@ -81,6 +82,9 @@ public class Discovery extends Fragment {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     if (position == 2){ //启动摇一摇
                         Intent intent = new Intent(mContext, ShakeActivity.class);
+                        startActivity(intent);
+                    }else if (position == 0){
+                        Intent intent = new Intent(mContext, LoginActivity.class);
                         startActivity(intent);
                     }
                 }

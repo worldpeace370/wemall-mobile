@@ -72,6 +72,10 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\start.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\start.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_borderless_material.xml"
     },

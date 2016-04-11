@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="base_shallow_black">#818181</color>
     <color name="abc_search_url_text_normal">#ff7fa87f</color>
     <item type="color" name="abc_search_url_text_selected">@android:color/black</item>
     <item type="color" name="abc_search_url_text_pressed">@android:color/black</item>
@@ -85,5 +86,7 @@
     <color name="viewfinder_laser">#ffcc0000</color>
     <color name="viewfinder_mask">#60000000</color>
     <color name="sapi_qr_tips_background">#30ffffff</color>
+    <color name="start_pressed">#8e031a</color>
+    <color name="start_normal">#D44D63</color>
 
 </resources>

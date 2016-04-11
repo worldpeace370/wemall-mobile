@@ -23,4 +23,20 @@ public class Config {
 			+ "index.php/App/Index/appdoaddress";
 	public static final String API_DO_ORDER = APP_URL
 			+ "index.php/App/Index/appdoorder";
+
+	/***
+	 * ------------------------------------应用配置-----------------------------
+	 **/
+	/**
+	 * 配置文件的名称
+	 */
+	public static String SHARED_PREFERENCES_NAME = "dun.delicious.food";
+	/**
+	 * 是否是第一次使用，默认值是true
+	 */
+	public static String THE_FIRST_INSTALL = "THE_FIRST_INSTALL";
+	/**
+	 * 是否第一次安装，默认是第一次安装
+	 */
+	public static boolean IS_FIRST = true;
 }
