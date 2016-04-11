@@ -3,35 +3,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/RelativeLayout1"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@color/custom_pottery_red">
-
-        <Button android:id="@+id/button_back"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:gravity="center"
-                android:onClick="click"
-                android:background="@null"
-                android:drawableLeft="@drawable/btn_back_normal"
-                android:textColor="@android:color/white"
-                android:text="返回"/>
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/custom_pottery_red"
+        android:fitsSystemWindows="true"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageButton android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="click"
+            android:src="@drawable/btn_back_normal"
+            android:gravity="center"
+            android:layout_gravity="left"
+            android:background="@null" />
         <TextView android:id="@+id/textView_qrcode_title"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_centerInParent="true"
-                  android:layout_alignBaseline="@+id/button_back"
-                  android:layout_alignBottom="@+id/button_back"
-                  android:textColor="@android:color/white"
-                  android:textSize="18sp"
-                  android:text="摇一摇"/>
-    </RelativeLayout>
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_alignBaseline="@+id/button_back"
+            android:layout_alignBottom="@+id/button_back"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:text="摇一摇"/>
+    </android.support.v7.widget.Toolbar>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

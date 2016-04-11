@@ -40,9 +40,16 @@
         <activity android:name="com.inuoer.wemall.SettingActivity" />
         <activity android:name="com.inuoer.wemall.OrderDetailActivity" />
         <activity android:name="com.inuoer.wemall.AboutActivity" />
-        <activity android:name="com.inuoer.wemall.QRCodeResult" />
-        <activity android:name="com.inuoer.wemall.MipcaCapture" />
-        <activity android:name="com.inuoer.wemall.ShakeActivity" />
+        <activity
+            android:name="com.inuoer.wemall.QRCodeResult"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.inuoer.wemall.MipcaCapture"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="com.inuoer.wemall.ShakeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="com.inuoer.wemall.LoginActivity" />
         <activity android:name="com.inuoer.wemall.GuideActivity" />
     </application>

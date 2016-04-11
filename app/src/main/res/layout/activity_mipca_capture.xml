@@ -17,11 +17,44 @@
             android:id="@+id/viewfinder_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-        <include android:id="@+id/include1"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_alignParentTop="true"
-            layout="@layout/title_qrcode"/>
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/custom_pottery_red"
+            android:fitsSystemWindows="true"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageButton android:id="@+id/button_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:layout_gravity="left"
+                android:background="@null"
+                android:src="@drawable/btn_back_normal"/>
+            <TextView android:id="@+id/textView_qrcode_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_alignBaseline="@+id/button_back"
+                android:layout_alignBottom="@+id/button_back"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
+            <Button android:id="@+id/button_photos"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="0dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:background="@null"
+                android:textColor="@android:color/white"
+                android:text="相册"
+                android:textSize="20sp"/>
+        </android.support.v7.widget.Toolbar>
     </RelativeLayout>
 </FrameLayout>
 

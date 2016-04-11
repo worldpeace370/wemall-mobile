@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -16,6 +17,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -27,6 +29,7 @@ import com.inuoer.fragment.DiscoveryFragment;
 import com.inuoer.fragment.DrawerFragment;
 import com.inuoer.fragment.MainFragment;
 import com.inuoer.fragment.WoFragment;
+import com.inuoer.util.ActivityManager;
 import com.inuoer.util.AsyncImageLoader;
 import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		setTransparent();
 		mContext = this;
 		//进入MainActivity之后，就不是第一次了，将配置改为false
 		SharedDataSave.save(mContext, Config.THE_FIRST_INSTALL, false);
@@ -305,6 +309,27 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 			mDrawerLayout.closeDrawer(GravityCompat.START);
 		} else {
 			super.onBackPressed();
+		}
+	}
+
+	/**
+	 * 设置状态栏透明
+	 */
+	private void setTransparent() {
+		if (ActivityManager.hasKitKat() && !ActivityManager.hasLollipop()){
+			//透明状态栏
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			//透明导航栏
+			//getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+		}else if (ActivityManager.hasLollipop()){
+			Window window = getWindow();
+			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+					| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+			window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+					//                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+					| View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			window.setStatusBarColor(Color.TRANSPARENT);
 		}
 	}
 }

@@ -40,9 +40,13 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".OrderDetailActivity" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".QRCodeResult"></activity>
-        <activity android:name=".MipcaCapture"></activity>
-        <activity android:name=".ShakeActivity"></activity>
+        <activity android:name=".QRCodeResult"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MipcaCapture"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity android:name=".ShakeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".GuideActivity"></activity>
     </application>

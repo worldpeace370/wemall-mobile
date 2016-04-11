@@ -1,11 +1,11 @@
 package com.inuoer.wemall;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -14,6 +14,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
@@ -21,7 +23,9 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +41,7 @@ import com.inuoer.camera.CameraManager;
 import com.inuoer.decoding.CaptureActivityHandler;
 import com.inuoer.decoding.InactivityTimer;
 import com.inuoer.decoding.RGBLuminanceSource;
+import com.inuoer.util.ActivityManager;
 import com.inuoer.util.PhotoChoiceUtils;
 import com.inuoer.view.ViewfinderView;
 
@@ -49,7 +54,7 @@ import java.util.Vector;
  * Initial the com.lebron.com.inuoer.camera
  * @author Ryan.Tang
  */
-public class MipcaCapture extends Activity implements Callback {
+public class MipcaCapture extends AppCompatActivity implements Callback {
 
     private CaptureActivityHandler handler;
     private ViewfinderView viewfinderView;
@@ -77,12 +82,17 @@ public class MipcaCapture extends Activity implements Callback {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mipca_capture);
+        setTransparent();
         //ViewUtil.addTopView(getApplicationContext(), this, R.string.scan_card);
         CameraManager.init(getApplication());
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
-        textView_qrcode_title = (TextView)findViewById(R.id.textView_qrcode_title);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+        textView_qrcode_title = (TextView)toolbar.findViewById(R.id.textView_qrcode_title);
         textView_qrcode_title.setText("扫一扫");
-        Button mButtonBack = (Button) findViewById(R.id.button_back);
+        ImageButton mButtonBack = (ImageButton) toolbar.findViewById(R.id.button_back);
         mButtonBack.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -93,7 +103,7 @@ public class MipcaCapture extends Activity implements Callback {
         /**
          * 调用系统相册，选择二维码图片扫描
          */
-        Button button_photos = (Button) findViewById(R.id.button_photos);
+        Button button_photos = (Button) toolbar.findViewById(R.id.button_photos);
         button_photos.setVisibility(View.VISIBLE);
         button_photos.setOnClickListener(new OnClickListener() {
             @Override
@@ -421,4 +431,25 @@ public class MipcaCapture extends Activity implements Callback {
         }
     };
 
+
+    /**
+     * 设置状态栏透明
+     */
+    private void setTransparent() {
+        if (ActivityManager.hasKitKat() && !ActivityManager.hasLollipop()){
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //透明导航栏
+            //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }else if (ActivityManager.hasLollipop()){
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    //                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
+    }
 }

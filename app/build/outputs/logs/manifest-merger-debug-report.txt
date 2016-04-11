@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:2:1-50:12
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:2:1-54:12
 	package
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml
@@ -24,6 +24,7 @@ MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\Admin
 MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:20:5-43
 	tools:overrideLibrary
@@ -69,7 +70,7 @@ ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\A
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:18:22-72
 application
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:20:5-48:19
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:20:5-52:19
 MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
@@ -77,6 +78,7 @@ MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\Admin
 MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
 	android:label
@@ -132,22 +134,28 @@ ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\A
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:42:19-48
 activity#com.inuoer.wemall.QRCodeResult
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:43:9-59
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:43:9-44:71
+	android:theme
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:13-69
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:43:19-47
 activity#com.inuoer.wemall.MipcaCapture
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:9-59
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:45:9-47:20
+	android:theme
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:46:13-69
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:19-47
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:45:19-47
 activity#com.inuoer.wemall.ShakeActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:45:9-60
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:48:9-49:71
+	android:theme
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:49:13-69
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:45:19-48
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:48:19-48
 activity#com.inuoer.wemall.LoginActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:46:9-60
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:50:9-60
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:46:19-48
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:50:19-48
 activity#com.inuoer.wemall.GuideActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:47:9-60
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:9-60
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:47:19-48
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:19-48
