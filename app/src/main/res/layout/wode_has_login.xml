@@ -12,7 +12,7 @@
         android:layout_height="76dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:src="@drawable/avater"
+        android:src="@drawable/self_photo"
         app:civ_border_width="2dp"
         app:civ_border_color="#d5ea6f81"/>
     <!--<ImageView-->

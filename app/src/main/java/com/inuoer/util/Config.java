@@ -10,7 +10,7 @@ package com.inuoer.util;
 public class Config {
 	public static final String APP_KEY = "wemall";
 	public static final String APP_URL = "http://115.28.64.78/wemall/";
-	public static final String PHONE = "10086";
+	public static final String PHONE = "0431-8516XXXX";
 	
 	public static final String API_GET_GOODS = APP_URL
 			+ "index.php/App/Index/appgetgood";
