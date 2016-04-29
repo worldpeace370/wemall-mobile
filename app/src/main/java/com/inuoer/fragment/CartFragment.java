@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,6 +41,9 @@ import java.net.URLEncoder;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * 所选物品信息添加到ListView中去，还有mHeadView，mFootView作为ListView的头和尾
+ */
 public class CartFragment extends Fragment implements OnClickListener ,Observer{
 	private Intent intent;
 	private LayoutInflater inflater;
@@ -48,7 +53,7 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 	private LinearLayout mFootView;
 	//添加备注时 备注对话框的布局
 	private LinearLayout mMarkDialogLayout;
-	private Dialog dialog;
+	private Dialog mMarkDialog;
 	private ListView mListView;
 	private SharedPreferences sharedpreferences;
 	private String username , uid;
@@ -67,8 +72,7 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 			}else if(msg.what == 0x124){
 				Toast.makeText(getActivity(), "订单提交成功", Toast.LENGTH_SHORT).show();
 				CartData.removeAllCart();
-				
-				getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, new CartFragment()).commit();
+				mCartFragAdapter.notifyDataSetChanged();
 				intent = new Intent(getActivity(), OrderActivity.class);
 				startActivity(intent);
 			}else {
@@ -76,12 +80,16 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 				mHeadView.findViewById(R.id.confirmorder_address_full).setVisibility(View.VISIBLE);
 				
 				addressFlag = true;
+
 				usernametv.setText(msg.getData().get("username").toString());
 				phonetv.setText(msg.getData().get("phone").toString());
 				addresstv.setText(msg.getData().get("address").toString());
+
 			}
 		}
 	};
+	private String TAG = "CartFragment";
+	private CartFragAdapter mCartFragAdapter;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,36 +111,38 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		mFootView = (LinearLayout) inflater.inflate(R.layout.confirmorder_footer, null);
 		//点击 确认下单 的监听事件
 		mFootView.findViewById(R.id.submit).setOnClickListener(this);
-		//商品总价summary
+		//商品总价summary,通过观察者模式，在artFragAdapter中进行发送消息来更新
 		summary = (TextView) mFootView.findViewById(R.id.summary);
-		mListView = new ListView(getActivity());
+
+		mListView = new ListView(mContext);
 		mListView.addHeaderView(mHeadView);
 		mListView.addFooterView(mFootView);
 
-		CartFragAdapter adapter = new CartFragAdapter(CartData.getCartList(), mContext);
-		mListView.setAdapter(adapter);
+		mCartFragAdapter = new CartFragAdapter(CartData.getCartList(), mContext);
+		mListView.setAdapter(mCartFragAdapter);
 		
-		sharedpreferences = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE); 
+		sharedpreferences = mContext.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 		username = sharedpreferences.getString("username", "");//如果取不到，则取默认值参数""
 		uid = sharedpreferences.getString("uid", "");
-		
-		if (!username.isEmpty()) {
+		//如果用户已经登录过了，执行下面，向服务器post方式提交用户uid，然后再下载用户地址和手机号等信息，填充到confirmorder_address_full布局中
+		if (!username.isEmpty()) {//isEmpty():  Returns true if the length of this string is 0.
 			new Thread(new Runnable() {
 				
 				@Override
 				public void run() {
 					try {
-						String result = HttpUtil.getPostJsonContent(Config.API_DO_ADDRESS+"?uid="+uid+"&do=1");
-						if (!result.isEmpty()) {
+						String result = HttpUtil.getPostJsonContent(Config.API_DO_ADDRESS + "?uid=" + uid + "&do=1");
+						Log.i(TAG, "result :" + result + "uid :" + uid + "username :" + username);
+						if (!TextUtils.isEmpty(result)) {
 							JSONObject jsonObject = JSONObject.parseObject(result);
 							
 							Message msg = new Message();
 							Bundle data = new Bundle();
-							data.putString("username", jsonObject.getString("username").toString());
-							data.putString("phone", jsonObject.getString("phone").toString());
-							data.putString("address", jsonObject.getString("address").toString());
+							data.putString("username", jsonObject.getString("username"));
+							data.putString("phone", jsonObject.getString("phone"));
+							data.putString("address", jsonObject.getString("address"));
 							msg.setData(data);
-							if (jsonObject.getString("address").toString().isEmpty()) {
+							if (jsonObject.getString("address").isEmpty()) {
 								handler.sendEmptyMessage(0x123);
 							}else{
 								handler.sendMessage(msg);
@@ -154,7 +164,7 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		switch (v.getId()) {
 		//新增地址点击事件
 		case R.id.confirmorder_address_add:
-			if (!("".equals(username))) {//如果用户没有登录，则"".equals(username)为true
+			if (!TextUtils.isEmpty(username)) {//如果用户没有登录，则为true
 				intent = new Intent(mContext, EditAddressActivity.class);
 				startActivityForResult(intent, 0);
 			}else{
@@ -171,21 +181,21 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		case R.id.confirmorder_userinfo_remarks:
 			mMarkDialogLayout = (LinearLayout) inflater.inflate(
 					R.layout.dialog_remark, null);
-			dialog = new Dialog(mContext);
-			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-			dialog.setContentView(mMarkDialogLayout);
-			dialog.show();
+			mMarkDialog = new Dialog(mContext);
+			mMarkDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			mMarkDialog.setContentView(mMarkDialogLayout);
+			mMarkDialog.show();
 
 			mMarkDialogLayout.findViewById(R.id.dialog_button_right).setOnClickListener(this);
 			mMarkDialogLayout.findViewById(R.id.dialog_button_left).setOnClickListener(this);
 			break;
 		//备注对话框 右键事件
 		case R.id.dialog_button_right:
-			dialog.dismiss();
+			mMarkDialog.dismiss();
 			break;
 		//备注对话框 左键事件
 		case R.id.dialog_button_left:
-			dialog.dismiss();
+			mMarkDialog.dismiss();
 
 			EditText remarks = (EditText) mMarkDialogLayout
 					.findViewById(R.id.remarks_inputer);
@@ -197,7 +207,7 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		case R.id.submit:
 			if (System.currentTimeMillis() - lastClick >= 1000){
 	        	lastClick = System.currentTimeMillis(); 
-				if (!("".equals(username))) {
+				if (!TextUtils.isEmpty(username)) {
 					if (addressFlag) {
 						if (CartData.getCartCount() != 0) {
 							new Thread(new Runnable() {
@@ -205,9 +215,12 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 								@Override
 								public void run() {
 									try {
+										//提交备注信息和购物车信息到服务器
 										TextView notetv = (TextView) mHeadView.findViewById(R.id.confirmorder_userinfo_remarks);
-										String result = HttpUtil.getPostJsonContent(Config.API_DO_ORDER + "?uid="+uid+"&cartdata="+URLEncoder.encode(JSONArray.toJSON(CartData.getCartList()).toString())+"&note="+URLEncoder.encode(notetv.getText().toString())+"&do=1");
-										if (!result.isEmpty()) {
+										String result = HttpUtil.getPostJsonContent(Config.API_DO_ORDER + "?uid=" + uid + "&cartdata="
+												+ URLEncoder.encode(JSONArray.toJSON(CartData.getCartList()).toString()) +
+												"&note=" + URLEncoder.encode(notetv.getText().toString()) + "&do=1");
+										if (!TextUtils.isEmpty(result)) {
 											handler.sendEmptyMessage(0x124);
 										}
 									} catch (Exception e) {
@@ -238,7 +251,7 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		
 		if (requestCode == 0) {
 			if (resultCode == 1) {
-				getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, new CartFragment()).commit();
+				mCartFragAdapter.notifyDataSetChanged();
 			}
 		}
 	}

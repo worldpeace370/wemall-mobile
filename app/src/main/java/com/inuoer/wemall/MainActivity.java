@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 		mToolBar = (Toolbar) findViewById(R.id.toolbar);
 		if (!ActivityManager.hasKitKat()){//API<14
 			ViewGroup.LayoutParams layoutParams =  mToolBar.getLayoutParams();
-			layoutParams.height = 70;
+			layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化
 			mToolBar.setLayoutParams(layoutParams);
 		}
 		//取消App name名字，靠近菜单附近的

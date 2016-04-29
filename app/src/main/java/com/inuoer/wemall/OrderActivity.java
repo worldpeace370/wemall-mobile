@@ -1,32 +1,39 @@
 package com.inuoer.wemall;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.inuoer.util.ActivityManager;
+import com.inuoer.util.Config;
+import com.inuoer.util.HttpUtil;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.inuoer.util.Config;
-import com.inuoer.util.HttpUtil;
-
-public class OrderActivity extends Activity implements OnClickListener {
+public class OrderActivity extends AppCompatActivity{
 	private SharedPreferences sharedpreferences;
 	private String uid;
 	private List<Map<String, String>> list;
@@ -37,10 +44,8 @@ public class OrderActivity extends Activity implements OnClickListener {
 	Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-			// TODO Auto-generated method stub
 			if (msg.what == 0x123) {
 				adapter.notifyDataSetChanged();
-
 			} else {
 			}
 		}
@@ -48,13 +53,12 @@ public class OrderActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_order);
+		setTransparent();
 
-		findViewById(R.id.confirmorder_actionbar_left_back).setOnClickListener(
-				this);
+		initToolBar();
 
 		sharedpreferences = this.getSharedPreferences("userInfo",
 				Context.MODE_PRIVATE);
@@ -75,11 +79,10 @@ public class OrderActivity extends Activity implements OnClickListener {
 
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				try {
 					String result = HttpUtil.getPostJsonContent(Config.API_DO_ORDER
 							+ "?uid=" + uid + "&do=2");
-					if (!result.isEmpty()) {
+					if (!TextUtils.isEmpty(result)) {
 						JSONArray jsonArray = JSONArray.parseArray(result);
 						JSONObject myjObject;
 						String order_status , pay_status;
@@ -101,7 +104,7 @@ public class OrderActivity extends Activity implements OnClickListener {
 					}
 
 				} catch (Exception e) {
-					// TODO: handle exception
+
 				}
 			}
 		}).start();
@@ -111,7 +114,6 @@ public class OrderActivity extends Activity implements OnClickListener {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// TODO Auto-generated method stub
 				String order_id = list.get(position).get("order_id").toString();
 				Intent intent = new Intent(OrderActivity.this, OrderDetailActivity.class);
 				intent.putExtra("order_id", order_id);
@@ -120,16 +122,48 @@ public class OrderActivity extends Activity implements OnClickListener {
 		});
 	}
 
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		switch (v.getId()) {
-		case R.id.confirmorder_actionbar_left_back:
-			finish();
-			break;
+	/**
+	 * 初始化ToolBar
+	 */
+	private void initToolBar() {
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		toolbar.setTitle("");
+		setSupportActionBar(toolbar);
+		if (!ActivityManager.hasKitKat()){//API<14
+			ViewGroup.LayoutParams layoutParams =  toolbar.getLayoutParams();
+			layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化
+			toolbar.setLayoutParams(layoutParams);
+		}
 
-		default:
-			break;
+		ImageButton buttonBack = (ImageButton) toolbar.findViewById(R.id.button_back);
+		buttonBack.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+		TextView tabTitle = (TextView) toolbar.findViewById(R.id.tab_title);
+		tabTitle.setText("我的订单");
+	}
+
+	/**
+	 * 设置状态栏透明
+	 */
+	private void setTransparent() {
+		if (ActivityManager.hasKitKat() && !ActivityManager.hasLollipop()){
+			//透明状态栏
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			//透明导航栏
+			//getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+		}else if (ActivityManager.hasLollipop()){
+			Window window = getWindow();
+			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+					| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+			window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+					//                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+					| View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			window.setStatusBarColor(Color.TRANSPARENT);
 		}
 	}
 

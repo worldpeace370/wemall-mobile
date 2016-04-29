@@ -128,7 +128,7 @@ public class MipcaCapture extends AppCompatActivity implements Callback {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (!ActivityManager.hasKitKat()){//API<14
             ViewGroup.LayoutParams layoutParams =  toolbar.getLayoutParams();
-            layoutParams.height = 70;
+            layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化
             toolbar.setLayoutParams(layoutParams);
         }
         toolbar.setTitle("");

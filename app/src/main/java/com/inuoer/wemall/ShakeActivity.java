@@ -86,9 +86,6 @@ public class ShakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shake);
         setTransparent();
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
 
         initView();
         initSensorManager();
@@ -100,9 +97,11 @@ public class ShakeActivity extends AppCompatActivity {
         imageView_main_logoup = (ImageView) findViewById(R.id.imageView_main_logoup);
         imageView_main_logodown = (ImageView) findViewById(R.id.imageView_main_logodown);
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
+        mToolBar.setTitle("");
+        setSupportActionBar(mToolBar);
         if (!ActivityManager.hasKitKat()){//API<14
             ViewGroup.LayoutParams layoutParams =  mToolBar.getLayoutParams();
-            layoutParams.height = 70;
+            layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化
             mToolBar.setLayoutParams(layoutParams);
         }
     }

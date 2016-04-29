@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:2:1-60:12
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:2:1-64:12
 	package
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml
@@ -48,7 +48,7 @@ ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\A
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:14:22-72
 application
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:16:5-58:19
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:16:5-62:19
 MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:23.2.1] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\AndroidManifest.xml:22:5-20
@@ -110,81 +110,85 @@ ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\A
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:36:19-54
 activity#com.inuoer.wemall.OrderActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:37:9-87
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:37:9-39:71
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:37:49-85
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:38:13-49
+	android:theme
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:39:13-69
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:37:19-48
 activity#com.inuoer.wemall.SettingActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:38:9-89
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:40:9-89
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:38:51-87
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:40:51-87
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:38:19-50
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:40:19-50
 activity#com.inuoer.wemall.OrderDetailActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:39:9-93
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:41:9-43:71
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:39:55-91
-	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:39:19-54
-activity#com.inuoer.wemall.AboutActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:40:9-87
-	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:40:49-85
-	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:40:19-48
-activity#com.inuoer.wemall.QRCodeResult
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:41:9-43:72
-	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:41:19-55
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:42:13-49
 	android:theme
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:43:13-69
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:42:13-41
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:41:19-54
+activity#com.inuoer.wemall.AboutActivity
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:9-87
+	android:screenOrientation
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:49-85
+	android:name
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:19-48
+activity#com.inuoer.wemall.QRCodeResult
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:45:9-47:72
+	android:screenOrientation
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:45:19-55
+	android:theme
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:47:13-69
+	android:name
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:46:13-41
 activity#com.inuoer.wemall.MipcaCapture
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:9-46:71
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:48:9-50:71
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:44:19-55
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:48:19-55
 	android:theme
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:46:13-69
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:50:13-69
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:45:13-41
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:49:13-41
 activity#com.inuoer.wemall.ShakeActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:47:9-49:72
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:9-53:72
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:47:19-55
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:19-55
 	android:theme
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:49:13-69
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:53:13-69
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:48:13-42
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:52:13-42
 activity#com.inuoer.wemall.LoginActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:50:9-87
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:54:9-87
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:50:49-85
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:54:49-85
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:50:19-48
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:54:19-48
 activity#com.inuoer.wemall.GuideActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:9-87
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:55:9-87
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:49-85
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:55:49-85
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:19-48
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:55:19-48
 activity#com.inuoer.wemall.TestActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:52:9-54:71
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:56:9-58:71
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:53:13-49
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:57:13-49
 	android:theme
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:54:13-69
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:58:13-69
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:52:19-47
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:56:19-47
 activity#com.inuoer.wemall.CityChoiceActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:55:9-57:71
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:59:9-61:71
 	android:screenOrientation
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:56:13-49
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:60:13-49
 	android:theme
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:57:13-69
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:61:13-69
 	android:name
-		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:55:19-53
+		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:59:19-53
 uses-sdk
 INJECTED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\AndroidManifest.xml:5:5-7:41
