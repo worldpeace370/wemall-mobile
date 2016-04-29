@@ -68,7 +68,7 @@
     <color name="wode_frag_list_color">#ff636363</color>
     <color name="order_comment_hint_color">#ffc4cdd5</color>
     <color name="shop_comment_total_count_color">#ffabaeb2</color>
-    <color name="sapi_background_color">#fff7f7f7</color>
+    <color name="sapi_background_color">#e1b1bd</color>
     <color name="sapi_title_text_color">#ffffffff</color>
     <color name="sapi_btn_text_color">#ffffffff</color>
     <color name="sapi_tab_pressed_color">#ff3289cb</color>

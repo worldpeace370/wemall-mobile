@@ -114,7 +114,7 @@ public class OrderActivity extends AppCompatActivity{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				String order_id = list.get(position).get("order_id").toString();
+				String order_id = list.get(position).get("order_id");
 				Intent intent = new Intent(OrderActivity.this, OrderDetailActivity.class);
 				intent.putExtra("order_id", order_id);
 				startActivity(intent);

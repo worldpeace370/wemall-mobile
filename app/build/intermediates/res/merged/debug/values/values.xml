@@ -184,7 +184,7 @@
     <color name="result_view">#b0000000</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
-    <color name="sapi_background_color">#fff7f7f7</color>
+    <color name="sapi_background_color">#e1b1bd</color>
     <color name="sapi_btn_text_color">#ffffffff</color>
     <color name="sapi_edit_hint_color">#ffdddddd</color>
     <color name="sapi_edit_neting_color">#ff888888</color>
