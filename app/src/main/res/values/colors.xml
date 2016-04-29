@@ -88,5 +88,7 @@
     <color name="sapi_qr_tips_background">#30ffffff</color>
     <color name="start_pressed">#8e031a</color>
     <color name="start_normal">#D44D63</color>
+    <color name="color_pressed">#ff5566</color>
+    <color name="color_normal">#00667788</color>
 
 </resources>

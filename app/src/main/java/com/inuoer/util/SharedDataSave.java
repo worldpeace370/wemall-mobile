@@ -23,7 +23,7 @@ public class SharedDataSave {
         /**
          * 获取是否是第一次使用的参数
          * preferences.getBoolean()的返回值,如果key存在则返回查到的值,不存在的话,
-         * 返回Constants.THE_FIRST自己的默认值,这个略屌啊
+         * 返回Constants.THE_FIRST自己的默认值
          */
         Config.IS_FIRST = preferences.getBoolean(Config.THE_FIRST_INSTALL,Config.IS_FIRST);
     }

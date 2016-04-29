@@ -26,6 +26,7 @@
     <string name="third_item">东北的炖菜</string>
     <string name="fourth_item">新疆的烤羊</string>
     <string name="fifth_item">尽在墩墩美食</string>
+    <string name="city_choice">城市选择</string>
     <string-array name="drawer_items">
         <item>全部菜品</item>
         <item>自助火锅</item>
@@ -34,7 +35,7 @@
         <item>麻辣涮串</item>
     </string-array>
     <string-array name="title_name">
-        <item>墩墩美食</item>
+        <item>长春美食</item>
         <item>提交订单</item>
         <item>发现</item>
         <item>个人中心</item>

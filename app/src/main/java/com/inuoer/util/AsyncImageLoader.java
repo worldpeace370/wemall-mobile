@@ -1,5 +1,9 @@
 package com.inuoer.util;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.Handler;
+
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,10 +11,10 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Handler;
-
+/**
+ * 自定义异步任务下载类，四个静态成员变量，所有AsyncImageLoader的对象共享
+ * 这样很好，就应该这样设计
+ */
 public class AsyncImageLoader {
 	// 保存正在下载的图片URL集合，避免重复下载用
 	private static HashSet<String> sDownloadingSet;
@@ -30,12 +34,11 @@ public class AsyncImageLoader {
 	public interface ImageCallback {
 		/**
 		 * 回调函数
-		 * 
 		 * @param bitmap
-		 *            : may be null!
+		 * may be null!
 		 * @param imageUrl
 		 */
-		public void onImageLoaded(Bitmap bitmap, String imageUrl);
+		void onImageLoaded(Bitmap bitmap, String imageUrl);
 	}
 
 	static {
@@ -87,19 +90,16 @@ public class AsyncImageLoader {
 	}
 
 	/**
-	 * 
-	 * @param url
-	 * @param cache2Memory
-	 *            是否缓存至memory中
-	 * @param callback
+	 * @param url 图片url地址
+	 * @param cache2Memory  是否缓存至memory中
+	 * @param callback 接口回调
 	 */
 	public void downloadImage(final String url, final boolean cache2Memory,
 			final ImageCallback callback) {
-		if (sDownloadingSet.contains(url)) {
-//			Log.i("AsyncImageLoader", "###该图片正在下载，不能重复下载！");
+		if (sDownloadingSet.contains(url)) {//如果为true,该url正在被网络下载(下载中...)，只有下载完成后remove，所以退出
 			return;
 		}
-
+		//先从内存缓存中寻找，找不到再从文件系统中寻找，都找不到再从网络下载
 		Bitmap bitmap = impl.getBitmapFromMemory(url);
 		if (bitmap != null) {
 			if (callback != null) {
@@ -128,7 +128,6 @@ public class AsyncImageLoader {
 
 	/**
 	 * 预加载下一张图片，缓存至memory中
-	 * 
 	 * @param url
 	 */
 	public void preLoadNextImage(final String url) {

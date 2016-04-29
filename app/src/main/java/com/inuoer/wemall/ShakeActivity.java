@@ -18,6 +18,7 @@ import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -78,6 +79,7 @@ public class ShakeActivity extends AppCompatActivity {
         }
     };
     private Dialog mDialog;
+    private Toolbar mToolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +99,12 @@ public class ShakeActivity extends AppCompatActivity {
     private void initView() {
         imageView_main_logoup = (ImageView) findViewById(R.id.imageView_main_logoup);
         imageView_main_logodown = (ImageView) findViewById(R.id.imageView_main_logodown);
+        mToolBar = (Toolbar) findViewById(R.id.toolbar);
+        if (!ActivityManager.hasKitKat()){//API<14
+            ViewGroup.LayoutParams layoutParams =  mToolBar.getLayoutParams();
+            layoutParams.height = 70;
+            mToolBar.setLayoutParams(layoutParams);
+        }
     }
 
     public void click(View view){
@@ -226,7 +234,10 @@ public class ShakeActivity extends AppCompatActivity {
         mDialog.setContentView(layout);
         mDialog.show();
         final ImageView imageView = (ImageView) layout.findViewById(R.id.dialog_detail_big_image);
-        new AsyncImageLoader(this).downloadImage(ShareValue.listItem.get(position).get("image").toString(), true,
+        AsyncImageLoader imageLoader = new AsyncImageLoader(this);
+        //设置缓存到文件系统中去
+        imageLoader.setCache2File(true);
+        imageLoader.downloadImage(ShareValue.listItem.get(position).get("image").toString(), true,
                 new AsyncImageLoader.ImageCallback() {
                     @Override
                     public void onImageLoaded(Bitmap bitmap, String imageUrl) {

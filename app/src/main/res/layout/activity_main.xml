@@ -9,13 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/custom_pottery_red"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        >
         <TextView android:id="@+id/tab_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="墩墩美食"
+            android:text="@string/app_name"
             android:textSize="22sp"/>
         <ImageView
             android:id="@+id/qr_code"
@@ -26,6 +27,7 @@
             android:scaleType="centerInside"
             android:src="@drawable/icon_qrcode"
             android:visibility="visible" />
+            <!--#6C3D43二维码的颜色值-->
     </android.support.v7.widget.Toolbar>
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -33,6 +35,7 @@
         android:layout_height="match_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
+        <!--抽屉布局主页-->
         <LinearLayout
             android:id="@+id/content_actionbar"
             android:layout_width="match_parent"
@@ -41,19 +44,19 @@
 
             <FrameLayout
                 android:id="@+id/framelayout_content"
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="1.0" >
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
             </FrameLayout>
 
             <View
-                android:layout_width="fill_parent"
-                android:layout_height="1.0px"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
                 android:background="#ffcccdd1" />
-
+            <!--RadioGroup继承自LinearLayout-->
             <RadioGroup
                 android:id="@+id/radioGroup"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:gravity="center"
@@ -84,10 +87,12 @@
             </RadioGroup>
 
         </LinearLayout>
+        <!--抽屉布局左侧页面，默认隐藏，拉动出现-->
+        <!--Fragment静态添加的方式-->
         <fragment android:id="@+id/navigation_drawer"
                   android:layout_width="180dp"
                   android:layout_height="match_parent"
-                  android:layout_gravity="start"
+                  android:layout_gravity="left"
                   android:name="com.inuoer.fragment.DrawerFragment"
                   tools:layout="@layout/fragment_drawer"/>
     </android.support.v4.widget.DrawerLayout>

@@ -18,9 +18,14 @@ import java.net.URL;
 public class HttpUtil {
 
 	public HttpUtil() {
-		// TODO Auto-generated constructor stub
+
 	}
 
+	/**
+	 * 根据url获取Get请求的json字符串
+	 * @param urlStr
+	 * @return
+     */
 	public static String getGetJsonContent(String urlStr) {
 		
 		try {// 获取HttpURLConnection连接对象
@@ -37,15 +42,18 @@ public class HttpUtil {
 				return ConvertStream2Json(httpConn.getInputStream());
 			}
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "";
 	}
-	
+
+	/**
+	 * 根据url获取Post请求的json字符串
+	 * @param urlStr
+	 * @return
+     */
 	public static String getPostJsonContent(String urlStr){
 		try {
 			String[] urlArr = urlStr.split("\\?");
@@ -85,7 +93,6 @@ public class HttpUtil {
 				return ConvertStream2Json(urlConn.getInputStream());
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 		return null;
 	}
@@ -104,7 +111,6 @@ public class HttpUtil {
 			// 将内存流转换为字符串
 			jsonStr = new String(out.toByteArray());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return jsonStr;

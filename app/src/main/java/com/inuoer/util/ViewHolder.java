@@ -11,6 +11,4 @@ public final class ViewHolder {
 	public ImageButton plusButton;
 	public ImageButton minusButton;
 	public TextView numTextView;
-	public TextView summary;
-	
 }

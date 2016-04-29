@@ -1,11 +1,15 @@
 package com.inuoer.fragment;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +19,21 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
+import com.inuoer.adpater.MainFragAdapter;
 import com.inuoer.util.CartData;
 import com.inuoer.util.Config;
 import com.inuoer.util.HttpUtil;
-import com.inuoer.util.MainAdapter;
 import com.inuoer.util.ShareValue;
+import com.inuoer.wemall.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainFragment extends Fragment{
-	private String jsonString;
-	private ListView lv;
-	private MainAdapter MyAdapter;
+	private MainFragAdapter mMyAdapter;
 	private ArrayList<Map<String, Object>> listItem = new ArrayList<Map<String, Object>>();
 	private ArrayList<Map<String, Object>> listItemSelected = new ArrayList<Map<String, Object>>();
 	private ProgressDialog mProgressDialog;
@@ -43,7 +48,7 @@ public class MainFragment extends Fragment{
 		@Override
 		public void handleMessage(Message msg) {
 			if (msg.what == 0x123) {
-				MyAdapter.notifyDataSetChanged();
+				mMyAdapter.notifyDataSetChanged();
 				mProgressDialog.dismiss();
 			} else if (msg.what == 0x124) {
 				Toast.makeText(getActivity(), "请查看网络连接", Toast.LENGTH_LONG)
@@ -52,9 +57,12 @@ public class MainFragment extends Fragment{
 
 		}
 	};
+	private SwipeRefreshLayout mSwipeRefresh;
+	private Activity mMainActivity;
+	private MaterialRefreshLayout mMaterialRefresh;
 
 	//根据menu_id对listItem进行过滤
-	private ArrayList<Map<String, Object>> selectByMenuId(){
+	private ArrayList<Map<String, Object>> selectByMenuId(String menu_id){
 		if (menu_id == null){
 			return listItem;
 		}else {
@@ -78,7 +86,7 @@ public class MainFragment extends Fragment{
 	}
 
 	/**
-	 * 创建MainFragment时传入不同的url参数来加载不同的页面
+	 * 创建MainFragment时传入不同的url参数和menu_id来加载不同的页面
 	 * @param urlString
 	 * @return
 	 */
@@ -90,6 +98,13 @@ public class MainFragment extends Fragment{
 		mainFragment.setArguments(bundle);
 		return mainFragment;
 	}
+
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		mMainActivity = getActivity();
+	}
+
 	/**
 	 * 加载网络数据
 	 * @param savedInstanceState
@@ -103,17 +118,73 @@ public class MainFragment extends Fragment{
 		}
 		initProgressDialog();
 		initData();
-		MyAdapter = new MainAdapter(getActivity(), listItemSelected);
+		mMyAdapter = new MainFragAdapter(listItemSelected, getActivity());
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.fragment_main_new, container, false);
+		ListView mListView = ((ListView) view.findViewById(R.id.listView_main));
+		mListView.setAdapter(mMyAdapter);
+		mMaterialRefresh = (MaterialRefreshLayout) view.findViewById(R.id.materialRefresh);
+		mMaterialRefresh.setMaterialRefreshListener(new MaterialRefreshListener() {
+			@Override
+			public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
+				//refreshing...
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+						SystemClock.sleep(2000);
+						mMainActivity.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								mMaterialRefresh.finishRefresh();
+							}
+						});
+					}
+				}).start();
+			}
 
-		lv = new ListView(getActivity());
-		lv.setAdapter(MyAdapter);
+			@Override
+			public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout) {
+				//load more refreshing...
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+						SystemClock.sleep(2000);
+						mMainActivity.runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								mMaterialRefresh.finishRefreshLoadMore();
+							}
+						});
+					}
+				}).start();
+			}
+		});
 
-		return lv;
+//		mSwipeRefresh = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefresh);
+//		mSwipeRefresh.setProgressBackgroundColorSchemeColor(getResources().getColor(R.color.custom_pottery_red));
+//		mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//			@Override
+//			public void onRefresh() {
+//				new Thread(new Runnable() {
+//					@Override
+//					public void run() {
+//						SystemClock.sleep(2000);
+//						mMainActivity.runOnUiThread(new Runnable() {
+//							@Override
+//							public void run() {
+//								mSwipeRefresh.setRefreshing(false);
+//								mMyAdapter.notifyDataSetChanged();
+//							}
+//						});
+//					}
+//				}).start();
+//			}
+//		});
+		return view;
 	}
 
 	private void initProgressDialog() {
@@ -133,7 +204,7 @@ public class MainFragment extends Fragment{
 		new Thread(new Runnable() {
 			public void run() {
 				try {
-					jsonString = HttpUtil
+					String jsonString = HttpUtil
 							.getGetJsonContent(urlString);
 
 					JSONArray jsonArr = JSON.parseArray(jsonString);
@@ -143,14 +214,14 @@ public class MainFragment extends Fragment{
 						Map<String, Object> map = new HashMap<String, Object>();
 						map.put("id", i);
 						map.put("menu_id", myjObject.getString("menu_id"));
-						map.put("image", Config.API_UPLOADS+myjObject.getString("image"));
+						map.put("image", Config.API_UPLOADS + myjObject.getString("image"));
 						map.put("name", myjObject.getString("name"));
 						map.put("price", myjObject.getString("price"));
 						map.put("num", CartData.findCart(i));
 						listItem.add(map);
 					}
 					//必须用addAll，直接listItemSelected = selectByMenuId()不行
-					listItemSelected.addAll(selectByMenuId());
+					listItemSelected.addAll(selectByMenuId(menu_id));
 					ShareValue.listItem.addAll(listItem);
 					handler.sendEmptyMessage(0x123);
 				} catch (Exception e) {
@@ -170,5 +241,9 @@ public class MainFragment extends Fragment{
 		super.onDestroyView();
 		listItemSelected.clear();
 		listItem.clear();
+	}
+
+	public void autoRefresh(){
+		mMaterialRefresh.autoRefresh();
 	}
 }

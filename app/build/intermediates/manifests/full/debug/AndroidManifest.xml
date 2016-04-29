@@ -25,6 +25,7 @@
         <activity
             android:name="com.inuoer.wemall.WelcomeActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,24 +35,49 @@
         </activity>
         <activity
             android:name="com.inuoer.wemall.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="com.inuoer.wemall.EditAddressActivity" />
-        <activity android:name="com.inuoer.wemall.OrderActivity" />
-        <activity android:name="com.inuoer.wemall.SettingActivity" />
-        <activity android:name="com.inuoer.wemall.OrderDetailActivity" />
-        <activity android:name="com.inuoer.wemall.AboutActivity" />
+        <activity
+            android:name="com.inuoer.wemall.EditAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.inuoer.wemall.OrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.inuoer.wemall.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.inuoer.wemall.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.inuoer.wemall.AboutActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.inuoer.wemall.QRCodeResult"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.inuoer.wemall.MipcaCapture"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.inuoer.wemall.ShakeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="com.inuoer.wemall.LoginActivity" />
-        <activity android:name="com.inuoer.wemall.GuideActivity" />
+        <activity
+            android:name="com.inuoer.wemall.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.inuoer.wemall.GuideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.inuoer.wemall.TestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.inuoer.wemall.CityChoiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

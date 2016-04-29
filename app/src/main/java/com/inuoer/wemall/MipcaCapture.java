@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -86,9 +88,7 @@ public class MipcaCapture extends AppCompatActivity implements Callback {
         //ViewUtil.addTopView(getApplicationContext(), this, R.string.scan_card);
         CameraManager.init(getApplication());
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
+        Toolbar toolbar = setToolbar();
 
         textView_qrcode_title = (TextView)toolbar.findViewById(R.id.textView_qrcode_title);
         textView_qrcode_title.setText("扫一扫");
@@ -121,6 +121,19 @@ public class MipcaCapture extends AppCompatActivity implements Callback {
 
         hasSurface = false;
         inactivityTimer = new InactivityTimer(this);
+    }
+
+    @NonNull
+    private Toolbar setToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (!ActivityManager.hasKitKat()){//API<14
+            ViewGroup.LayoutParams layoutParams =  toolbar.getLayoutParams();
+            layoutParams.height = 70;
+            toolbar.setLayoutParams(layoutParams);
+        }
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        return toolbar;
     }
 
     /**

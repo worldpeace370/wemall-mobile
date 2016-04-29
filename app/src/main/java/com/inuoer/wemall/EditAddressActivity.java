@@ -1,7 +1,5 @@
 package com.inuoer.wemall;
 
-import java.net.URLEncoder;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -18,6 +16,8 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.inuoer.util.Config;
 import com.inuoer.util.HttpUtil;
+
+import java.net.URLEncoder;
 
 public class EditAddressActivity extends Activity implements OnClickListener {
 
@@ -44,7 +44,6 @@ public class EditAddressActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.address_addedit);
@@ -60,7 +59,6 @@ public class EditAddressActivity extends Activity implements OnClickListener {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				try {
 					String result = HttpUtil
 							.getPostJsonContent(Config.API_DO_ADDRESS + "?uid="
@@ -78,7 +76,7 @@ public class EditAddressActivity extends Activity implements OnClickListener {
 					}
 
 				} catch (Exception e) {
-					// TODO: handle exception
+
 				}
 			}
 		}).start();
@@ -91,7 +89,6 @@ public class EditAddressActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.edit_address_actionbar_left_back:
 			finish();
@@ -104,14 +101,13 @@ public class EditAddressActivity extends Activity implements OnClickListener {
 	        		
 	        		@Override
 	        		public void run() {
-	        			// TODO Auto-generated method stub
 	        			try {
 	        				String result = HttpUtil.getPostJsonContent(Config.API_DO_ADDRESS + "?uid="+uid+"&do=2&address="+URLEncoder.encode(address.getText().toString(), "utf-8"));
 //						if (!result.isEmpty()) {
 	        				handler.sendEmptyMessage(0x123);
 //						}
 	        			} catch (Exception e) {
-	        				// TODO: handle exception
+
 	        			}
 	        		}
 	        	}).start();

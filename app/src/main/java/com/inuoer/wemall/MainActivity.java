@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -16,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -29,6 +31,7 @@ import com.inuoer.fragment.DiscoveryFragment;
 import com.inuoer.fragment.DrawerFragment;
 import com.inuoer.fragment.MainFragment;
 import com.inuoer.fragment.WoFragment;
+import com.inuoer.manager.ObserverManager;
 import com.inuoer.util.ActivityManager;
 import com.inuoer.util.AsyncImageLoader;
 import com.inuoer.util.CartData;
@@ -43,10 +46,10 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 	private List<Fragment> mFragmentList = new ArrayList<Fragment>();
 	private ArrayList<Map<String, Object>> listItem = new ArrayList<Map<String, Object>>();
 
-	private int mRequestCode;
+	private final int mQRRequestCode = 0x22;
+	private final int mCityRequestCode = 0x33;
 	private Context mContext;
 	private DrawerLayout mDrawerLayout;
-	private RadioGroup mRadioGroup;
 	private RadioButton[] arrRadioButtons;
 	//当前书签对应的Fragment索引
 	private int currentTabIndex = 0;
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 	private TextView mTab_title;
 	private ImageView mQr_code;
 	private MainFragment mMainFragment;
+	private Drawable mTitleDrawable;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,19 +81,92 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 
 	}
 	/**
+	 * 初始化抽屉布局
+	 */
+	private void initDrawer() {
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		//设置DrawerListener监听器，重写四个方法
+		mDrawerLayout.setDrawerListener(this);
+		mDrawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+		mDrawerFragment.setOnDrawerItemSelectedListener(this);
+	}
+	/**
+	 * 初始化ToolBar
+	 */
+	private void initToolBar(){
+		mToolBar = (Toolbar) findViewById(R.id.toolbar);
+		if (!ActivityManager.hasKitKat()){//API<14
+			ViewGroup.LayoutParams layoutParams =  mToolBar.getLayoutParams();
+			layoutParams.height = 70;
+			mToolBar.setLayoutParams(layoutParams);
+		}
+		//取消App name名字，靠近菜单附近的
+		mToolBar.setTitle("");
+		//mToolBar.showOverflowMenu();
+		setSupportActionBar(mToolBar);
+		getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		//ToolBar的开关,toggle,设置后，点击开关打开抽屉布局或者关闭抽屉布局
+		mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolBar,
+				R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+		mToggle.syncState();
+	}
+
+	/**
+	 * 初始化ToolBar的title和二维码扫描事件
+	 */
+	private void initView(){
+		mTitleArray = getResources().getStringArray(R.array.title_name);
+		mQr_code = (ImageView) mToolBar.findViewById(R.id.qr_code);
+		mQr_code.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.setClass(MainActivity.this, MipcaCapture.class);
+				startActivityForResult(intent, mQRRequestCode);
+			}
+		});
+		mTab_title = (TextView) mToolBar.findViewById(R.id.tab_title);
+		mTab_title.setText(mTitleArray[0]);
+		mTitleDrawable = getResources().getDrawable(R.drawable.iconfont_xiala);
+		mTitleDrawable.setBounds(0, 0, mTitleDrawable.getMinimumWidth()-6, mTitleDrawable.getMinimumHeight()-6);
+		mTab_title.setCompoundDrawables(null, null, mTitleDrawable, null);
+		mTab_title.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(mContext, CityChoiceActivity.class);
+				startActivityForResult(intent, mCityRequestCode);
+			}
+		});
+	}
+
+	/**
+	 * 初始化mFragmentList
+	 */
+	private void initFragmentList() {
+		mMainFragment = MainFragment.newInstance(Config.API_GET_GOODS, null);
+		mFragmentList.add(mMainFragment);
+		mFragmentList.add(new CartFragment());
+		mFragmentList.add(new DiscoveryFragment());
+		mFragmentList.add(new WoFragment());
+		//默认Fragment,为shopping页面--刚进入APP的首页
+		getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, mMainFragment).commit();
+	}
+	/**
 	 * 初始化主Activity页面下面的书签导航,并点击可以切换不同的页面
 	 */
 	private void initTabs(){
-		mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 		//为新建的RadioButton数组创建大小,该数组里面包含RadioGroup里面所有的RadioButton
-		arrRadioButtons = new RadioButton[mRadioGroup.getChildCount()];
-		for (int i = 0; i < mRadioGroup.getChildCount(); i++) {
-			arrRadioButtons[i] = (RadioButton) mRadioGroup.getChildAt(i);
+		arrRadioButtons = new RadioButton[radioGroup.getChildCount()];
+		for (int i = 0; i < radioGroup.getChildCount(); i++) {
+			arrRadioButtons[i] = (RadioButton) radioGroup.getChildAt(i);
 		}
 		//设置第一个RadioButton默认被选中
 		arrRadioButtons[0].setChecked(true);
 		//mRadioGroup的监听事件,改变对应RadioButton的标题颜色和切换Fragment
-		mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+		radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				for (int i = 0; i < arrRadioButtons.length; i++) {
@@ -108,9 +185,13 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 	 * @param targetTabIndex
 	 */
 	private void switchFragment(int targetTabIndex){
+		//主页面和其他页面需要在TooBar上显示不同的功能特性，刚开始布局的时候应该把ToolBar加入到Fragment中而不是Activity，这样可能会很方便
 		if (targetTabIndex == 0){
 			mQr_code.setVisibility(View.VISIBLE);
 			mTab_title.setText(mTitleArray[0]);
+			mTab_title.setCompoundDrawables(null, null, mTitleDrawable, null);
+			//设置可点击
+			mTab_title.setEnabled(true);
 			getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
 			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 			mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolBar,
@@ -119,7 +200,10 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 			mToggle.syncState();
 		}else {
 			mQr_code.setVisibility(View.INVISIBLE);
+			//设置不可点击
+			mTab_title.setEnabled(false);
 			mTab_title.setText(mTitleArray[targetTabIndex]);
+			mTab_title.setCompoundDrawables(null, null, null, null);
 			getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 		}
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -137,58 +221,14 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 		transaction.commit();
 	}
 
-	private void initFragmentList() {
-		mMainFragment = MainFragment.newInstance(Config.API_GET_GOODS, null);
-		mFragmentList.add(mMainFragment);
-		mFragmentList.add(new CartFragment());
-		mFragmentList.add(new DiscoveryFragment());
-		mFragmentList.add(new WoFragment());
-		//默认Fragment,为shopping页面--刚进入APP的首页
-		getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, mMainFragment).commit();
-	}
-
-
-	private void initToolBar(){
-		mToolBar = (Toolbar) findViewById(R.id.toolbar);
-		mToolBar.setTitle("");
-		setSupportActionBar(mToolBar);
-		getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolBar,
-				R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
-		mToggle.syncState();
-	}
-
-	private void initView(){
-		mTitleArray = getResources().getStringArray(R.array.title_name);
-		mQr_code = (ImageView) mToolBar.findViewById(R.id.qr_code);
-		mQr_code.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.setClass(MainActivity.this, MipcaCapture.class);
-				mRequestCode = 0x222;
-				startActivityForResult(intent, mRequestCode);
-			}
-		});
-		mTab_title = (TextView) mToolBar.findViewById(R.id.tab_title);
-		mTab_title.setText(mTitleArray[0]);
-	}
-
-
-	private void initDrawer() {
-		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		//设置DrawerListener监听器，重写四个方法
-		mDrawerLayout.setDrawerListener(this);
-		mDrawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-		mDrawerFragment.setOnDrawerItemSelectedListener(this);
-	}
-
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		listItem = mMainFragment.getListItem();
-		if (this.mRequestCode == requestCode && resultCode == 0x55){
+		if (this.mCityRequestCode == requestCode && resultCode == 0x66){
+			String cityName = data.getExtras().getString("cityName");
+			mTab_title.setText(cityName+"美食");
+		}
+		if (this.mQRRequestCode == requestCode && resultCode == 0x55){
 			String result = data.getExtras().getString("result");
 			//得到二维码扫描来的物品position信息
 			final int position;
@@ -203,8 +243,12 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			dialog.setContentView(layout);
 			dialog.show();
+			//显示菜品图案的ImageView
 			final ImageView imageView = (ImageView) layout.findViewById(R.id.dialog_detail_big_image);
-			new AsyncImageLoader(mContext).downloadImage(listItem.get(position).get("image").toString(), true,
+			AsyncImageLoader imageLoader = new AsyncImageLoader(mContext);
+			//设置缓存到文件系统中去
+			imageLoader.setCache2File(true);
+			imageLoader.downloadImage(listItem.get(position).get("image").toString(), true,
 					new AsyncImageLoader.ImageCallback() {
 						@Override
 						public void onImageLoaded(Bitmap bitmap, String imageUrl) {
@@ -265,7 +309,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 		}
 	}
 
-	/**
+	/**点击左侧抽屉菜单后的回调，为MainFragment传递不同的参数，得到不同的MainFragment
 	 * mDrawerFragment的回调方法
 	 * @param menu_id
 	 */
@@ -331,5 +375,11 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 			window.setStatusBarColor(Color.TRANSPARENT);
 		}
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		ObserverManager.getObserverManager().deleteObservers();
 	}
 }

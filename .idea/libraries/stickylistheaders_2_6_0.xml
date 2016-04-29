@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="stickylistheaders-2.6.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/se.emilsjolander/stickylistheaders/2.6.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/se.emilsjolander/stickylistheaders/2.6.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/se.emilsjolander/stickylistheaders/2.6.0/a7d8c6d2c5acaae027a3288a2aff002fc7cfa3d0/stickylistheaders-2.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

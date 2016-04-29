@@ -1,5 +1,8 @@
 package com.inuoer.util;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,9 +15,6 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
 /**
  * 
@@ -60,7 +60,7 @@ public class LoaderImpl {
 	 * 
 	 */
 	public Bitmap getBitmapFromUrl(String url, boolean cache2Memory){
-		Bitmap bitmap = null;
+		Bitmap bitmap;
 		try{
 			URL u = new URL(url);
 			HttpURLConnection conn = (HttpURLConnection)u.openConnection();  
@@ -90,6 +90,7 @@ public class LoaderImpl {
 	
 	/**
 	 * 从内存缓存中获取bitmap
+	 * 从外部缓存文件读取
 	 * @param url
 	 * @return bitmap or null.
 	 */
@@ -139,7 +140,7 @@ public class LoaderImpl {
 	
 	
 	/**  
-     * MD5 加密  
+     * 对文件名 MD5 加密
      */   
     private static String getMD5Str(String str) {   
         MessageDigest messageDigest = null;   

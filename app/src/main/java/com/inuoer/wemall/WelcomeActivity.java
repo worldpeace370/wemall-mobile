@@ -21,7 +21,7 @@ import com.inuoer.util.SharedDataSave;
 
 public class WelcomeActivity extends Activity{
 
-	private TranslateAnimation translateanim;
+	private TranslateAnimation mTranslateAnim;
 	private Context mContext = this;
 
 	@Override
@@ -44,14 +44,14 @@ public class WelcomeActivity extends Activity{
 		ll.addView(imageView);
 		imageView.setImageResource(R.drawable.wemall);
 
-		translateanim = new TranslateAnimation(0, 0, imageView.getY(), imageView.getY()+100);
-		translateanim.setDuration(2000);
-		translateanim.setFillAfter(true);
-		imageView.startAnimation(translateanim);
+		mTranslateAnim = new TranslateAnimation(0, 0, imageView.getY(), imageView.getY()+100);
+		mTranslateAnim.setDuration(2000);
+		mTranslateAnim.setFillAfter(true);
+		imageView.startAnimation(mTranslateAnim);
 
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		this.addContentView(ll, params);
-		translateanim.setAnimationListener(new Animation.AnimationListener() {
+		mTranslateAnim.setAnimationListener(new Animation.AnimationListener() {
 			@Override
 			public void onAnimationStart(Animation animation) {
 
@@ -76,14 +76,11 @@ public class WelcomeActivity extends Activity{
 		if (ActivityManager.hasKitKat() && !ActivityManager.hasLollipop()){
 			//透明状态栏
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-			//透明导航栏
-			//getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 		}else if (ActivityManager.hasLollipop()){
 			Window window = getWindow();
 			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
 					| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 			window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-					//                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 					| View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 			window.setStatusBarColor(Color.TRANSPARENT);

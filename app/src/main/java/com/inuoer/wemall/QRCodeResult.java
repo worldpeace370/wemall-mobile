@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -41,6 +42,11 @@ public class QRCodeResult extends AppCompatActivity {
         setContentView(R.layout.activity_qrcode_result);
         setTransparent();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (!ActivityManager.hasKitKat()){//API<14
+            ViewGroup.LayoutParams layoutParams =  toolbar.getLayoutParams();
+            layoutParams.height = 70;
+            toolbar.setLayoutParams(layoutParams);
+        }
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         textView_showInfo = (TextView) findViewById(R.id.textView_showInfo);

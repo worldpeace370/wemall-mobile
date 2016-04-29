@@ -38,7 +38,7 @@ public class CartData {
 	public static void editCart(String id, String name, String price,
 			String num, String image) {
 		Boolean addFlag = true;
-
+		//如果商品没有被添加过，则执行addCart,如果添加过了，则更新，不会执行addCart
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).get("id") == id) {
 //				removeCart(id);

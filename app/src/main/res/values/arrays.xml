@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="cities">
+
+        <item>安庆</item>
+        <item>鞍山</item>
+        <item>安顺</item>
+        <item>安阳</item>
+        <item>澳门</item>
+
+        <item>北京</item>
+        <item>保定</item>
+        <item>宝鸡</item>
+        <item>保山</item>
+        <item>包头</item>
+
+        <item>赤峰</item>
+        <item>成都</item>
+        <item>长沙</item>
+        <item>长春</item>
+        <item>池州</item>
+
+        <item>大连</item>
+        <item>大理</item>
+        <item>大庆</item>
+        <item>大同</item>
+        <item>大兴安岭</item>
+
+        <item>恩施</item>
+        <item>鄂州</item>
+        <item>鄂尔多斯</item>
+
+        <item>福州</item>
+        <item>佛山</item>
+        <item>抚顺</item>
+        <item>抚州</item>
+        <item>阜阳</item>
+
+        <item>广州</item>
+        <item>桂林</item>
+        <item>贵阳</item>
+        <item>赣州</item>
+
+        <item>杭州</item>
+        <item>哈尔滨</item>
+        <item>合肥</item>
+        <item>海口</item>
+        <item>呼和浩特</item>
+
+        <item>济南</item>
+        <item>佳木斯</item>
+        <item>吉安</item>
+        <item>江门</item>
+        <item>焦作</item>
+
+    </string-array>
+</resources>

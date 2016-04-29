@@ -6,7 +6,7 @@ import android.os.Build;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
+/**判断android版本号
  * 作者：$(吴祥坤) on 2015/10/30 19:44
  * 邮箱：337360287@qq.com
  * This class is used for managering all of Activity of this App,
@@ -50,7 +50,7 @@ public class ActivityManager {
         activityList.add(activity);
     }
 
-    /**清除所有观察者(貌似....不需要?)
+    /**
      * 程序退出时,遍历activityList,销毁所有的活动
      */
     public void exit(){

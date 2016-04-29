@@ -33,8 +33,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/waimai_shop_list_item_magin_left"
-            android:layout_toRightOf="@id/itemlist_shop_image_container"
-            android:orientation="horizontal" >
+            android:layout_toRightOf="@id/itemlist_shop_image_container">
 
             <TextView
                 android:id="@+id/itemlist_shopname"
