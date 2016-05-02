@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="@color/sapi_background_color"
+            android:background="#FFFFFF"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/custom_content_lrgap"
             android:paddingRight="@dimen/custom_content_lrgap"
@@ -39,7 +39,7 @@
                         android:maxWidth="100dp"
                         android:singleLine="true"
                         android:text="订单编号:"
-                        android:textColor="@color/custom_white"
+                        android:textColor="#000000"
                         android:textSize="@dimen/custom_title" />
 
                     <TextView
@@ -49,7 +49,7 @@
                         android:ellipsize="end"
                         android:singleLine="true"
                         android:text="2014111020471369"
-                        android:textColor="@color/custom_white"
+                        android:textColor="@color/custom_inputright_gray"
                         android:textSize="@dimen/custom_title" />
                 </LinearLayout>
 
@@ -63,7 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="订单状态："
-                        android:textColor="@color/custom_pottery_font"
+                        android:textColor="#000000"
                         android:textSize="@dimen/custom_info" />
 
                     <TextView
@@ -73,7 +73,7 @@
                         android:ellipsize="end"
                         android:singleLine="true"
                         android:text="未发货"
-                        android:textColor="@color/custom_pottery_font"
+                        android:textColor="@color/custom_inputright_gray"
                         android:textSize="@dimen/custom_info" />
                     
                     <TextView
@@ -81,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:text="付款状态："
-                        android:textColor="@color/custom_pottery_font"
+                        android:textColor="#000000"
                         android:textSize="@dimen/custom_info" />
 
                     <TextView
@@ -91,7 +91,7 @@
                         android:ellipsize="end"
                         android:singleLine="true"
                         android:text="未付款"
-                        android:textColor="@color/custom_pottery_font"
+                        android:textColor="@color/custom_inputright_gray"
                         android:textSize="@dimen/custom_info" />
 
                 </LinearLayout>
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="right"
-                android:src="@drawable/mypage_list_icon_white_arrow" />
+                android:src="@drawable/order_detail" />
         </LinearLayout>
     </LinearLayout>
 

@@ -21,6 +21,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -33,6 +34,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 根据用户的登录信息，从服务器下载用户对应的订单信息。
+ * 点击订单信息，跳转到详情页面
+ * 如果没有登录，则弹出吐司
+ */
 public class OrderActivity extends AppCompatActivity{
 	private SharedPreferences sharedpreferences;
 	private String uid;
@@ -64,7 +70,7 @@ public class OrderActivity extends AppCompatActivity{
 				Context.MODE_PRIVATE);
 		uid = sharedpreferences.getString("uid", "");
 
-		ListView lv = (ListView) findViewById(R.id.order_list);
+		ListView listView = (ListView) findViewById(R.id.order_list);
 
 		list = new ArrayList<Map<String, String>>();
 
@@ -73,53 +79,58 @@ public class OrderActivity extends AppCompatActivity{
 						"order_status", "pay_status" }, new int[] {
 						R.id.order_id, R.id.order_status, R.id.pay_status });
 
-		lv.setAdapter(adapter);
+		listView.setAdapter(adapter);
+		if (TextUtils.isEmpty(uid)){
+			Toast.makeText(OrderActivity.this, "请登录", Toast.LENGTH_SHORT).show();
+		}else {
+			/*网络下载订单数据，填充到ListView中去*/
+			new Thread(new Runnable() {
 
-		new Thread(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						String result = HttpUtil.getPostJsonContent(Config.API_DO_ORDER
+								+ "?uid=" + uid + "&do=2");
+						if (!TextUtils.isEmpty(result)) {
+							JSONArray jsonArray = JSONArray.parseArray(result);
+							JSONObject myjObject;
+							String order_status , pay_status;
 
-			@Override
-			public void run() {
-				try {
-					String result = HttpUtil.getPostJsonContent(Config.API_DO_ORDER
-							+ "?uid=" + uid + "&do=2");
-					if (!TextUtils.isEmpty(result)) {
-						JSONArray jsonArray = JSONArray.parseArray(result);
-						JSONObject myjObject;
-						String order_status , pay_status;
-						
-						for (int i = 0; i < jsonArray.size(); i++) {
-							myjObject = jsonArray.getJSONObject(i);
-							hashmap = new HashMap<String, String>();
-							hashmap.put("order_id", myjObject.getString("orderid"));
-							
-							order_status = myjObject.getString("order_status").equals("0")?"未发货":"已发货";
-							pay_status = myjObject.getString("pay_status").equals("0")?"未付款":"已付款";
-							
-							hashmap.put("order_status", order_status);
-							hashmap.put("pay_status", pay_status);
-							list.add(hashmap);
+							for (int i = 0; i < jsonArray.size(); i++) {
+								myjObject = jsonArray.getJSONObject(i);
+								hashmap = new HashMap<String, String>();
+								hashmap.put("order_id", myjObject.getString("orderid"));
+
+								order_status = myjObject.getString("order_status").equals("0")?"未发货":"已发货";
+								pay_status = myjObject.getString("pay_status").equals("0")?"未付款":"已付款";
+
+								hashmap.put("order_status", order_status);
+								hashmap.put("pay_status", pay_status);
+								list.add(hashmap);
+							}
+
+							handler.sendEmptyMessage(0x123);
 						}
 
-						handler.sendEmptyMessage(0x123);
+					} catch (Exception e) {
+
 					}
-
-				} catch (Exception e) {
-
 				}
-			}
-		}).start();
-		
-		lv.setOnItemClickListener(new OnItemClickListener() {
+			}).start();
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String order_id = list.get(position).get("order_id");
-				Intent intent = new Intent(OrderActivity.this, OrderDetailActivity.class);
-				intent.putExtra("order_id", order_id);
-				startActivity(intent);
-			}
-		});
+			/*ListView的点击事件，进入到订单详情页面，将order_id传过去*/
+			listView.setOnItemClickListener(new OnItemClickListener() {
+
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+										int position, long id) {
+					String order_id = list.get(position).get("order_id");
+					Intent intent = new Intent(OrderActivity.this, OrderDetailActivity.class);
+					intent.putExtra("order_id", order_id);
+					startActivity(intent);
+				}
+			});
+		}
 	}
 
 	/**

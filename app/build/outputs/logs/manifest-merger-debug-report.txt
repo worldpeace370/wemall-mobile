@@ -154,7 +154,7 @@ ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\A
 	android:name
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:49:13-41
 activity#com.inuoer.wemall.ShakeActivity
-ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:9-53:72
+ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:9-53:71
 	android:screenOrientation
 		ADDED from C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\AndroidManifest.xml:51:19-55
 	android:theme

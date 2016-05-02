@@ -1,72 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="55.0dip"
-        android:background="@color/custom_white" >
-
-        <ImageButton
-            android:id="@+id/actionbar_left_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_gravity="left|center"
-            android:layout_marginLeft="10.0dip"
-            android:layout_marginRight="10.0dip"
-            android:background="@drawable/setting_actionbar_left_back_selector"
-            android:clickable="true"
-            android:paddingLeft="@dimen/waimai_shoplist_filter_item_grid_margin"
-            android:paddingRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
-            android:visibility="visible" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_marginRight="@dimen/waimai_shoplist_list_item_ratingbar_mini_height"
-                android:gravity="center"
-                android:text="订单详情"
-                android:textColor="@color/custom_title"
-                android:textSize="18.0sp" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1.0px"
-            android:layout_alignParentBottom="true"
-            android:background="#ffdbdcde" />
-    </RelativeLayout>
-
+    <include android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toolbar"/>
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@color/custom_background"
             android:orientation="vertical" >
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1.0px"
-                android:layout_marginTop="@dimen/custom_item_gap"
-                android:background="@color/custom_line" />
-
             <LinearLayout
                 android:id="@+id/dish_info"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/custom_white"
                 android:orientation="vertical"
@@ -129,19 +82,19 @@
             </LinearLayout>
 
             <View
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="1.0px"
                 android:background="@color/custom_line" />
 
             <View
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="1.0px"
                 android:layout_marginTop="@dimen/custom_item_gap"
                 android:background="@color/custom_line" />
 
             <LinearLayout
                 android:id="@+id/distribution_info"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/custom_item_gap"
                 android:background="@color/custom_white"
@@ -150,14 +103,14 @@
                 android:paddingRight="@dimen/custom_content_lrgap" >
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/custom_item_height"
                     android:gravity="center_vertical"
                     android:orientation="horizontal" >
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="联系人："
                         android:textColor="@color/custom_title"
@@ -186,14 +139,14 @@
                 <View style="@style/CustomHorizonSplitLineNoLeftRight" />
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/custom_item_height"
                     android:gravity="center_vertical"
                     android:orientation="horizontal" >
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="手机："
                         android:textColor="@color/custom_title"
@@ -211,7 +164,7 @@
                 <View style="@style/CustomHorizonSplitLineNoLeftRight" />
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="@dimen/custom_item_height"
                     android:orientation="horizontal"
@@ -238,7 +191,7 @@
 
                 <LinearLayout
                     android:id="@+id/remarks_container"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="@dimen/custom_item_height"
                     android:orientation="horizontal"
@@ -264,7 +217,7 @@
                 <View style="@style/CustomHorizonSplitLineNoLeftRight" />
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="@dimen/custom_item_height"
                     android:orientation="horizontal"
@@ -290,7 +243,7 @@
                 <View style="@style/CustomHorizonSplitLineNoLeftRight" />
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="@dimen/custom_item_height"
                     android:orientation="horizontal"
@@ -316,7 +269,7 @@
                 <View style="@style/CustomHorizonSplitLineNoLeftRight" />
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="@dimen/custom_item_height"
                     android:orientation="horizontal"
