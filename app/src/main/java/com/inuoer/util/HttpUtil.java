@@ -77,7 +77,7 @@ public class HttpUtil {
 			// 要注意的是connection.getOutputStream会隐含的进行connect。
 			urlConn.connect();
 			
-			// DataOutputStream流
+			// DataOutputStream流，向服务器的输出流，提交数据
 			DataOutputStream out = new DataOutputStream(urlConn.getOutputStream());
 			// 要上传的参数
 			String content = urlArr[1];
@@ -90,6 +90,7 @@ public class HttpUtil {
 			// 获取相应码
 			int respCode = urlConn.getResponseCode();
 			if (respCode == 200) {
+				//获取服务器的返回数据，将流转为json数据
 				return ConvertStream2Json(urlConn.getInputStream());
 			}
 		} catch (Exception e) {

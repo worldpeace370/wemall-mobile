@@ -166,7 +166,7 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		case R.id.confirmorder_address_add:
 			if (!TextUtils.isEmpty(username)) {//如果用户没有登录，则为true
 				intent = new Intent(mContext, EditAddressActivity.class);
-				startActivityForResult(intent, 0);
+				startActivity(intent);
 			}else{
 				Toast.makeText(getActivity(), "请先登录", Toast.LENGTH_LONG).show();
 				createDialog();
@@ -245,16 +245,6 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 			break;
 		}
 	}
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		
-		if (requestCode == 0) {
-			if (resultCode == 1) {
-				mCartFragAdapter.notifyDataSetChanged();
-			}
-		}
-	}
 
 	@Override
 	public void onAttach(Context context) {
@@ -300,9 +290,12 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
      */
 	@Override
 	public void update(Observable observable, Object data) {
-		if (data instanceof Float){
+		if (data instanceof Float){//接受消息，更改总价
 			Float sum = (Float) data;
 			summary.setText(String.valueOf(summary(sum)));
+		}else if (data instanceof String){//更新地址后，接受消息
+			String address = (String) data;
+			addresstv.setText(address);
 		}
 	}
 

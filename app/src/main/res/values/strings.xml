@@ -27,6 +27,7 @@
     <string name="fourth_item">新疆的烤羊</string>
     <string name="fifth_item">尽在墩墩美食</string>
     <string name="city_choice">城市选择</string>
+    <string name="save">保存</string>
     <string-array name="drawer_items">
         <item>全部菜品</item>
         <item>自助火锅</item>

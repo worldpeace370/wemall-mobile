@@ -1472,7 +1472,7 @@
         <item>提交订单</item>
         <item>发现</item>
         <item>个人中心</item>
-    </string-array><string name="start">开始体验</string><string name="hello_blank_fragment">Hello blank fragment</string><string name="navigation_drawer_close">close</string><string name="third_item">东北的炖菜</string><string name="updating">最近更新：</string><string name="forgot_pwd">忘记密码？</string><string name="first_item">全国的美食</string><string name="phone_reg">注册账号</string><string name="registerButtonText">注册</string></file><file path="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\res\values\styles.xml" qualifiers=""><style name="confirmorderUserinfoShown">
+    </string-array><string name="save">保存</string><string name="start">开始体验</string><string name="hello_blank_fragment">Hello blank fragment</string><string name="navigation_drawer_close">close</string><string name="third_item">东北的炖菜</string><string name="updating">最近更新：</string><string name="forgot_pwd">忘记密码？</string><string name="first_item">全国的美食</string><string name="phone_reg">注册账号</string><string name="registerButtonText">注册</string></file><file path="C:\Users\Administrator\.AndroidStudio2.0\wemall-mobile\app\src\main\res\values\styles.xml" qualifiers=""><style name="confirmorderUserinfoShown">
         <item name="android:textSize">@dimen/custom_hint</item>
         <item name="android:textColor">@color/custom_hint</item>
         <item name="android:textColorHint">@color/custom_hint</item>
