@@ -175,7 +175,7 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		//用户登陆后显示的个人地址栏线性布局，点击后跳转到更改地址页面
 		case R.id.confirmorder_address_full:
 			intent = new Intent(mContext, EditAddressActivity.class);
-			startActivityForResult(intent, 0);
+			startActivity(intent);
 			break;
 		//点击 备注，弹出备注对话框
 		case R.id.confirmorder_userinfo_remarks:

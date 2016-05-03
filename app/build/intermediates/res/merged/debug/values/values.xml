@@ -544,6 +544,7 @@
     <string name="save">保存</string>
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
     <string name="second_item">四川的麻辣</string>
+    <string name="self_center">个人中心</string>
     <string name="start">开始体验</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="third_item">东北的炖菜</string>

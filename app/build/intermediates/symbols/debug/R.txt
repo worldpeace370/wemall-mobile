@@ -1386,11 +1386,12 @@ int string release_to_refresh 0x7f060026
 int string save 0x7f060027
 int string scan_text 0x7f060028
 int string second_item 0x7f060029
-int string start 0x7f06002a
+int string self_center 0x7f06002a
+int string start 0x7f06002b
 int string status_bar_notification_info_overflow 0x7f060013
-int string third_item 0x7f06002b
-int string updating 0x7f06002c
-int string usernameHint 0x7f06002d
+int string third_item 0x7f06002c
+int string updating 0x7f06002d
+int string usernameHint 0x7f06002e
 int style AddressaddrInputMtb 0x7f090088
 int style AlertDialog_AppCompat 0x7f090089
 int style AlertDialog_AppCompat_Light 0x7f09008a

@@ -17,7 +17,6 @@ public class SettingActivity extends Activity {
 	private String username;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.wode_setting);
@@ -33,7 +32,6 @@ public class SettingActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				finish();
 			}
 		});
@@ -41,15 +39,12 @@ public class SettingActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
 				new AlertDialog.Builder(SettingActivity.this)
 					.setMessage("确认要退出账号吗？")
 					.setPositiveButton("是", new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-							sharedpreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE); 
+							sharedpreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 							Editor editor = sharedpreferences.edit();  
 			                editor.remove("username");
 			                editor.remove("uid");
@@ -65,7 +60,6 @@ public class SettingActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				Intent intent = new Intent(SettingActivity.this, AboutActivity.class);
 				startActivity(intent);
 			}

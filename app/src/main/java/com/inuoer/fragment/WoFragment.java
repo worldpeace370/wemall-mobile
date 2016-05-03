@@ -1,7 +1,5 @@
 package com.inuoer.fragment;
 
-import java.net.URLEncoder;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -13,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +35,8 @@ import com.inuoer.wemall.OrderActivity;
 import com.inuoer.wemall.R;
 import com.inuoer.wemall.SettingActivity;
 
+import java.net.URLEncoder;
+
 public class WoFragment extends Fragment implements OnClickListener {
 	private Intent intent;
 	private LayoutInflater inflater;
@@ -53,36 +54,36 @@ public class WoFragment extends Fragment implements OnClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		this.inflater = inflater;
 		
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
-		FrameLayout fl = new FrameLayout(getActivity());
-		fl.setLayoutParams(params);
+		FrameLayout frameLayout = new FrameLayout(getActivity());
+		frameLayout.setLayoutParams(params);
 
-		fl.addView(inflater.inflate(R.layout.wode_fragment, container, false));
+		frameLayout.addView(inflater.inflate(R.layout.wode_fragment, container, false));
 
-		fl.findViewById(R.id.wode_address).setOnClickListener(this);
-		fl.findViewById(R.id.wode_call).setOnClickListener(this);
-		fl.findViewById(R.id.wode_order).setOnClickListener(this);
-		fl.findViewById(R.id.wode_login_btn).setOnClickListener(this);
-		fl.findViewById(R.id.setting_not_login).setOnClickListener(this);
-		fl.findViewById(R.id.setting_has_login).setOnClickListener(this);
-		call_text = (TextView) fl.findViewById(R.id.wode_call_text);
-		call_text.setText("客服 "+Config.PHONE);
+		frameLayout.findViewById(R.id.wode_address).setOnClickListener(this);
+		frameLayout.findViewById(R.id.wode_call).setOnClickListener(this);
+		frameLayout.findViewById(R.id.wode_order).setOnClickListener(this);
+		frameLayout.findViewById(R.id.wode_login_btn).setOnClickListener(this);
+		frameLayout.findViewById(R.id.setting_not_login).setOnClickListener(this);
+		frameLayout.findViewById(R.id.setting_has_login).setOnClickListener(this);
+		//设置客服电话号码
+		call_text = (TextView) frameLayout.findViewById(R.id.wode_call_text);
+		call_text.setText(Config.PHONE);
 		
 		sharedpreferences = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE); 
 		username = sharedpreferences.getString("username", "");
-
-		if (!("".equals(username))) {
-			fl.findViewById(R.id.wode_not_login_layout).setVisibility(View.GONE);
-			fl.findViewById(R.id.wode_has_login_layout).setVisibility(View.VISIBLE);
-			TextView usernametv = (TextView) fl.findViewById(R.id.wode_username);
+		//根据用户是否登录显示不同的布局
+		if (!TextUtils.isEmpty(username)) {
+			frameLayout.findViewById(R.id.wode_not_login_layout).setVisibility(View.GONE);
+			frameLayout.findViewById(R.id.wode_has_login_layout).setVisibility(View.VISIBLE);
+			TextView usernametv = (TextView) frameLayout.findViewById(R.id.wode_username);
 			usernametv.setText(username);
 		}
 		
-		return fl;
+		return frameLayout;
 	}
 
 	@SuppressLint("HandlerLeak")
@@ -111,7 +112,6 @@ public class WoFragment extends Fragment implements OnClickListener {
 	};
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.wode_address:
 			intent = new Intent(getActivity(), EditAddressActivity.class);
@@ -120,7 +120,7 @@ public class WoFragment extends Fragment implements OnClickListener {
 		case R.id.wode_call:
 			intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"
 					+ Config.PHONE));
-			startActivity(intent);// 内部类
+			startActivity(intent);
 			break;
 		case R.id.wode_order:
 			intent = new Intent(getActivity(), OrderActivity.class);
@@ -146,7 +146,6 @@ public class WoFragment extends Fragment implements OnClickListener {
 				@SuppressLint("NewApi")
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
 					dialog.dismiss();
 					
 					registerLayout = (LinearLayout) inflater.inflate(R.layout.activity_register, null);
@@ -167,7 +166,6 @@ public class WoFragment extends Fragment implements OnClickListener {
 					registerLayout.findViewById(R.id.gologin).setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							// TODO Auto-generated method stub
 							registerDialog.dismiss();
 							dialog.show();
 						}
@@ -175,7 +173,6 @@ public class WoFragment extends Fragment implements OnClickListener {
 					registerLayout.findViewById(R.id.register).setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							// TODO Auto-generated method stub
 							if (System.currentTimeMillis() - lastClick >= 1000){
 					        	lastClick = System.currentTimeMillis();  
 								final String registerusername = registerusernametv.getText().toString();
@@ -187,7 +184,6 @@ public class WoFragment extends Fragment implements OnClickListener {
 									new Thread(new Runnable() {
 										@Override
 										public void run() {
-											// TODO Auto-generated method stub
 											@SuppressWarnings("deprecation")
 											String result = HttpUtil.getPostJsonContent(Config.API_REGISTER + "?phone="+URLEncoder.encode(registerphone)+"&username="+URLEncoder.encode(registerusername)+"&password="+URLEncoder.encode(registerpassord));
 											if (!result.isEmpty()) {
@@ -210,7 +206,6 @@ public class WoFragment extends Fragment implements OnClickListener {
 
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
 					if (System.currentTimeMillis() - lastClick >= 1000){
 			        	lastClick = System.currentTimeMillis();  
 						loginphonetv = (TextView) loginlayout.findViewById(R.id.loginphone);
@@ -258,10 +253,10 @@ public class WoFragment extends Fragment implements OnClickListener {
 	
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
 		
 		if (requestCode == 0) {
+			Toast.makeText(getActivity(), "注销当前账号成功", Toast.LENGTH_SHORT).show();
 			if (resultCode == 1) {
 				getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, new WoFragment()).commit();
 				Toast.makeText(getActivity(), "注销当前账号成功", Toast.LENGTH_SHORT).show();

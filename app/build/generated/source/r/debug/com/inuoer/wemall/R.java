@@ -2995,11 +2995,12 @@ containing a value of this type.
         public static final int save=0x7f060027;
         public static final int scan_text=0x7f060028;
         public static final int second_item=0x7f060029;
-        public static final int start=0x7f06002a;
+        public static final int self_center=0x7f06002a;
+        public static final int start=0x7f06002b;
         public static final int status_bar_notification_info_overflow=0x7f060013;
-        public static final int third_item=0x7f06002b;
-        public static final int updating=0x7f06002c;
-        public static final int usernameHint=0x7f06002d;
+        public static final int third_item=0x7f06002c;
+        public static final int updating=0x7f06002d;
+        public static final int usernameHint=0x7f06002e;
     }
     public static final class style {
         public static final int AddressaddrInputMtb=0x7f090088;

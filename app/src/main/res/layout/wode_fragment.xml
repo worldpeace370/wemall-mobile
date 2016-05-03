@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#ffecedf1" >
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <include
@@ -18,13 +18,13 @@
             android:visibility="visible" />
 
         <View
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1.0px"
             android:layout_marginTop="@dimen/custom_item_gap"
             android:background="@color/custom_line" />
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/custom_white"
             android:orientation="vertical"
@@ -32,13 +32,13 @@
             android:paddingRight="@dimen/custom_content_lrgap" >
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <LinearLayout
                     android:id="@+id/wode_address"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/custom_item_height"
                     android:orientation="horizontal" >
 
@@ -55,7 +55,7 @@
                     <TextView
                         android:id="@+id/wode_address_text"
                         android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:text="我的地址"
                         android:textColor="@color/wode_frag_list_color"
@@ -63,7 +63,7 @@
 
                     <LinearLayout
                         android:layout_width="0.0dip"
-                        android:layout_height="fill_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1.0"
                         android:gravity="right"
                         android:orientation="horizontal" >
@@ -84,13 +84,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <LinearLayout
                     android:id="@+id/wode_order"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/custom_item_height"
                     android:orientation="horizontal" >
 
@@ -107,7 +107,7 @@
                     <TextView
                         android:id="@+id/wode_order_text"
                         android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:text="我的订单"
                         android:textColor="@color/wode_frag_list_color"
@@ -115,7 +115,7 @@
 
                     <LinearLayout
                         android:layout_width="0.0dip"
-                        android:layout_height="fill_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1.0"
                         android:gravity="right"
                         android:orientation="horizontal" >
@@ -137,19 +137,19 @@
 
 
         <View
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1.0px"
             android:layout_marginBottom="@dimen/custom_item_gap"
             android:background="@color/custom_line" />
 
         <View
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1.0px"
             android:background="@color/custom_line" />
 
         <LinearLayout
             android:id="@+id/wode_call"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/custom_item_height"
             android:background="@color/custom_white"
             android:orientation="vertical"
@@ -158,7 +158,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:paddingLeft="0dip"
                 android:paddingRight="24.0dip" >
@@ -176,7 +176,7 @@
                 <TextView
                     android:id="@+id/wode_call_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:text="客服 18000000000"
                     android:textColor="@color/custom_actionbar_red"
@@ -185,7 +185,7 @@
         </LinearLayout>
 
         <View
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1.0px"
             android:layout_marginBottom="@dimen/custom_item_gap"
             android:background="@color/custom_line" />

@@ -221,8 +221,18 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.On
 		transaction.commit();
 	}
 
+	/**
+	 * 如果MainActivity中有Fragment attach了，则当这个Fragment执行startActivityForResult(),
+	 * 并重写onActivityResult()方法时，所在的MainActivity也重写了onActivityResult()时，其必须调用
+	 * super.onActivityResult(requestCode, resultCode, data);否则Fragment中的onActivityResult()
+	 * 不会被回调
+	 * @param requestCode
+	 * @param resultCode
+	 * @param data
+     */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
 		listItem = mMainFragment.getListItem();
 		if (this.mCityRequestCode == requestCode && resultCode == 0x66){
 			String cityName = data.getExtras().getString("cityName");
