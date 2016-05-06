@@ -92,6 +92,14 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 	private CartFragAdapter mCartFragAdapter;
 
 	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		mContext = getActivity();
+		//加入观察者队列，如果有消息被发送，会执行Observer接口的update()方法
+		ObserverManager.getObserverManager().addObserver(this);
+	}
+
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		this.inflater = inflater;
@@ -246,17 +254,10 @@ public class CartFragment extends Fragment implements OnClickListener ,Observer{
 		}
 	}
 
-	@Override
-	public void onAttach(Context context) {
-		super.onAttach(context);
-		mContext = getActivity();
-		//加入观察者队列，如果有消息被发送，会执行Observer接口的update()方法
-		ObserverManager.getObserverManager().addObserver(this);
-	}
 
 	@Override
-	public void onDetach() {
-		super.onDetach();
+	public void onDestroyView() {
+		super.onDestroyView();
 		ObserverManager.getObserverManager().deleteObserver(this);
 	}
 

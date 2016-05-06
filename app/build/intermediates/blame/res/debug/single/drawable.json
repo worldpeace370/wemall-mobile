@@ -8,10 +8,6 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\global_border.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\confirmorder_desc_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\confirmorder_desc_bottom.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_button.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\background_button.xml"
     },
@@ -44,24 +40,20 @@
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\global_actionbar_selector.xml",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\global_actionbar_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\global_dialog_border_lefttop.xml",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\global_dialog_border_lefttop.xml"
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\global_dialog_bg_corner.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\global_dialog_bg_corner.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_check_material.xml"
+        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\global_dialog_border_lefttop.xml",
+        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\global_dialog_border_lefttop.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
@@ -94,10 +86,6 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\global_item_pressed_selector.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\global_item_pressed_selector.xml"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\global_border_pressed_topbottom.xml",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\global_border_pressed_topbottom.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_radio.xml",
@@ -150,10 +138,6 @@
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
         "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\setting_actionbar_left_back_selector.xml",
-        "source": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\src\\main\\res\\drawable\\setting_actionbar_left_back_selector.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\.AndroidStudio2.0\\wemall-mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\waimai_tab_atme_selector.xml",

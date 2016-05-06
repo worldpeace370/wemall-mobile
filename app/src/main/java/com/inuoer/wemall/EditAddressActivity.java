@@ -1,13 +1,13 @@
 package com.inuoer.wemall;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
@@ -28,7 +28,7 @@ import com.inuoer.util.HttpUtil;
 
 import java.net.URLEncoder;
 
-public class EditAddressActivity extends AppCompatActivity implements OnClickListener {
+public class EditAddressActivity extends Activity implements OnClickListener {
 
 	private SharedPreferences sharedpreferences;
 	private String uid;
@@ -53,7 +53,6 @@ public class EditAddressActivity extends AppCompatActivity implements OnClickLis
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.address_addedit);
 		setTransparent();
 		initToolBar();
@@ -131,7 +130,6 @@ public class EditAddressActivity extends AppCompatActivity implements OnClickLis
 	private void initToolBar() {
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle("");
-		setSupportActionBar(toolbar);
 		if (!ActivityManager.hasKitKat()){//API<14
 			ViewGroup.LayoutParams layoutParams =  toolbar.getLayoutParams();
 			layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化

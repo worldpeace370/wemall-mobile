@@ -1,1 +1,1 @@
-include ':app', ':guidepagedemo', ':tencentqq'
+include ':app'

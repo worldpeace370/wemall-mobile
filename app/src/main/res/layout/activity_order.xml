@@ -14,4 +14,11 @@
         android:layout_height="match_parent" >
     </ListView>
 
+    <TextView android:id="@+id/textView_empty"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="暂时没有订单数据..."
+        android:textSize="18sp"
+        android:visibility="invisible"/>
 </LinearLayout>

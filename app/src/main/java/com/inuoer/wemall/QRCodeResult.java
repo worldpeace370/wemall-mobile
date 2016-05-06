@@ -1,10 +1,10 @@
 package com.inuoer.wemall;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +20,7 @@ import com.inuoer.util.ActivityManager;
  * 此活动刚启动就跳转到二维码扫描界面，这里用的是startActivityForResult跳转
  * 扫描完了之后调到该界面
  */
-public class QRCodeResult extends AppCompatActivity {
+public class QRCodeResult extends Activity {
 
     private ImageButton button_back;
     /**
@@ -38,7 +38,6 @@ public class QRCodeResult extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_qrcode_result);
         setTransparent();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -48,7 +47,6 @@ public class QRCodeResult extends AppCompatActivity {
             toolbar.setLayoutParams(layoutParams);
         }
         toolbar.setTitle("");
-        setSupportActionBar(toolbar);
         textView_showInfo = (TextView) findViewById(R.id.textView_showInfo);
         imageView_photo = (ImageView) findViewById(R.id.imageView_photo);
         textView_qrcode_title = (TextView)toolbar.findViewById(R.id.textView_qrcode_title);

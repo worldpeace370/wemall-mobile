@@ -1,5 +1,6 @@
 package com.inuoer.wemall;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -15,7 +16,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +35,7 @@ import com.inuoer.util.ShareValue;
 
 import java.util.Random;
 
-public class ShakeActivity extends AppCompatActivity {
+public class ShakeActivity extends Activity {
     //摇一摇上下两张图片
     private ImageView imageView_main_logoup;
     private ImageView imageView_main_logodown;
@@ -98,7 +98,6 @@ public class ShakeActivity extends AppCompatActivity {
         imageView_main_logodown = (ImageView) findViewById(R.id.imageView_main_logodown);
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
         mToolBar.setTitle("");
-        setSupportActionBar(mToolBar);
         if (!ActivityManager.hasKitKat()){//API<14
             ViewGroup.LayoutParams layoutParams =  mToolBar.getLayoutParams();
             layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化

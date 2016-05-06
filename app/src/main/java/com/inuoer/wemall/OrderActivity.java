@@ -1,6 +1,8 @@
 package com.inuoer.wemall;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +10,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
@@ -39,28 +40,33 @@ import java.util.Map;
  * 点击订单信息，跳转到详情页面
  * 如果没有登录，则弹出吐司
  */
-public class OrderActivity extends AppCompatActivity{
+public class OrderActivity extends Activity {
 	private SharedPreferences sharedpreferences;
 	private String uid;
 	private List<Map<String, String>> list;
 	private Map<String, String> hashmap;
 	private SimpleAdapter adapter;
-
+	private ProgressDialog mProgressDialog;
 	@SuppressLint("HandlerLeak")
 	Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
 			if (msg.what == 0x123) {
-				adapter.notifyDataSetChanged();
+				dismissProgressDialog();
+				if (list.size() == 0){
+					Toast.makeText(OrderActivity.this, "您还没有下单呢！", Toast.LENGTH_SHORT).show();
+				}else {
+					adapter.notifyDataSetChanged();
+				}
 			} else {
 			}
 		}
 	};
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_order);
 		setTransparent();
 
@@ -69,7 +75,7 @@ public class OrderActivity extends AppCompatActivity{
 		sharedpreferences = this.getSharedPreferences("userInfo",
 				Context.MODE_PRIVATE);
 		uid = sharedpreferences.getString("uid", "");
-
+		TextView textViewEmpty = ((TextView) findViewById(R.id.textView_empty));
 		ListView listView = (ListView) findViewById(R.id.order_list);
 
 		list = new ArrayList<Map<String, String>>();
@@ -82,7 +88,8 @@ public class OrderActivity extends AppCompatActivity{
 		listView.setAdapter(adapter);
 		if (TextUtils.isEmpty(uid)){
 			Toast.makeText(OrderActivity.this, "请登录", Toast.LENGTH_SHORT).show();
-		}else {
+		}else {  //登录后
+			showProgressDialog();
 			/*网络下载订单数据，填充到ListView中去*/
 			new Thread(new Runnable() {
 
@@ -108,10 +115,8 @@ public class OrderActivity extends AppCompatActivity{
 								hashmap.put("pay_status", pay_status);
 								list.add(hashmap);
 							}
-
-							handler.sendEmptyMessage(0x123);
 						}
-
+						handler.sendEmptyMessage(0x123);
 					} catch (Exception e) {
 
 					}
@@ -130,6 +135,7 @@ public class OrderActivity extends AppCompatActivity{
 					startActivity(intent);
 				}
 			});
+			listView.setEmptyView(textViewEmpty);
 		}
 	}
 
@@ -139,7 +145,6 @@ public class OrderActivity extends AppCompatActivity{
 	private void initToolBar() {
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle("");
-		setSupportActionBar(toolbar);
 		if (!ActivityManager.hasKitKat()){//API<14
 			ViewGroup.LayoutParams layoutParams =  toolbar.getLayoutParams();
 			layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化
@@ -178,4 +183,15 @@ public class OrderActivity extends AppCompatActivity{
 		}
 	}
 
+	private void showProgressDialog(){
+		mProgressDialog = new ProgressDialog(this);
+		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		mProgressDialog.setMessage("正在加载中...");
+		mProgressDialog.setCancelable(true);
+		mProgressDialog.show();
+	}
+
+	private void dismissProgressDialog(){
+		mProgressDialog.dismiss();
+	}
 }

@@ -1,5 +1,6 @@
 package com.inuoer.wemall;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
@@ -15,7 +16,6 @@ import android.os.Message;
 import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.SurfaceHolder;
@@ -56,7 +56,7 @@ import java.util.Vector;
  * Initial the com.lebron.com.inuoer.camera
  * @author Ryan.Tang
  */
-public class MipcaCapture extends AppCompatActivity implements Callback {
+public class MipcaCapture extends Activity implements Callback {
 
     private CaptureActivityHandler handler;
     private ViewfinderView viewfinderView;
@@ -82,7 +82,6 @@ public class MipcaCapture extends AppCompatActivity implements Callback {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mipca_capture);
         setTransparent();
         //ViewUtil.addTopView(getApplicationContext(), this, R.string.scan_card);
@@ -132,7 +131,6 @@ public class MipcaCapture extends AppCompatActivity implements Callback {
             toolbar.setLayoutParams(layoutParams);
         }
         toolbar.setTitle("");
-        setSupportActionBar(toolbar);
         return toolbar;
     }
 

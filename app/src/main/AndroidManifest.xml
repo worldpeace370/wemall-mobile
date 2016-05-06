@@ -39,11 +39,12 @@
         <activity android:name=".OrderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".OrderDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".AboutActivity" android:screenOrientation="portrait"/>
         <activity android:screenOrientation="portrait"
             android:name=".QRCodeResult"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

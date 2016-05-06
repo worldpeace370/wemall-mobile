@@ -1,11 +1,11 @@
 package com.inuoer.wemall;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * 订单详情页面，根据OrderActivity传来的订单编号，从服务器下载相应的详情
  */
-public class OrderDetailActivity extends AppCompatActivity{
+public class OrderDetailActivity extends Activity {
 	private String order_id;
 	private SharedPreferences sharedpreferences;
 	private String uid;
@@ -39,7 +39,6 @@ public class OrderDetailActivity extends AppCompatActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_order_detail);
 		setTransparent();
 		initToolBar();
@@ -60,7 +59,6 @@ public class OrderDetailActivity extends AppCompatActivity{
 	private void initToolBar() {
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle("");
-		setSupportActionBar(toolbar);
 		if (!ActivityManager.hasKitKat()){//API<14
 			ViewGroup.LayoutParams layoutParams =  toolbar.getLayoutParams();
 			layoutParams.height = (int)(50 * getResources().getDisplayMetrics().density);//设置50dp高，height的值是px，所以需要转化

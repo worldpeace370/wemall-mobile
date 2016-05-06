@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.LinearLayout;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.inuoer.manager.ObserverManager;
 import com.inuoer.util.Config;
 import com.inuoer.util.HttpUtil;
 import com.inuoer.wemall.EditAddressActivity;
@@ -36,12 +38,14 @@ import com.inuoer.wemall.R;
 import com.inuoer.wemall.SettingActivity;
 
 import java.net.URLEncoder;
+import java.util.Observable;
+import java.util.Observer;
 
-public class WoFragment extends Fragment implements OnClickListener {
+public class WoFragment extends Fragment implements OnClickListener ,Observer{
 	private Intent intent;
 	private LayoutInflater inflater;
-	private TextView loginphonetv;
-	private TextView loginpasswordtv;
+	private EditText loginphonetv;
+	private EditText loginpasswordtv;
 	private String loginphone , username;
 	private String loginpassword;
 	private SharedPreferences sharedpreferences;
@@ -50,6 +54,14 @@ public class WoFragment extends Fragment implements OnClickListener {
 	public LinearLayout registerLayout;
 	public TextView registerphonetv , call_text;
 	public TextView registerpasswordtv;
+	private FrameLayout mFrameLayout;
+	private Dialog mRegisterDialog;
+
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		ObserverManager.getObserverManager().addObserver(this);
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,32 +70,38 @@ public class WoFragment extends Fragment implements OnClickListener {
 		
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
-		FrameLayout frameLayout = new FrameLayout(getActivity());
-		frameLayout.setLayoutParams(params);
+		mFrameLayout = new FrameLayout(getActivity());
+		mFrameLayout.setLayoutParams(params);
 
-		frameLayout.addView(inflater.inflate(R.layout.wode_fragment, container, false));
+		mFrameLayout.addView(inflater.inflate(R.layout.wode_fragment, container, false));
 
-		frameLayout.findViewById(R.id.wode_address).setOnClickListener(this);
-		frameLayout.findViewById(R.id.wode_call).setOnClickListener(this);
-		frameLayout.findViewById(R.id.wode_order).setOnClickListener(this);
-		frameLayout.findViewById(R.id.wode_login_btn).setOnClickListener(this);
-		frameLayout.findViewById(R.id.setting_not_login).setOnClickListener(this);
-		frameLayout.findViewById(R.id.setting_has_login).setOnClickListener(this);
+		mFrameLayout.findViewById(R.id.wode_address).setOnClickListener(this);
+		mFrameLayout.findViewById(R.id.wode_call).setOnClickListener(this);
+		mFrameLayout.findViewById(R.id.wode_order).setOnClickListener(this);
+		mFrameLayout.findViewById(R.id.wode_login_btn).setOnClickListener(this);
+		mFrameLayout.findViewById(R.id.setting_not_login).setOnClickListener(this);
+		mFrameLayout.findViewById(R.id.setting_has_login).setOnClickListener(this);
 		//设置客服电话号码
-		call_text = (TextView) frameLayout.findViewById(R.id.wode_call_text);
+		call_text = (TextView) mFrameLayout.findViewById(R.id.wode_call_text);
 		call_text.setText(Config.PHONE);
-		
-		sharedpreferences = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE); 
+
+		showDifferLayout();
+
+		return mFrameLayout;
+	}
+
+	/**
+	 * 根据用户是否登录显示不同的布局
+	 */
+	private void showDifferLayout() {
+		sharedpreferences = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 		username = sharedpreferences.getString("username", "");
-		//根据用户是否登录显示不同的布局
 		if (!TextUtils.isEmpty(username)) {
-			frameLayout.findViewById(R.id.wode_not_login_layout).setVisibility(View.GONE);
-			frameLayout.findViewById(R.id.wode_has_login_layout).setVisibility(View.VISIBLE);
-			TextView usernametv = (TextView) frameLayout.findViewById(R.id.wode_username);
+			mFrameLayout.findViewById(R.id.wode_not_login_layout).setVisibility(View.GONE);
+			mFrameLayout.findViewById(R.id.wode_has_login_layout).setVisibility(View.VISIBLE);
+			TextView usernametv = (TextView) mFrameLayout.findViewById(R.id.wode_username);
 			usernametv.setText(username);
 		}
-		
-		return frameLayout;
 	}
 
 	@SuppressLint("HandlerLeak")
@@ -91,8 +109,8 @@ public class WoFragment extends Fragment implements OnClickListener {
 		@SuppressLint("NewApi")
 		@Override
 		public void handleMessage(Message msg) {
-			if (msg.what == 0x123) {
-				getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, new WoFragment()).commit();
+			if (msg.what == 0x123) {//用户登陆后更改布局
+				showDifferLayout();
 				dialog.dismiss();
 			} else if (msg.what == 0x124) {
 				Toast.makeText(getActivity(), "请检查网络连接", Toast.LENGTH_LONG)
@@ -102,7 +120,7 @@ public class WoFragment extends Fragment implements OnClickListener {
 						.show();
 			}else if (msg.what == 0x126){
 				registerLayout.findViewById(R.id.gologin).callOnClick();
-				Toast.makeText(getActivity(), "注册成功,请登录", Toast.LENGTH_LONG)
+				Toast.makeText(getActivity(), "注册成功,请登录！", Toast.LENGTH_LONG)
 						.show();
 			}else if (msg.what == 0x127){
 				Toast.makeText(getActivity(), "注册失败,请重新注册", Toast.LENGTH_LONG)
@@ -132,11 +150,16 @@ public class WoFragment extends Fragment implements OnClickListener {
 			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			dialog.setContentView(loginlayout);
 			dialog.show();
-			
+			loginlayout.findViewById(R.id.dialog_detail_close).setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					dialog.dismiss();
+				}
+			});
 			WindowManager windowManager = getActivity().getWindowManager();
 			final Display display = windowManager.getDefaultDisplay();
 			WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
-			lp.width = (int)(display.getWidth())*4/5; //设置宽度
+			lp.width = display.getWidth(); //设置宽度
 			dialog.getWindow().setAttributes(lp);
 			
 			final Button registerButton = (Button) loginlayout.findViewById(R.id.goregister);
@@ -149,14 +172,14 @@ public class WoFragment extends Fragment implements OnClickListener {
 					dialog.dismiss();
 					
 					registerLayout = (LinearLayout) inflater.inflate(R.layout.activity_register, null);
-					final Dialog registerDialog = new Dialog(getActivity());
-					registerDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-					registerDialog.setContentView(registerLayout);
-					registerDialog.show();
+					mRegisterDialog = new Dialog(getActivity());
+					mRegisterDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					mRegisterDialog.setContentView(registerLayout);
+					mRegisterDialog.show();
 					
-					WindowManager.LayoutParams lpr = registerDialog.getWindow().getAttributes();
-					lpr.width = (int)(display.getWidth())*4/5; //设置宽度
-					registerDialog.getWindow().setAttributes(lpr);
+					WindowManager.LayoutParams lpr = mRegisterDialog.getWindow().getAttributes();
+					lpr.width = display.getWidth(); //设置宽度
+					mRegisterDialog.getWindow().setAttributes(lpr);
 					
 					final TextView registerusernametv = (TextView) registerLayout.findViewById(R.id.registerusername);
 					registerphonetv = (TextView) registerLayout.findViewById(R.id.registerphone);
@@ -166,7 +189,7 @@ public class WoFragment extends Fragment implements OnClickListener {
 					registerLayout.findViewById(R.id.gologin).setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							registerDialog.dismiss();
+							mRegisterDialog.dismiss();
 							dialog.show();
 						}
 					});
@@ -185,8 +208,10 @@ public class WoFragment extends Fragment implements OnClickListener {
 										@Override
 										public void run() {
 											@SuppressWarnings("deprecation")
-											String result = HttpUtil.getPostJsonContent(Config.API_REGISTER + "?phone="+URLEncoder.encode(registerphone)+"&username="+URLEncoder.encode(registerusername)+"&password="+URLEncoder.encode(registerpassord));
-											if (!result.isEmpty()) {
+											String result = HttpUtil.getPostJsonContent(Config.API_REGISTER + "?phone=" +
+													URLEncoder.encode(registerphone) + "&username=" + URLEncoder.encode(registerusername)
+													+ "&password=" + URLEncoder.encode(registerpassord));
+											if (!TextUtils.isEmpty(result)) {
 												handler.sendEmptyMessage(0x126);
 											}else{
 												handler.sendEmptyMessage(0x127);
@@ -208,18 +233,19 @@ public class WoFragment extends Fragment implements OnClickListener {
 				public void onClick(View v) {
 					if (System.currentTimeMillis() - lastClick >= 1000){
 			        	lastClick = System.currentTimeMillis();  
-						loginphonetv = (TextView) loginlayout.findViewById(R.id.loginphone);
-						loginpasswordtv = (TextView) loginlayout.findViewById(R.id.loginpassword);
+						loginphonetv = (EditText) loginlayout.findViewById(R.id.loginphone);
+						loginpasswordtv = (EditText) loginlayout.findViewById(R.id.loginpassword);
 						loginphone = loginphonetv.getText().toString();
 						loginpassword = loginpasswordtv.getText().toString();
 	
-						if( !(loginphone.isEmpty() && loginpassword.isEmpty()) ){
+						if(!TextUtils.isEmpty(loginphone) && !TextUtils.isEmpty(loginpassword)){
 							new Thread(new Runnable() {
 								public void run() {
-									String result = HttpUtil.getPostJsonContent(Config.API_LOGIN + "?phone="+URLEncoder.encode(loginphone)+"&password="+URLEncoder.encode(loginpassword));
-									if (!result.isEmpty()) {
+									String result = HttpUtil.getPostJsonContent(Config.API_LOGIN + "?phone=" +
+											URLEncoder.encode(loginphone) + "&password=" + URLEncoder.encode(loginpassword));
+									if (!TextUtils.isEmpty(result)) {
 										JSONObject jsonObject = JSON.parseObject(result);
-										//记住用户名  
+										//记住用户名,保存本地SharedPreferences
 										Editor editor = sharedpreferences.edit();  
 										editor.putString("username", jsonObject.get("username").toString());  
 										editor.putString("uid", jsonObject.get("uid").toString());
@@ -244,24 +270,28 @@ public class WoFragment extends Fragment implements OnClickListener {
 			break;
 		case R.id.setting_has_login:
 			intent = new Intent(getActivity(), SettingActivity.class);
-			startActivityForResult(intent, 0);//1表示注销用户功能
+			startActivity(intent);
 			break;
 		default:
 			break;
 		}
 	}
-	
+
 	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		
-		if (requestCode == 0) {
-			Toast.makeText(getActivity(), "注销当前账号成功", Toast.LENGTH_SHORT).show();
-			if (resultCode == 1) {
-				getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_content, new WoFragment()).commit();
+	public void update(Observable observable, Object data) {
+		if (data instanceof String){
+			String content = (String) data;
+			if (content.equals("change")){
+				mFrameLayout.findViewById(R.id.wode_not_login_layout).setVisibility(View.VISIBLE);
+				mFrameLayout.findViewById(R.id.wode_has_login_layout).setVisibility(View.GONE);
 				Toast.makeText(getActivity(), "注销当前账号成功", Toast.LENGTH_SHORT).show();
 			}
 		}
 	}
-	
+
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+		ObserverManager.getObserverManager().deleteObserver(this);
+	}
 }

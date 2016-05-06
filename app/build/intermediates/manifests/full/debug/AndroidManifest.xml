@@ -47,14 +47,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.inuoer.wemall.SettingActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.inuoer.wemall.OrderDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.inuoer.wemall.AboutActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name="com.inuoer.wemall.QRCodeResult"
             android:screenOrientation="portrait"
