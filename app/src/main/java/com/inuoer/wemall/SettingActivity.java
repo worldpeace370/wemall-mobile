@@ -21,6 +21,9 @@ import android.widget.TextView;
 import com.inuoer.manager.ObserverManager;
 import com.inuoer.util.ActivityManager;
 
+/**
+ * 退出登录,删除SharedPreferences对应数据
+ */
 public class SettingActivity extends Activity {
 	private SharedPreferences sharedpreferences;
 	private String username;
