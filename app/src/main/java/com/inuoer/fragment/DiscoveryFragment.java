@@ -15,7 +15,6 @@ import android.widget.SimpleAdapter;
 import com.inuoer.wemall.LoginActivity;
 import com.inuoer.wemall.R;
 import com.inuoer.wemall.ShakeActivity;
-import com.inuoer.wemall.TestActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -88,8 +87,8 @@ public class DiscoveryFragment extends Fragment {
                         Intent intent = new Intent(mContext, LoginActivity.class);
                         startActivity(intent);
                     }else if (position == 1){//启动测试
-                        Intent intent = new Intent(mContext, TestActivity.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(mContext, TestActivity.class);
+                        //                        startActivity(intent);
                     }
                 }
             });

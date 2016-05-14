@@ -37,6 +37,7 @@ import com.inuoer.wemall.OrderActivity;
 import com.inuoer.wemall.R;
 import com.inuoer.wemall.SettingActivity;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Observable;
 import java.util.Observer;
@@ -203,23 +204,29 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 								final String registerpassord = registerpasswordtv.getText().toString();
 								String registerrepeatpassord = registerrepeatpasswordtv.getText().toString();
 								
-								if ( registerpassord.equals(registerrepeatpassord) && !(registerusername.isEmpty() && registerpassord.isEmpty() && registerphone.isEmpty()) ) {
+								if ( registerpassord.equals(registerrepeatpassord) && !(registerusername.isEmpty() || registerpassord.isEmpty() || registerphone.isEmpty()) ) {
 									new Thread(new Runnable() {
 										@Override
 										public void run() {
-											@SuppressWarnings("deprecation")
-											String result = HttpUtil.getPostJsonContent(Config.API_REGISTER + "?phone=" +
-													URLEncoder.encode(registerphone) + "&username=" + URLEncoder.encode(registerusername)
-													+ "&password=" + URLEncoder.encode(registerpassord));
+											String result = null;
+											try {
+												result = HttpUtil.getPostJsonContent(Config.API_REGISTER + "?phone=" +
+														URLEncoder.encode(registerphone, "UTF-8") + "&username=" + URLEncoder.encode(registerusername, "UTF-8")
+														+ "&password=" + URLEncoder.encode(registerpassord, "UTF-8"));
+											} catch (UnsupportedEncodingException e) {
+												e.printStackTrace();
+											}
 											if (!TextUtils.isEmpty(result)) {
+												//注册成功,请登录！
 												handler.sendEmptyMessage(0x126);
 											}else{
+												//注册失败,请重新注册
 												handler.sendEmptyMessage(0x127);
 											}
 										}
 									}).start();
 								}else {
-									Toast.makeText(getActivity(), "请核对用户名手机号密码", Toast.LENGTH_SHORT).show();
+									Toast.makeText(getActivity(), "请输入完整的用户信息！", Toast.LENGTH_SHORT).show();
 								}
 							}
 							

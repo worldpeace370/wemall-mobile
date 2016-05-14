@@ -57,7 +57,7 @@ public class HttpUtil {
 	public static String getPostJsonContent(String urlStr){
 		try {
 			String[] urlArr = urlStr.split("\\?");
-			urlStr = urlArr[0];
+			urlStr = urlArr[0];  //http://115.28.64.78/wemall/index.php/App/Index/appregister
 			
 			URL url = new URL(urlStr);
 			HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
@@ -71,7 +71,7 @@ public class HttpUtil {
 			urlConn.setUseCaches(false);
 			urlConn.setInstanceFollowRedirects(true);
 			// 配置本次连接的Content-type,配置为application/x-www-form-urlencoded的
-			urlConn.setRequestProperty("Contet-Type",
+			urlConn.setRequestProperty("Content-Type",
 					"application/x-www-form-urlencoded");
 			// 连接，从postUrl.openConnection()至此的配置必须要在connect之前完成，
 			// 要注意的是connection.getOutputStream会隐含的进行connect。
@@ -80,7 +80,7 @@ public class HttpUtil {
 			// DataOutputStream流，向服务器的输出流，提交数据
 			DataOutputStream out = new DataOutputStream(urlConn.getOutputStream());
 			// 要上传的参数
-			String content = urlArr[1];
+			String content = urlArr[1];  //?后面的， phone=XX&username=XX&password=XX
 			// 将要上传的内容写入流中
 			out.writeBytes(content);
 			// 刷新、关闭
