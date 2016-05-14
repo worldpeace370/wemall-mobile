@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,16 +30,20 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.inuoer.impl.UploadDataImpl;
+import com.inuoer.interfaces.UploadDataListener;
 import com.inuoer.manager.ObserverManager;
 import com.inuoer.util.Config;
-import com.inuoer.util.HttpUtil;
 import com.inuoer.wemall.EditAddressActivity;
 import com.inuoer.wemall.OrderActivity;
 import com.inuoer.wemall.R;
 import com.inuoer.wemall.SettingActivity;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -57,11 +62,14 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 	public TextView registerpasswordtv;
 	private FrameLayout mFrameLayout;
 	private Dialog mRegisterDialog;
+	//POST方式上传用户信息到服务器的实现类
+	private UploadDataImpl mUploadDataImpl;
 
 	@Override
 	public void onAttach(Context context) {
 		super.onAttach(context);
 		ObserverManager.getObserverManager().addObserver(this);
+		mUploadDataImpl = new UploadDataImpl(getActivity());
 	}
 
 	@Override
@@ -124,7 +132,7 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 				Toast.makeText(getActivity(), "注册成功,请登录！", Toast.LENGTH_LONG)
 						.show();
 			}else if (msg.what == 0x127){
-				Toast.makeText(getActivity(), "注册失败,请重新注册", Toast.LENGTH_LONG)
+				Toast.makeText(getActivity(), "网络原因，注册失败,请重新注册", Toast.LENGTH_LONG)
 					.show();
 			}
 		}
@@ -177,7 +185,12 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 					mRegisterDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 					mRegisterDialog.setContentView(registerLayout);
 					mRegisterDialog.show();
-					
+					registerLayout.findViewById(R.id.dialog_detail_close).setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							mRegisterDialog.dismiss();
+						}
+					});
 					WindowManager.LayoutParams lpr = mRegisterDialog.getWindow().getAttributes();
 					lpr.width = display.getWidth(); //设置宽度
 					mRegisterDialog.getWindow().setAttributes(lpr);
@@ -205,17 +218,20 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 								String registerrepeatpassord = registerrepeatpasswordtv.getText().toString();
 								
 								if ( registerpassord.equals(registerrepeatpassord) && !(registerusername.isEmpty() || registerpassord.isEmpty() || registerphone.isEmpty()) ) {
-									new Thread(new Runnable() {
+									/****************用Volley方法实现post上传用户注册信息************************/
+									Map<String, String> userRegisterMap = new HashMap<>();
+									try {
+										userRegisterMap.put("phone", URLEncoder.encode(registerphone, "UTF-8"));
+										userRegisterMap.put("username", URLEncoder.encode(registerusername, "UTF-8"));
+										userRegisterMap.put("password", URLEncoder.encode(registerpassord, "UTF-8"));
+									} catch (UnsupportedEncodingException e) {
+										e.printStackTrace();
+								    }
+									mUploadDataImpl.uploadData(Config.API_REGISTER, userRegisterMap, new UploadDataListener() {
+										//result 是向服务器提交用户注册信息时，服务器返回的数据
 										@Override
-										public void run() {
-											String result = null;
-											try {
-												result = HttpUtil.getPostJsonContent(Config.API_REGISTER + "?phone=" +
-														URLEncoder.encode(registerphone, "UTF-8") + "&username=" + URLEncoder.encode(registerusername, "UTF-8")
-														+ "&password=" + URLEncoder.encode(registerpassord, "UTF-8"));
-											} catch (UnsupportedEncodingException e) {
-												e.printStackTrace();
-											}
+										public void onSuccess(String result) {
+											Log.i("WoFragment", "onSuccess: " + result);
 											if (!TextUtils.isEmpty(result)) {
 												//注册成功,请登录！
 												handler.sendEmptyMessage(0x126);
@@ -224,7 +240,33 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 												handler.sendEmptyMessage(0x127);
 											}
 										}
-									}).start();
+
+										@Override
+										public void onError() {
+
+										}
+									});
+									/****************用HttpURLConnection方法实现post上传用户注册信息*************/
+//									new Thread(new Runnable() {
+//										@Override
+//										public void run() {
+//											String result = null;
+//											try {
+//												result = HttpUtil.getPostJsonContent(Config.API_REGISTER + "?phone=" +
+//														URLEncoder.encode(registerphone, "UTF-8") + "&username=" + URLEncoder.encode(registerusername, "UTF-8")
+//														+ "&password=" + URLEncoder.encode(registerpassord, "UTF-8"));
+//											} catch (UnsupportedEncodingException e) {
+//												e.printStackTrace();
+//											}
+//											if (!TextUtils.isEmpty(result)) {
+//												//注册成功,请登录！
+//												handler.sendEmptyMessage(0x126);
+//											}else{
+//												//注册失败,请重新注册
+//												handler.sendEmptyMessage(0x127);
+//											}
+//										}
+//									}).start();
 								}else {
 									Toast.makeText(getActivity(), "请输入完整的用户信息！", Toast.LENGTH_SHORT).show();
 								}
@@ -238,33 +280,74 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 
 				@Override
 				public void onClick(View v) {
-					if (System.currentTimeMillis() - lastClick >= 1000){
-			        	lastClick = System.currentTimeMillis();  
+					if (System.currentTimeMillis() - lastClick >= 1000) {
+						lastClick = System.currentTimeMillis();
 						loginphonetv = (EditText) loginlayout.findViewById(R.id.loginphone);
 						loginpasswordtv = (EditText) loginlayout.findViewById(R.id.loginpassword);
 						loginphone = loginphonetv.getText().toString();
 						loginpassword = loginpasswordtv.getText().toString();
-	
-						if(!TextUtils.isEmpty(loginphone) && !TextUtils.isEmpty(loginpassword)){
-							new Thread(new Runnable() {
-								public void run() {
-									String result = HttpUtil.getPostJsonContent(Config.API_LOGIN + "?phone=" +
-											URLEncoder.encode(loginphone) + "&password=" + URLEncoder.encode(loginpassword));
+
+						if (!TextUtils.isEmpty(loginphone) && !TextUtils.isEmpty(loginpassword)) {
+							/****************用Volley方法实现post上传用户登录信息************************/
+							Map<String, String> userLoginMap = new HashMap<>();
+							//用户登录信息装在Map里面
+							try {
+								userLoginMap.put("phone", URLEncoder.encode(loginphone, "UTF-8"));
+								userLoginMap.put("password", URLEncoder.encode(loginpassword, "UTF-8"));
+							} catch (UnsupportedEncodingException e) {
+								e.printStackTrace();
+							}
+							//开始调用上传数据实现类的方法实现用户信息上传，上传成功后将服务器返回结果result回调到本类中
+							mUploadDataImpl.uploadData(Config.API_LOGIN, userLoginMap, new UploadDataListener() {
+								@Override
+								public void onSuccess(String result) {
 									if (!TextUtils.isEmpty(result)) {
 										JSONObject jsonObject = JSON.parseObject(result);
 										//记住用户名,保存本地SharedPreferences
-										Editor editor = sharedpreferences.edit();  
-										editor.putString("username", jsonObject.get("username").toString());  
-										editor.putString("uid", jsonObject.get("uid").toString());
+										Editor editor = sharedpreferences.edit();
+										try {
+											editor.putString("username", URLDecoder.decode(jsonObject.get("username").toString(), "UTF-8"));
+											editor.putString("uid", jsonObject.get("uid").toString());
+										} catch (UnsupportedEncodingException e) {
+											e.printStackTrace();
+										}
 										editor.commit();
 										handler.sendEmptyMessage(0x123);
-									}else {
+									} else {
 										handler.sendEmptyMessage(0x125);
 									}
-									
 								}
-							}).start();
-						}else {
+
+								@Override
+								public void onError() {
+
+								}
+							});
+							/****************用HttpURLConnection方法实现post上传用户登录信息*************/
+							//							new Thread(new Runnable() {
+							//								public void run() {
+							//									String result = null;
+							//									try {
+							//										result = HttpUtil.getPostJsonContent(Config.API_LOGIN + "?phone=" +
+							//												URLEncoder.encode(loginphone, "UTF-8") + "&password=" + URLEncoder.encode(loginpassword, "UTF-8"));
+							//									} catch (UnsupportedEncodingException e) {
+							//										e.printStackTrace();
+							//									}
+							//									if (!TextUtils.isEmpty(result)) {
+							//										JSONObject jsonObject = JSON.parseObject(result);
+							//										//记住用户名,保存本地SharedPreferences
+							//										Editor editor = sharedpreferences.edit();
+							//										editor.putString("username", jsonObject.get("username").toString());
+							//										editor.putString("uid", jsonObject.get("uid").toString());
+							//										editor.commit();
+							//										handler.sendEmptyMessage(0x123);
+							//									}else {
+							//										handler.sendEmptyMessage(0x125);
+							//									}
+							//
+							//								}
+							//							}).start();
+						} else {
 							Toast.makeText(getActivity(), "手机号密码不为空", Toast.LENGTH_SHORT).show();
 						}
 					}
