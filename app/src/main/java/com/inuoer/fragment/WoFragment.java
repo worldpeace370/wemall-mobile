@@ -47,6 +47,10 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * Fragment的生命周期方法中只有onCreateView()不用调用super.XXXX()方法
+ * 其他的都得调用。调用replace()方法来切换Fragment的时候，其所有的生命周期方法均会执行
+ */
 public class WoFragment extends Fragment implements OnClickListener ,Observer{
 	private Intent intent;
 	private LayoutInflater inflater;
@@ -64,17 +68,19 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 	private Dialog mRegisterDialog;
 	//POST方式上传用户信息到服务器的实现类
 	private UploadDataImpl mUploadDataImpl;
-
+    private String TAG = "WoFragment";
 	@Override
 	public void onAttach(Context context) {
 		super.onAttach(context);
 		ObserverManager.getObserverManager().addObserver(this);
 		mUploadDataImpl = new UploadDataImpl(getActivity());
+		Log.i(TAG, "onAttach: 执行了");
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		Log.i(TAG, "onCreateView: 执行了");
 		this.inflater = inflater;
 		
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
@@ -382,6 +388,13 @@ public class WoFragment extends Fragment implements OnClickListener ,Observer{
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();
+		Log.i(TAG, "onDestroyView: 执行了");
 		ObserverManager.getObserverManager().deleteObserver(this);
+	}
+
+	@Override
+	public void onDetach() {
+		super.onDetach();
+		Log.i(TAG, "onDetach: 执行了");
 	}
 }
